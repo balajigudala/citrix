@@ -1,0 +1,43 @@
+aie-rt/driver/src/dma/xaie_dma_aie2ps.c
+
+
+/proj/xsjsswstaff/dchauhan/work/dma_pause/test/aieml-tests/src/test.c
+
+
+src/aie2ps/xaie_load_ucelf.c
+
+
+
+
+for compiling the test cases of AIE2PS  and for libraray generation
+
+	/proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests
+
+developer login to get the simulator access for AIE2PS
+
+ssh xsjrdevl171
+
+change to bash
+
+cd /proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests
+
+refer README.md file to compile the library and to run the test code
+
+AI2PS
+```
+source /proj/xsjsswstaff/sankarji/aie-arch/aie-arch-env-files/aie2ps-arch.sh
+
+export LD_LIBRARY_PATH=$PWD/aie-rt/driver/src:$LD_LIBRARY_PATH
+
+for compiling the library
+
+make AIE_GEN=5 systemc
+
+for running the test code 
+
+make AIE_GEN=5 run_sim
+
+kill the processes created by command "iss_fst_bin"
+use "top" command 
+top -u "username"
+kill -9 "pid" (or) killall iss_fst_bin

@@ -1,0 +1,235 @@
+/**************  verifying the pending Bd in ShimDmaLoopBack 
+                 while pausing and unpausing the NocDmaPause
+************************************************************/ 
+
+/********log on 190124-0453*********/
+considering the tile loc (0,0), chnl no : 0, dir : 1.
+dma pause outside the pending bd loop
+
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+In shimdma T_Mod : 439f0
+printing reg addr : 0x9348
+RegVal : 5
+NocDmaPause func is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+PendingBd: 5
+
+
+
+
+/********log on 190124-0430 *********/Enabling channels....
+considering the tile loc (0,0), chnl no : 0, dir : 1.
+dma pause inside the pending bd loop
+
+
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+Enabling channels....
+PendingBd: 1
+In shimdma T_Mod : 439f0
+printing reg addr : 0x9348
+RegVal : 5
+NocDmaPause func is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+PendingBd: 0
+In shimdma T_Mod : 439f0
+printing reg addr : 0x9348
+RegVal : 5
+NocDmaPause func is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+SHIM DMA loopback on col 0 passed
+1/1 AIEML tests passed.
+
+
+
+
+
+
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_dma_pause
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+Running shim dma loopback for column 0
+Configuring AIE...
+Enabling channels....
+
+before pausing dma PendingBd: 1
+In shimdma T_Mod : 43c20
+printing reg addr : 0x9348
+RegVal : 1
+NocDmaPause is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+after pausing dma PendingBd: 0
+printing reg addr : 0x9348
+RegVal : 0
+NocDmaPause is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma unpause the noc_txn_status : 0
+
+after unpausing dma PendingBd: 0
+SHIM DMA loopback on col 0 passed
+
+
+
+Running shim dma loopback for column 1
+Configuring AIE...
+Enabling channels....
+before pausing dma PendingBd: 1
+In shimdma T_Mod : 43c20
+printing reg addr : 0x2009348
+RegVal : 1
+NocDmaPause is success for tile(0, 1)
+Noc dma txn status register addr : 0x2002120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+after pausing dma PendingBd: 0
+printing reg addr : 0x2009348
+RegVal : 0
+NocDmaPause is success for tile(0, 1)
+Noc dma txn status register addr : 0x2002120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma unpause the noc_txn_status : 0
+
+after unpausing dma PendingBd: 0
+SHIM DMA loopback on col 1 passed
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_dma_pause
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+Running shim dma loopback for column 0
+In shimdma T_Mod : 43b10
+enter the state to pause(1) or unpause(0) dma : printing reg addr : 0x9348
+RegVal : 1
+NocDmaPause func is success for tile(0, 0)
+Noc dma txn status register addr : 0x2120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 0 passed
+Running shim dma loopback for column 1
+In shimdma T_Mod : 43b10
+enter the state to pause(1) or unpause(0) dma : printing reg addr : 0x2009348
+RegVal : 0
+NocDmaPause func is success for tile(0, 1)
+Noc dma txn status register addr : 0x2002120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma unpause the noc_txn_status : 0
+
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 1 passed
+Running shim dma loopback for column 2
+In shimdma T_Mod : 43b10
+enter the state to pause(1) or unpause(0) dma : printing reg addr : 0x4009348
+RegVal : 1
+NocDmaPause func is success for tile(0, 2)
+Noc dma txn status register addr : 0x4002120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma pause the noc_txn_status : 0
+
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 2 passed
+Running shim dma loopback for column 3
+In shimdma T_Mod : 43b10
+enter the state to pause(1) or unpause(0) dma : printing reg addr : 0x6009348
+RegVal : 0
+NocDmaPause func is success for tile(0, 3)
+Noc dma txn status register addr : 0x6002120
+txn status in _XAie2ps_GetNocDmaAxiMmOutstandingTxn is 0
+when dma unpause the noc_txn_status : 0
+
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 3 passed
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit

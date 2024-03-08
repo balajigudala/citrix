@@ -1,0 +1,264 @@
+/******** log for uc dma pause for uc_load_elf ********/
+
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+l
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_UcDma_pause
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_UcDma_pause
+UcDmaPause is success for tile(0, 0)
+status of UcDmaAxiMmOutstandingTxn : 0, if pause : 1
+
+before uc write the value is 0 in d0000
+Elf file read from _binary___app_elf_start 0x60bcf0.
+Load UC elf.
+Get core status.1 before Wakeup
+ [  error]  (0 s in tl.me.south_shim.tile_0_0.uc_module.axi_ctrl) : Attempt to read core control register which is write-only!
+Get core status.0 after Wakeup
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+Hello World form Microblaze 21!
+
+uc write value 13245760 in d0000
+CoreStatusHost: 2  CoreStatusUC :321148768
+uc load success!
+Addresses  data_sdm1: 20000 data_sdm2: 20020
+
+values data_sdm1: 13245760 data_sdm2: 0
+
+unpause UcDma is success for tile(0, 0)
+status of UcDmaAxiMmOutstandingTxn : 0, if pause : 0
+
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+Core status is successful
+
+Values after DMA  data_sdm1: 2 data_sdm2: 13245760
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+ * Copyright (C) 2019 - 2020 Xilinx, Inc.  All rights reserved.
+ * SPDX-License-Identifier: MIT
+ ******************************************************************************/
+
+/*****************************************************************************/
+/**
+ * @file xaie_load_ucelf.c
+ * @{
+ *
+ * This file contains the test application of data memory check.
+ *
+ * This application write random integers to first 1024 bytes of data memory of
+ * all valid tiles and reads the data back to check the basic functioning of
+ * data memory.
+ *
+ ******************************************************************************/
+
+/***************************** Include Files *********************************/
+#include <stdlib.h>
+#include <xaiengine.h>
+
+//#include "xaie_npi.h"
+
+/*#ifndef _UCFW_
+//int test_aie_dma_pause(XAie_DevInst *DevInst){
+}
+
+#else*/
+
+#include "../hw_config.h"
+#include "ucfirmware/ucheader.h"
+/************************** Constant Definitions *****************************/
+extern const char _binary___app_elf_start[];
+extern const char _binary___app_elf_end[];
+
+int test_aie_UcDma_pause(XAie_DevInst *DevInst)
+{
+        AieRC RC = XAIE_OK;
+
+        const XAie_DmaMod *UcDmaMod= NULL;
+        const XAie_DmaMod *NocMod = NULL;
+
+
+        XAie_DmaMod *T_Mod = DevInst->DevProp.DevMod[XAIEGBL_TILE_TYPE_SHIMNOC].DmaMod;
+        XAie_UcMod *T_ucMod = DevInst->DevProp.DevMod[XAIEGBL_TILE_TYPE_SHIMNOC].UcMod;
+
+        XAie_LocType loc =  {0,0};
+        u32 pause = 0, chnl = 0, dir = 0, dir_n = 0;
+
+
+        pause = 1; // pause ucdma
+        RC = T_ucMod->UcDmaPause(DevInst, &loc, dir, pause, T_ucMod);
+        if (RC != XAIE_OK) {
+                printf("\nPause for UcDma failed \n\n");
+
+                return XAIE_ERR;
+        }
+        printf("Pause for UcDma is success for tile(%d, %d)\n",
+                        loc.Row, loc.Col);
+        u32 uc_sts=-1;
+        T_ucMod->GetUcDmaAxiMmOutstandingTxn(DevInst, loc, T_ucMod, &uc_sts);
+        printf("status of UcDmaAxiMmOutstandingTxn : %u, if pause : %u\n", uc_sts, pause);
+        printf("\n");
+
+        //pause NocDma
+        RC = T_Mod->NocDmaPause(DevInst, &loc, chnl, dir_n, pause, T_Mod);
+        if (RC != XAIE_OK) {
+                printf("\nPause for NocDma failed \n\n");
+
+                return XAIE_ERR;
+        }
+        printf("Pause for NocDma is success for tile(%d, %d)\n",
+                        loc.Row, loc.Col);
+        u32 noc_sts=-1;
+        T_Mod->GetNocDmaAxiMmOutstandingTxn(DevInst, loc, T_Mod, &noc_sts);
+        printf("status for NocDmaAxiMmOutstandingTxn : %u, if pause : %u\n",
+                        noc_sts, pause);
+
+
+        /********************** mod for load uc ***********************/
+        u8 TileType = DevInst->DevOps->GetTTypefromLoc(DevInst, loc);
+        uint32_t shared_mem_base_addr = DevInst->DevProp.DevMod[TileType].UcMod->DataMemAddr;
+        uint32_t smvar1 = 0,smvar2 = 0;
+        uint32_t addr = _XAie_GetTileAddr(DevInst, loc.Row, loc.Col) + shared_mem_base_addr;
+        XAie_Write32(DevInst, addr, smvar1);
+        XAie_Read32(DevInst, addr, &smvar1);
+#if DEVICE == 0
+        sleep(1);
+#endif
+        printf("before uc write the value is %x in %x\n", smvar1, shared_mem_base_addr);
+        void *ElfMem = _binary___app_elf_start;
+        if(ElfMem == NULL) {
+                printf("Error load the UC firmware data section.\n");
+                return -1;
+        } else {
+                printf("Elf file read from _binary___app_elf_start %p.\n", _binary___app_elf_start);
+        }
+
+        RC = XAie_LoadUcMem(DevInst, loc, ElfMem);
+        printf("Load UC elf.\n");
+
+        const XAie_UcMod *UcMod = DevInst->DevProp.DevMod[TileType].UcMod;
+        u32 status1, status2;
+        UcMod->GetCoreStatus(DevInst, loc, &status1,UcMod );
+        printf("Get core status.%x before Wakeup\n", status1);
+        UcMod->Wakeup(DevInst, loc, UcMod);
+        UcMod->GetCoreStatus(DevInst, loc, &status2,UcMod );
+        printf("Get core status.%x after Wakeup\n", status2);
+        if (status1 == status2) {
+                return -1;
+        }
+        uint32_t count = 0;
+        while(smvar2 != MAGIC_DATA && count++ < 10) {
+                XAie_Read32(DevInst, addr, &smvar2);
+                printf("uc write value %x in %x\n", smvar2, shared_mem_base_addr);
+                sleep(1);
+        }
+
+        // Check core status
+        u32 CoreStatusHost, CoreStatusUC;
+        XAie_CoreGetStatus(DevInst, XAie_TileLoc(1,2), &CoreStatusHost);
+        uint32_t addr_dm = _XAie_GetTileAddr(DevInst, 2, 1) + shared_mem_base_addr;
+        XAie_Read32(DevInst, addr, &CoreStatusUC);
+        printf("CoreStatusHost: %d  CoreStatusUC :%d\n", CoreStatusHost, CoreStatusUC);
+
+        if (smvar2 != MAGIC_DATA){
+                printf("timeout the UC load failed\n");
+                return -1;
+        }
+        printf("uc load success!\n");
+        /************** end load uc ******************/
+
+        sleep(10);
+        pause = 0; //unpause ucdma
+        RC = T_ucMod->UcDmaPause(DevInst, &loc, dir, pause, T_ucMod);
+        if (RC != XAIE_OK) {
+                printf("\nUnpause for UcDma failed \n\n");
+
+                return XAIE_ERR;
+        }
+        printf("Unpause for UcDma is success for tile(%d, %d)\n",
+                        loc.Row, loc.Col);
+        uc_sts=-1;
+        T_ucMod->GetUcDmaAxiMmOutstandingTxn(DevInst, loc, T_ucMod, &uc_sts);
+
+        //unpause NocDma
+        RC = T_Mod->NocDmaPause(DevInst, &loc, chnl, dir_n, pause, T_Mod);
+        if (RC != XAIE_OK) {
+                printf("\nUnpause for NocDma failed \n\n");
+
+                return XAIE_ERR;
+        }
+        printf("Unpause for NocDmais success for tile(%d, %d)\n",
+                        loc.Row, loc.Col);
+        noc_sts=-1;
+        T_Mod->GetNocDmaAxiMmOutstandingTxn(DevInst, loc, T_Mod, &noc_sts);
+        printf("status for NocDmaAxiMmOutstandingTxn : %u, if pause : %u\n",
+                        noc_sts, pause);
+
+        //for (col = 0; col <= 1; col++) {
+/*      for (col = 0; col < DevInst->NumCols; col++) {
+                XAie_LocType loc =  {0, col};
+
+        //      for(pause = 0; pause <= 1; pause++) {
+                RC = T_Mod->NocDmaPause(DevInst, &loc, 0, 0, pause, T_Mod);
+                if (RC != XAIE_OK) {
+                        printf("\nthe NocDmapause failed \n\n");
+
+                        return XAIE_ERR;
+                }
+                printf("NocDmaPause is success for tile(%d, %d)\n",
+                                loc.Row, loc.Col);
+        }
+*/
+
+/*      u32 noc_sts=-1;
+        T_Mod->GetNocDmaAxiMmOutstandingTxn(DevInst,loc,T_Mod,&noc_sts);
+        pause == 0 ? printf("when dma unpause the noc_txn_status : %d\n\n", noc_sts) :
+                printf("when dma pause the noc_txn_status : %d\n\n", noc_sts);
+*/
+
+        return XAIE_OK;
+}
+//#endif

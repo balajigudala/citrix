@@ -1,0 +1,14 @@
+******************* *************
+link to build the AIE driver
+
+https://pages.gitenterprise.xilinx.com/huaj/aiedoc/GettingStarted/aiebuild.html#build-linux-kernel-seperately-for-aie
+
+
+
+
+
+
+petalinux 2023.2
+
+
+source /proj/petalinux/2023.2/petalinux-v2023.2_daily_latest/tool/petalinux-v2023.2-final/settings.sh

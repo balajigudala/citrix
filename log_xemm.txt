@@ -1,0 +1,41 @@
+/****** output for running the matrix multipliaction ******/
+/******
+/****** 050224 *******/
+
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 1245.494629] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(811), ret: 0
+[ 1245.503545] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(811)
+[ 1245.511083] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(811), ret: 0
+[ 1245.576079] [drm] Loading xclbin 594c523c-5913-f240-41da-d4485d016b24 to slot 1
+[ 1245.576095] [drm] found kind 29(AIE_RESOURCES)
+[ 1245.665256] [drm] AIE Reset successfully finished.
+[1865415.850]Loading PDI from DDR
+[1865416.028]Monolithic/Master Device
+[1865419.397]3.540 ms: PDI initialization time
+[1865423.501]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[1865429.515]---Loading Partition#: 0x0, Id: 0x0
+[1865479.313] 45.497 ms for Partition#: 0x0, Size: 18761472 Bytes
+[1865482.268]Subsystem PDI Load: Done
+[ 1245.669786] [drm] found kind 18(PDI)
+[ 1245.758810] [drm] FPGA Manager load DONE
+[ 1245.768961] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 1245.772898] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 1245.778298] [drm] found kind 25(AIE_METADATA)
+[ 1245.784245] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 1245.788599] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 1245.802711] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+[ 1245.808404] [drm] zocl_xclbin_read_axlf 594c523c-5913-f240-41da-d4485d016b24 ret: 0
+[ 1245.965782] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 1245.982323] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 1245.990981] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] AIE cores are done executing
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 1291.923037] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(811)

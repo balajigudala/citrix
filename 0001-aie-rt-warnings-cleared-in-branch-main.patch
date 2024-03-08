@@ -1,0 +1,296 @@
+From 49a156f3b45383d0d475d983aeaa224b89caa341 Mon Sep 17 00:00:00 2001
+From: Dhananjay Chauhan <dchauhan@amd.com>
+Date: Thu, 7 Mar 2024 03:05:36 -0800
+Subject: [AIE_ENGINE] aie-rt warnings cleared in branch main.
+
+Signed-off-by: Dhananjay Chauhan <dchauhan@amd.com>
+---
+ driver/src/core/xaie_uc.c               |  5 +--
+ driver/src/device/xaie_device_aie2ps.c  |  2 +-
+ driver/src/global/xaiegbl.c             |  2 -
+ driver/src/io_backend/ext/xaie_socket.c |  1 +
+ driver/src/memory/xaie_mem.c            |  1 -
+ driver/src/routing/xaie_routing.c       | 49 ++++++++++++++++---------
+ driver/src/routing/xaie_routing.h       |  1 +
+ 7 files changed, 37 insertions(+), 24 deletions(-)
+
+diff --git a/driver/src/core/xaie_uc.c b/driver/src/core/xaie_uc.c
+index 81edd102..fda57fdd 100644
+--- a/driver/src/core/xaie_uc.c
++++ b/driver/src/core/xaie_uc.c
+@@ -104,11 +104,10 @@ static AieRC _XAie_LoadDataMemSection(XAie_DevInst *DevInst, XAie_LocType Loc,
+ 	u32 SectionSize;
+ 	u32 BytesToWrite;
+ 	u32 OverFlowBytes;
+-	XAie_LocType TgtLoc;
+ 	const XAie_UcMod *UcMod;
+ 	unsigned char *Tmp = XAIE_NULL;
+-	u32 AddrMask, MemSize, MemAddr;
+-	u8 TileType, Inv = 1U, MemType;
++	u32 AddrMask, MemSize;
++	u8 Inv = 1U, MemType;
+ 	const unsigned char *Buffer = SectionPtr;
+ 	AieRC (*BlockWrite)(XAie_DevInst *DevInst, XAie_LocType Loc,
+ 		u32 Addr, const void *Src, u32 Size);
+diff --git a/driver/src/device/xaie_device_aie2ps.c b/driver/src/device/xaie_device_aie2ps.c
+index b55bf9af..1481ebb5 100644
+--- a/driver/src/device/xaie_device_aie2ps.c
++++ b/driver/src/device/xaie_device_aie2ps.c
+@@ -66,7 +66,7 @@ u8 _XAie2PS_GetTTypefromLoc(XAie_DevInst *DevInst, XAie_LocType Loc)
+ 
+ AieRC _XAie2PS_SetAxiMMIsolation(XAie_DevInst* DevInst)
+ {
+-        AieRC RC;
++        AieRC RC = XAIE_OK;
+         u64 RegAddr;
+         u32 RegVal;
+         u8 TileType;
+diff --git a/driver/src/global/xaiegbl.c b/driver/src/global/xaiegbl.c
+index 6d190580..7038008c 100644
+--- a/driver/src/global/xaiegbl.c
++++ b/driver/src/global/xaiegbl.c
+@@ -820,8 +820,6 @@ AieRC XAie_TurnEccOff(XAie_DevInst *DevInst)
+ *******************************************************************************/
+ AieRC XAie_TurnEccOn(XAie_DevInst *DevInst)
+ {
+-	AieRC RC;
+-
+ 	if((DevInst == XAIE_NULL) ||
+ 		(DevInst->IsReady != XAIE_COMPONENT_IS_READY)) {
+ 		XAIE_ERROR("Invalid Device Instance\n");
+diff --git a/driver/src/io_backend/ext/xaie_socket.c b/driver/src/io_backend/ext/xaie_socket.c
+index e8981236..787871d2 100644
+--- a/driver/src/io_backend/ext/xaie_socket.c
++++ b/driver/src/io_backend/ext/xaie_socket.c
+@@ -25,6 +25,7 @@
+ #ifdef __AIESOCKET__
+ 
+ #define  _POSIX_C_SOURCE 200112L
++#define  _XOPEN_SOURCE   600
+ 
+ #include <errno.h>
+ #include <netdb.h>
+diff --git a/driver/src/memory/xaie_mem.c b/driver/src/memory/xaie_mem.c
+index 5e53e40c..dbed6388 100644
+--- a/driver/src/memory/xaie_mem.c
++++ b/driver/src/memory/xaie_mem.c
+@@ -308,7 +308,6 @@ AieRC XAie_SharedDataMemBlockWrite(XAie_DevInst *DevInst, XAie_LocType Loc,
+ 	u32 MemSize, MemAddr;
+ 	u8 TileType;
+ 	unsigned char *CharSrc = (unsigned char *)Src;
+-	const XAie_MemMod *MemMod;
+ 	const XAie_UcMod *UcMod;
+ 
+ 	if((DevInst == XAIE_NULL) ||
+diff --git a/driver/src/routing/xaie_routing.c b/driver/src/routing/xaie_routing.c
+index 84352f7a..d15ff164 100644
+--- a/driver/src/routing/xaie_routing.c
++++ b/driver/src/routing/xaie_routing.c
+@@ -36,7 +36,7 @@ void PrintBits(u8 value) {
+ void PrintBDBits(uint64_t num) {
+     printf("0b");
+     for (int i = 47; i >= 0; i--) { // Ensure we start from the highest bit of a 48-bit number
+-        printf("|%d", (num >> i) & 1);
++        printf("|%ld", (num >> i) & 1);
+         if (i % 8 == 0) {
+             printf("|");
+         }
+@@ -58,7 +58,7 @@ static Queue* createQueue(unsigned capacity) {
+     return queue;
+ }
+ 
+-static bool isFull(Queue* queue) { return (queue->size == queue->capacity); }
++static bool isFull(Queue* queue) { return ((unsigned int)queue->size == queue->capacity); }
+ static bool isEmpty(Queue* queue) { return (queue->size == 0); }
+ 
+ static void _XAie_enqueue(Queue* queue, XAie_LocType item) {
+@@ -117,7 +117,7 @@ static void _XAie_printBitfield(int value, int bits) {
+ AieRC XAie_dumpConstraintsToPrint(XAie_RoutingInstance* RoutingInstance) {
+     if (RoutingInstance == NULL) {
+         printf("Invalid input to dumpConstraintsToPrint\n");
+-        return;
++        return XAIE_ERR;
+     }
+ 
+     printf("{\n  \"tiles\": [\n");
+@@ -521,6 +521,7 @@ int findAvailableChannelIDforShimTile(XAie_RoutingInstance *routingInstance, XAi
+             }
+         }
+     }
++    return XAIE_OK;
+ }
+ 
+ /*****************************************************************************/
+@@ -561,6 +562,8 @@ static void _XAie_updatePortAvailabilityForStrmConn(XAie_RoutingInstance *routin
+         case DMA:
+             constraint->MM2S_State &= ~(1 << sourceStream);
+             break;
++	default:
++	    break;
+     }
+ 
+     // Unset bit for the master port in the destination direction
+@@ -580,6 +583,8 @@ static void _XAie_updatePortAvailabilityForStrmConn(XAie_RoutingInstance *routin
+         case DMA:
+             constraint->S2MM_State &= ~(1 <<destStream);
+             break;
++	default:
++	    break;
+     }
+ }
+ 
+@@ -840,6 +845,8 @@ static bool _XAie_isAdjTileValidForCurrTile(XAie_RoutingInstance* RoutingInstanc
+             case WEST: // West
+                 isPortAvailable = currentConstraint->SlaveWest && adjConstraint->MasterEast;
+                 break;
++	    default:
++		break;
+         }
+     }
+ 
+@@ -892,6 +899,8 @@ AieRC XAie_RoutingSwitchReset(XAie_RoutingInstance *routingInstance, XAie_LocTyp
+                 case EAST:  slavePortBitfield = tileConstraint->SlaveEast;  break;
+                 case WEST:  slavePortBitfield = tileConstraint->SlaveWest;  break;
+                 case DMA:   slavePortBitfield = tileConstraint->ShimMM2S_State; break; // MM2S for DMA
++		default:
++			    break;
+             }
+ 
+             for (int masterIdx = 0; masterIdx < dirCount; ++masterIdx) {
+@@ -905,6 +914,8 @@ AieRC XAie_RoutingSwitchReset(XAie_RoutingInstance *routingInstance, XAie_LocTyp
+                     case EAST:  masterPortBitfield = tileConstraint->MasterEast;  break;
+                     case WEST:  masterPortBitfield = tileConstraint->MasterWest;  break;
+                     case DMA:   masterPortBitfield = tileConstraint->ShimS2MM_State; break; // S2MM for DMA
++		    default:
++				break;
+                 }
+ 
+                 // Iterate through bitfields to find set bits and disable connection
+@@ -958,7 +969,7 @@ AieRC XAie_RoutingSwitchReset(XAie_RoutingInstance *routingInstance, XAie_LocTyp
+ 
+ void XAie_DumpRoutingSwitchInfo(XAie_RoutingInstance *routingInstance, XAie_LocType* listOfTiles, uint32_t NoOfTiles) {
+     // Loop through the list of tiles
+-    for (int i = 0; i < NoOfTiles; i++) {
++    for (int i = 0; (uint32_t)i < NoOfTiles; i++) {
+         XAie_LocType CurrTile = listOfTiles[i];
+         XAie_CoreConstraint* CurrentTileconstraint = routingInstance->CoreConstraintPerCore[CurrTile.Col][CurrTile.Row];
+ 
+@@ -1179,6 +1190,8 @@ static void _XAie_updatePortAvailabilityForStrmConnInverse(XAie_RoutingInstance
+         case DMA:
+             constraint->MM2S_State |= (1 << sourceStream);
+             break;
++	default:
++	    break;
+     }
+ 
+     // Set bit for the master port in the destination direction
+@@ -1198,6 +1211,8 @@ static void _XAie_updatePortAvailabilityForStrmConnInverse(XAie_RoutingInstance
+         case DMA:
+             constraint->S2MM_State |= (1 << destStream);
+             break;
++	default:
++	    break;
+     }
+ }
+ 
+@@ -1598,7 +1613,7 @@ AieRC XAie_MoveData(XAie_RoutingInstance *routingInstance, XAie_LocType source,
+     // Wait for pending BD for destination
+     u32 destPendingBDCount = 5;
+     while (destPendingBDCount) {
+-        RC |= XAie_DmaGetPendingBdCount(DevInst, destination, destChannelID, DMA_S2MM, &destPendingBDCount);
++        RC |= XAie_DmaGetPendingBdCount(DevInst, destination, destChannelID, DMA_S2MM, (u8 *)&destPendingBDCount);
+     }
+ 
+     // Check for errors in the process
+@@ -1648,7 +1663,7 @@ XAie_LocType source, XAie_LocType destination, XAie_LocType *path, int *pathLeng
+         return false;
+     }
+ 
+-    for (int i = 0; i < MAX_COLS; i++) {
++    for (int i = 0; (u32)i < MAX_COLS; i++) {
+         visited[i] = (bool*)aligned_alloc(16,MAX_ROWS * sizeof(bool));
+ 
+         if (visited[i] == NULL)
+@@ -1712,7 +1727,7 @@ XAie_LocType source, XAie_LocType destination, XAie_LocType *path, int *pathLeng
+ 
+     // Free the queue and visited array
+     freeQueue(queue);
+-    for (int i = 0; i < MAX_COLS; i++) {
++    for (int i = 0; (u32)i < MAX_COLS; i++) {
+         free(visited[i]);
+     }
+     free(visited);
+@@ -1763,7 +1778,7 @@ AieRC XAie_Run(XAie_RoutingInstance* routingInstance, uint32_t count) {
+         return XAIE_INVALID_ARGS;
+     }
+ 
+-    for (int i = 0; i < count; i++)
++    for (int i = 0; (uint32_t)i < count; i++)
+     {
+         for (u8 col = 0; col < routingInstance->NumCols; col++) {
+             for (u8 row = 0; row < routingInstance->NumRows; row++) {
+@@ -1802,17 +1817,17 @@ AieRC XAie_RouteDmaWait(XAie_RoutingInstance *routingInstance, XAie_LocType tile
+     {
+         for (int i = 0; i < S2MM_val.S2MM_portCount; i++)
+         {
+-            if(XAie_DmaWaitForDone(routingInstance->DeviceInstance, tile, S2MM_val.S2MM_ports[i], DMA_S2MM, 0) != XAIE_OK)
+-                XAIE_ERROR("XAie_DmaWait backend failed!\n");
+-                return XAIE_ERR;
++		if(XAie_DmaWaitForDone(routingInstance->DeviceInstance, tile, S2MM_val.S2MM_ports[i], DMA_S2MM, 0) != XAIE_OK)
++			XAIE_ERROR("XAie_DmaWait backend failed!\n");
++		return XAIE_ERR;
+         }
+     }
+     else
+     {
+         for (int i = 0; i < MM2S_val.MM2S_portCount; i++)
+         {
+-            if(XAie_DmaWaitForDone(routingInstance->DeviceInstance, tile, MM2S_val.MM2S_ports[i], DMA_MM2S, 0) != XAIE_OK)
+-                XAIE_ERROR("XAie_DmaWait backend failed!\n");
++		if(XAie_DmaWaitForDone(routingInstance->DeviceInstance, tile, MM2S_val.MM2S_ports[i], DMA_MM2S, 0) != XAIE_OK)
++			XAIE_ERROR("XAie_DmaWait backend failed!\n");
+                 return XAIE_ERR;
+         }
+     }
+@@ -2112,10 +2127,9 @@ XAie_RoutingInstance* XAie_InitRoutingHandler(XAie_DevInst *DevInst) //DeviceIns
+         }
+ 
+ 
+-        for (u8 row = 0; row < NumRows; row++)
+-            for (u8 col = 0; col < NumCols; col++)
++	for (u8 row = 0; row < NumRows; row++)
++		for (u8 col = 0; col < NumCols; col++)
+             {
+-                    XAie_LocType CurrTile = XAie_TileLoc(col, row);
+                     bool isShimTileRow = (row == DevInst->ShimRow) ? true : false;
+                     bool isMemTileRow = ((row >= MemTileStart) && (row <= MemTileEnd)) ? true: false;
+                     bool isAieTile = ((row >= AieTileRowStart) && (row <= AieTileRowEnd)) ? true: false;
+@@ -2297,11 +2311,12 @@ static void _XAie_addRouteInRoutesDB(XAie_ProgrammedRoutes** head, XAie_RoutingP
+     XAie_ProgrammedRoutes* newNode = (XAie_ProgrammedRoutes*)aligned_alloc(16,sizeof(XAie_ProgrammedRoutes));
+     if (newNode == NULL) {
+         XAIE_DBG("Error creating a new Programmed Route\n");
+-        return NULL;
++        return;
+     }
+     newNode->routePath = routePath;
+     newNode->nextRoute = *head;
+     *head = newNode;
++    return;
+ }
+ 
+ /*****************************************************************************/
+diff --git a/driver/src/routing/xaie_routing.h b/driver/src/routing/xaie_routing.h
+index 74270c1d..193a902e 100644
+--- a/driver/src/routing/xaie_routing.h
++++ b/driver/src/routing/xaie_routing.h
+@@ -147,6 +147,7 @@ AieRC XAie_MoveData(XAie_RoutingInstance *routingInstance, XAie_LocType source,
+ AieRC XAie_Route(XAie_RoutingInstance *routingInstance,  XAie_RouteConstraints* RouteConstraints, XAie_LocType source, XAie_LocType destination);
+ AieRC XAie_DeRoute(XAie_RoutingInstance *routingInstance, XAie_LocType source, XAie_LocType destination, bool ShouldModifyCoreConfig);
+ AieRC XAie_RoutesReveal(XAie_RoutingInstance *routingInstance, XAie_LocType source, XAie_LocType destination);
++int findAvailableChannelIDforShimTile(XAie_RoutingInstance *routingInstance, XAie_LocType tile, u8 port, bool HostToAie);
+ AieRC XAie_RouteDmaWait(XAie_RoutingInstance *routingInstance, XAie_LocType tile, bool isS2MM);
+ AieRC XAie_CoreWait(XAie_RoutingInstance *routingInstance, XAie_LocType tile);
+ AieRC XAie_Run(XAie_RoutingInstance* routingInstance, uint32_t count);
+-- 
+2.25.1
+

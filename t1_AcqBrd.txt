@@ -1,0 +1,31 @@
+**************** commands used to acquire board  ************
+
+terminal one 
+
+xsdb% histo
+     1 ta
+     2 conn
+     3 ta
+     4 ta 1
+     5 device program /proj/xsjsswstaff/ssatpute/exports/BOOT.BIN
+     6 dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/Image" 0x80000
+     7 dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/rootfs.cpio.gz.u-boot" 0x2000000
+     8 dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/system.dtb" 0x1000
+     9 ta
+    10 histo
+    11 histo
+    12 device program /proj/xsjsswstaff/ssatpute/exports/BOOT.BIN
+
+
+
+FOR VEK280-8
+
+	hw_server tftpd "/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/" nfsroot3 "/proj/xsjsswstaff/dchauhan/work/mipsology/image/"
+
+	connect com0
+
+	device program /proj/xsjsswstaff/sumanthg/jaydip_share/vek280/noes1/BOOT.BIN
+	
+	dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/Image" 0x80000
+	dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/rootfs.cpio.gz.u-boot" 0x2000000
+	dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/system.dtb" 0x1000

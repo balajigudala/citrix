@@ -1,0 +1,276 @@
+entered into test_aie_dma_pause
+size of devinst T_Mod : 0x43840
+UcDmaPause is success for tile(0, 0)
+UcDmaPause is success for tile(0, 1)
+UcDmaPause is success for tile(0, 2)
+UcDmaPause is success for tile(0, 3)
+
+chnl : 0, dir : 0
+entered into _XAie2PS_NocDmaPause
+print finding reg addr
+printing reg addr : 0x9348
+wrriten some values to the registers
+RegVal : 1
+
+Running shim dma loopback for column 0
+[AIE ERROR] XAie_BaremetalMemAllocate():292: my print in XAie_BaremetalMemAllocate
+[AIE ERROR] XAie_BaremetalMemAllocate():292: my print in XAie_BaremetalMemAllocate
+[AIE ERROR] XAie_BaremetalMemSyncForCPU():354: my print in XAie_BaremetalMemSyncForCPU
+[AIE ERROR] XAie_BaremetalMemSyncForCPU():354: my print in XAie_BaremetalMemSyncForCPU
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+[AIE ERROR] XAie_BaremetalMemSyncForCPU():354: my print in XAie_BaremetalMemSyncForCPU
+[AIE ERROR] XAie_BaremetalMemSyncForCPU():354: my print in XAie_BaremetalMemSyncForCPU
+SHIM DMA loopback on col 0 passed
+NocDmaPause is success for tile(0, 0)
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+
+
+
+
+
+
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+------------------print in test_aie_shimdma_loopback--------------
+------------------print in 104--------------
+Running shim dma loopback for column 0
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+------------------print in test_aie_shimdma_loopback--------------
+------------------print in 104--------------
+Running shim dma loopback for column 0
+[AIE ERROR] XAie_BaremetalMemAllocate():303: malloc failed
+[AIE ERROR] XAie_BaremetalMemAllocate():303: malloc failed
+[AIE ERROR] XAie_MemGetDevAddr():698: Invalid memory instance
+[AIE ERROR] XAie_MemGetDevAddr():698: Invalid memory instance
+[AIE ERROR] XAie_MemSyncForCPU():630: Invalid memory instance
+[AIE ERROR] XAie_MemSyncForCPU():630: Invalid memory instance
+[AIE ERROR] XAie_MemSyncForDev():654: Invalid memory instance
+[AIE ERROR] XAie_MemSyncForDev():654: Invalid memory instance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------print in test_aie_shimdma_loopback--------------
+------------------print in 104--------------
+Running shim dma loopback for column 0
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 0 passed
+Running shim dma loopback for column 1
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 1 passed
+Running shim dma loopback for column 2
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 2 passed
+Running shim dma loopback for column 3
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 3 passed
+
+
+
+
+
+
+
+/********shimdma loop back ************/
+
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+func _XAie_PrivilegeInitPart line 492
+opts 15
+func _XAie_PrivilegeInitPart line 505
+func _XAie_PrivilegeInitPart line 509
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 1 vs Val written: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 1 vs Val written: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 1 vs Val written: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 1 vs Val written: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 0 vs Val written: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 0 vs Val written: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 0 vs Val written: 0
+[AIE ERROR] _XAie_PrivilegeSetColReset():83: RegVal: 1
+[AIE ERROR] _XAie_PrivilegeSetColReset():87: RegVal: 0 vs Val written: 0
+func _XAie_PrivilegeInitPart line 539
+func _XAie_PrivilegeInitPart line 557
+func _XAie_PrivilegeInitPart line 566
+func _XAie_PrivilegeInitPart line 573
+func _XAie_PrivilegeInitPart line 580
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():442: AxiMM Isolation: 0
+func _XAie_PrivilegeSetAxiMMIsolation regaddr 7ff44 regval 2 retval 2
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():442: AxiMM Isolation: 1
+func _XAie_PrivilegeSetAxiMMIsolation regaddr 207ff44 regval 0 retval 0
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():442: AxiMM Isolation: 2
+func _XAie_PrivilegeSetAxiMMIsolation regaddr 407ff44 regval 0 retval 0
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():442: AxiMM Isolation: 3
+func _XAie_PrivilegeSetAxiMMIsolation regaddr 607ff44 regval 8 retval 8
+func _XAie_PrivilegeInitPart line 590
+line 595 RC value 0
+------------------print in test_aie_shimdma_loopback--------------
+------------------print in 104--------------
+Running shim dma loopback for column 2
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 2 passed
+Running shim dma loopback for column 3
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 3 passed
+Running shim dma loopback for column 6
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_StreamSwitchConfigureCct():214: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_ConfigShimNocMux():615: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_ConfigShimNocDeMux():692: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[5552.151696]-------Loading Prtn No: 0x9
+[5556.174740] 0.436525 ms for PrtnNum: 9, Size: 1104 Bytes
+[5560.875621]***********Boot PDI Load: Done*************
+[5565.770362]68131.335553 ms: ROM Time
+[5569.152159]Total PLM Boot Time
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+------------------print in test_aie_shimdma_loopback--------------
+------------------print in 104--------------
+Running shim dma loopback for column 2
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 2 passed
+Running shim dma loopback for column 3
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+SHIM DMA loopback on col 3 passed
+Running shim dma loopback for column 6
+------------------print in xaie_shimdma_loopback--------------
+Configuring AIE...
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_StreamSwitchConfigureCct():214: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_ConfigShimNocMux():615: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+[AIE ERROR] _XAie_ConfigShimNocDeMux():692: Invalid Tile Type
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 6
+

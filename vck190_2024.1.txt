@@ -1,0 +1,35 @@
+/***********petalinux - project *******/
+/**********vck190  2024.1v*************/
+
+/home/dchauhan/temp/extra/bsp_test/2024.1
+"vck190-3,vck190-4,vck190-11,vck190-12,vck190-20,vck190-22,vck190-23"
+
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+petalinux-create -t project -s /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest_bsps/release/xilinx-vck190-v2024.1-final.bsp
+cd
+petalinux-build
+
+
+
+
+------oob
+
+git clone https://gitenterprise.xilinx.com/ai-engine/xgemm.git
+
+cd xgemm/
+
+bash
+
+export XILINXD_LICENSE_FILE=2100@aiengine-eng
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+export BASE_XSA=/proj/xbuilds/2024.1_daily_latest/internal_platforms/xilinx_vck190_base_202410_1/hw/hw.xsa
+export SYSROOT=/proj/xbuilds/2024.1_daily_latest/internal_platforms/sw/versal/xilinx-versal-common-v2024.1/sysroots/cortexa72-cortexa53-xilinx-linux/
+
+
+source settings.sh
+
+cd designs/xgemm-gmio
+make clean
+
+make OS=linux

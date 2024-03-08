@@ -1,0 +1,36 @@
+**********commands to acquire board ************
+
+VCK190- aie1
+VEK280- aie2
+========== VEK280 BOARDFARM =====================
+/proj/systest/bin//cluster-ping vek280
+/proj/systest/bin/systest       vek280-4
+
+---Terminal 1     *****---*****        Terminal 2---------
+hw_server
+
+-ssh connect to board	
+/opt/systest/common/bin/systest-client
+connect com0
+										
+										xsdb
+										conn
+										ta 1
+										device program /proj/xsjsswstaff/ssatpute/exports/BOOT.BIN
+										device program /home/jaydpate/flashing/BOOT.BIN
+									
+stop auto boot(press any key)
+								
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/system.dtb" 0x1000
+									
+booti 0x80000 0x2000000 0x1000
+username:
+password:
+scp -r ssatpute@10.10.70.101://proj/xsjsswstaff/ssatpute/exports/vek280/lib/* .
+sudo rm /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+./usr_space_application
+
+

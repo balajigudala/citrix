@@ -1,0 +1,193 @@
+/****** log for isolation test case ******/
+
+/****** 060224 ******/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+/****** Before Isolation ******/
+random value : 123
+read value : 123
+read and write operation on tiles of col:0 pass
+random value : 0
+read value : 456
+read and write operation on tiles of col:1 pass
+After isolation
+After isolation and read and write operations
+
+
+/****** After isolation of col:0 ******/
+random value : 0
+read value : 1
+read and write operation on tiles of col:1 fail
+random value : 0
+read value : 258
+read and write operation on tiles of col:1 pass
+test aie isolation check success
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+/****** 060224 ******/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+/****** Before Isolation ******/
+ 0x0007FF34 line 33 RC 0 value 0
+line 35 RC 0 wrtnval 123
+line 38 RC 0 value 123
+......c1.......
+ 0x0007FF34 line 43 RC 0 value 0
+line 45 RC 0 wrtnval 321
+line 48 RC 0 value 321
+func test_aie_isolation_check line 54
+func test_aie_isolation_check line 72
+
+
+
+After isolation run
+
+
+......c0.......
+ 0x0007FF34 line 89 RC 0 value 1
+line 91 RC 0 wrtnval 456
+line 94 RC 0 value 1
+......c1.......
+ 0x0007FF34 line 99 RC 0 value 321
+line 101 RC 0 wrtnval 654
+line 104 RC 0 value 654
+
+
+
+test_aie_isolation_check success
+
+
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+/****** 060224 ******/
+
+Connecting to device com0.  Use Ctrl-\ to escape.
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+......c0.......
+ 0x0007FF34 line 54 RC 0 value 0
+line 56 RC 0
+line 59 RC 0 value 1
+......c1.......
+ 0x0007FF34 line 63 RC 0 value 114
+line 65 RC 0
+line 68 RC 0 value 112
+c 4 r 7 XAIE_COL_SHIFT 25 XAIE_ROW_SHIFT 20
+func test_aie_isolation_check line 125
+func test_aie_isolation_check line 146
+
+
+
+After isolation run
+
+
+......c0.......
+ 0x0007FF34 line 207 RC 0 value 1
+line 209 RC 0
+line 212 RC 0 value 1
+......c1.......
+ 0x0007FF34 line 216 RC 0 value 112
+line 218 RC 0
+line 221 RC 0 value 114
+
+
+
+test end
+
+
+1/1 AIEML tests passed.
+Tests Execution Completed

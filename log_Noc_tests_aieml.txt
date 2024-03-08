@@ -1,0 +1,154 @@
+/******* 150224 *******/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_UcDma_pause
+test_aie_NocDma_pause
+test_aie_Uc_AxiMmOutstandingTxn
+test_aie_Noc_AxiMmOutstandingTxn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+/****** Before starting AxiMm Oustanding loopback transaction ******/
+status of AxiMm OutstandingTxn :0
+
+AxiMm Outstanding loopback for column 0
+Configuring AIE...
+Enabling channels....
+/****** while Running AxiMm Oustanding loopback txn *****/
+status of AxiMm OutstandingTxn :1
+
+/****** After completion AxiMm Outstanding loopback transaction ******/
+status of AxiMm OutstandingTxn :0
+
+AIE Noc_AxiMm_OutstandingTxn success
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+/******for single tile and purticular col, pausing and unpausing check ******/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_UcDma_pause
+test_aie_NocDma_pause
+test_aie_Uc_AxiMmOutstandingTxn
+test_aie_Noc_AxiMmOutstandingTxn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+/****** ShimDma loopback started ******/
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+ShimDma loopback passed without dmapausing
+
+/******* Pausing NocDma ********/
+/****** Unpausing NocDma ******/
+1/1 AIEML tests passed.
+
+
+
+/******** pausing and check shimdma *********/
+/******* act as pending *********/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_UcDma_pause
+test_aie_NocDma_pause
+test_aie_Uc_AxiMmOutstandingTxn
+test_aie_Noc_AxiMmOutstandingTxn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+/****** ShimDma loopback started ******/
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 0
+ShimDma loopback passed without dmapausing
+
+/******* Pausing NocDma ********/
+/****** After pausing, ShimDma loopback started ******/
+Configuring AIE...
+Enabling channels....
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+PendingBd: 1
+infinite   

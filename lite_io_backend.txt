@@ -1,0 +1,6 @@
+aie-rt/driver/src/lite/
+
+aie-rt/driver/src/io_backend/
+
+/proj/xsjsswstaff/dchauhan/temp/extra/privilege.patch
+

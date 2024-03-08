@@ -1,0 +1,141 @@
+/********** added dma pause to check the loopback
+            in test_aie_uc_load_elf test case. ***********/
+
+
+/******log on 19012023-1206******/
+test_aie_UcDma_pause
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_UcDma_pause
+Pause for UcDma is success for tile(0, 0)
+status of UcDmaAxiMmOutstandingTxn : 0, if pause : 1
+
+before uc write the value is 0 in d0000
+Elf file read from _binary___app_elf_start 0x60bc70.
+Load UC elf.
+Get core status.1 before Wakeup
+ [  error]  (0 s in tl.me.south_shim.tile_0_0.uc_module.axi_ctrl) : Attempt to read core control register which is write-only!
+Get core status.0 after Wakeup
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+Hello World form Microblaze 21!
+
+uc write value 13245760 in d0000
+CoreStatusHost: 2  CoreStatusUC :321148768
+uc load success!
+Addresses  data_sdm1: 20000 data_sdm2: 20020
+
+values data_sdm1: 13245760 data_sdm2: 0
+
+status of UcDmaAxiMmOutstandingTxn : 0, if pause : 1
+
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+
+
+
+
+
+
+test_aie_load_uc_elf
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_load_uc_elf
+before uc write the value is 0 in d0000
+Elf file read from _binary___app_elf_start 0x60b670.
+In shimdma T_Mod : a2de420
+UcDmaPause func is success for tile(0, 0)
+Load UC elf.
+Get core status.1 before Wakeup
+ [  error]  (0 s in tl.me.south_shim.tile_0_0.uc_module.axi_ctrl) : Attempt to read core control register which is write-only!
+Get core status.0 after Wakeup
+--------------------line : 137 ------------
+UcDmaPause func is success for tile(0, 0)
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+Hello World form Microblaze 21!
+
+uc write value 13245760 in d0000
+CoreStatusHost: 2  CoreStatusUC :321148768
+uc load success!
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+values data_sdm1: 13245760 data_sdm2: 0
+
+Core status is successful
+
+Values after DMA  data_sdm1: 2 data_sdm2: 13245760
+
+
+
+
+
+
+
+
+
+
+
+test_aie_load_uc_elf
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_load_uc_elf
+before uc write the value is 0 in d0000
+Elf file read from _binary___app_elf_start 0x60b4b0.
+Load UC elf.
+Get core status.1 before Wakeup
+ [  error]  (0 s in tl.me.south_shim.tile_0_0.uc_module.axi_ctrl) : Attempt to read core control register which is write-only!
+Get core status.0 after Wakeup
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+uc write value 0 in d0000
+Hello World form Microblaze 21!
+
+uc write value 0 in d0000
+uc write value 0 in d0000
+datasdm2: 2D20
+
+uc write value 0 in d0000
+offset :0
+
+iss_fst_bin: src/uc_dma.cpp:724: void {anonymous}::UcDMAChannel_MM2DM::load_axi_mm_data(): Assertion `effective_addr % 4 == 0' failed.
+[1]+  Aborted                 mesimulator -d ${ME_ROOT}/data/aie2ps_5x4_1ms.json --microblaze-uart-to-stdout -r

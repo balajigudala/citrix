@@ -1,0 +1,161 @@
+/home/dchauhan/temp/extra/bsp_test/2024.1
+"vck190-3,vck190-4,vck190-11,vck190-12,vck190-20,vck190-22,vck190-23"
+
+**** COMMANDS *****
+#booting steps
+https://confluence.xilinx.com/display/~tejuss/Booting+Linux+on+Versal
+
+
+dts to dts conaversion
+--dtc -I dtb -O dts -f  system.dtb -o system.dts
+-------------------------
+privelleged enable & disable
+
+-==-==-==-==-
+petalinux-build
+petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb
+
+===========
+
+Launch xsct:
+$ source /proj/xbuilds/2023.1_daily_latest/installs/lin64/Vitis/2023.1/settings64.sh
+$ xsct
+===========
+-==-==-==-==-
+$ systest% power 0 power 1
+************************************************
+VCK190- aie1
+========== VEK280 BOARDFARM =====================
+/proj/systest/bin//cluster-ping vck190
+/proj/systest/bin/systest       vck190-
+
+---Terminal 1     *****---*****        Terminal 2---------
+hw_server
+connect com0
+										-ssh connect to board	
+										/opt/systest/common/bin/systest-client
+										xsdb
+										conn
+										ta 1
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/BOOT.BIN
+										
+stop auto boot(press any key)
+								
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/system.dtb" 0x1000
+									
+booti 0x80000 0x2000000 0x1000
+username:
+password:
+scp -r ssatpute@10.10.70.101://proj/xsjsswstaff/ssatpute/exports/vek280/lib/* .
+sudo rm /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+./usr_space_application
+
+
+
+
+
+===============================================================================================================================
+**** COMMANDS *****
+
+dts to dts conaversion
+--dtc -I dtb -O dts -f  system.dtb -o system.dts
+-------------------------
+privelleged enable & disable
+
+-==-==-==-==-
+petalinux-build
+petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb
+
+===========
+
+Launch xsct:
+$ source /proj/xbuilds/2023.1_daily_latest/installs/lin64/Vitis/2023.1/settings64.sh
+$ xsct
+===========
+-==-==-==-==-
+$ systest% power 0 power 1
+************************************************
+VCK190- aie1
+VEK280- aie2
+========== VEK280 BOARDFARM =====================
+/proj/systest/bin//cluster-ping vek280
+/proj/systest/bin/systest       vek280-4
+
+---Terminal 1     *****---*****        Terminal 2---------
+hw_server
+connect com0
+										-ssh connect to board	
+										/opt/systest/common/bin/systest-client
+										xsdb
+										conn
+										ta 1
+										device program /proj/xsjsswstaff/ssatpute/exports/BOOT.BIN
+										device program /home/jaydpate/flashing/BOOT.BIN
+									
+stop auto boot(press any key)
+								
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/Image_new" 0x80000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/Image_AIE_OPS_ZEROISATION" 0x80000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/system.dtb" 0x1000
+										
+										
+										device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/2023.1/BOOT.BIN
+										device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/BOOT.BIN
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/2023.1/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/Image_AIE_OPS_ZEROISATION" 0x80000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/2023.1/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/2023.1/system.dtb" 0x1000
+										##VEK280
+										device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/BOOT.BIN
+										device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/BOOT_pre.BIN
+										device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/BOOT_ES1_PRE.BIN
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/system.dtb" 0x1000
+										
+									
+booti 0x80000 0x2000000 0x1000
+username:
+password:
+
+
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/bsp_test/2024.1/oob/xgemm/designs/xgemm-gmio/export/linux/ .
+
+
+scp -r jaydpate@172.19.2.41:/scratch/jaydpate/workspace/aie-rt/driver/src/lib* .
+scp -r jaydpate@172.19.2.41:/scratch/jaydpate/workspace/aie-rt/driver/examples/xaie_tile_dma_loopback_org .
+scp -r jaydpate@172.19.2.41:/scratch/jaydpate/workspace/aie-rt/driver/examples/xaie_tile_dma_loopback .
+###AIEML
+scp -r jaydpate@172.19.2.41:/scratch/jaydpate/workspace/aie-rt/aieml/aie-rt/driver/src/lib* .
+scp -r jaydpate@172.19.2.41:/scratch/jaydpate/workspace/aie-rt/aieml/aie-rt/driver/examples/xaie_tile_dma_loopback .
+sudo rm /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+./usr_space_application
+
+#To release board
+Ctrl + \ : comm port will be disconnected
+
+#Then in systest you can run "exit" command..
+Systest# exit
+
+###Restart board
+power 0 power 1
+
+##VEK280 boards
+vek280-4            muscaria18        20230405    [B-revB] ok
+vek280-5            chanterelle19     20230405    [B-revB] ok
+vek280-6            chanterelle20     20230405    [B-revB] ok
+
+
+#############################
+BareMetal programming board
+####################################
+https://confluence.xilinx.com/pages/viewpage.action?spaceKey=~manral&title=Bare+metal+test+flow+for+AIE+driver
+
+cp helloworld.elf /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/.
+
+rst -proc; dow -force /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/helloworld.elf;con

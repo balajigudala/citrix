@@ -1,0 +1,60 @@
+CLONING AND COMPILING OF AIE-RT CODE
+
+
+//git clone https://github.com/Xilinx/aie-rt.git
+clone aie-rt repo from https://gitenterprise.xilinx.com/sangejha
+
+sudo apt install gcc-aarch64-linux-gnu
+
+make -C driver/src/ CC=aarch64-linux-gnu-gcc COMPILER=aarch64-linux-gnu-gcc CFLAGS='-Wall -O2 -g -Wextra --std=c11 -D_AIELINUX_ -DXAIE_DEBUG -D_POSIX_C_SOURCE=200809' -f Makefile.Linux
+
+make -C driver/examples/ CC=aarch64-linux-gnu-gcc COMPILER=aarch64-linux-gnu-gcc CFLAGS='-Wall -O2 -g -Wextra --std=c11 -D_AIELINUX_ -DXAIE_DEBUG -D_POSIX_C_SOURCE=200809'
+
+scp -r dchauhan@172.19.2.41:/proj/xsjsswstaff/dchauhan/temp/extra/aie-rt/driver/src/libxaiengine* ./
+
+scp -r dchauhan@172.19.2.41:/proj/xsjsswstaff/dchauhan/temp/extra/aie-rt/driver/examples/xaie_tile_dma_loopback ./
+
+
+
+CLONING THE AIEML CODE 
+
+git clone https://gitenterprise.xilinx.com/ai-engine/aieml-tests.git
+
+sudo apt install  gcc-aarch64-linux-gnu
+
+sudo apt install  gcc-aarch64-linux-g++
+
+make linux_driver
+
+make linux
+
+make fal_driver
+
+
+linux_driver:
+        make -C $(AIE_DRIVER)/src CC=$(PREFIX)$(CC) CFLAGS='-Wall -g -Wextra --std=c11 -D__AIELINUX__' -f Makefile.Linux
+		
+		# make -C ./aie-rt/driver/src/ CC=aarch64-linux-gnu-gcc CFLAGS='-Wall -g -Wextra --std=c11 -D__AIELINUX__' -f Makefile.Linux
+	to check generated libraries(lib.so)
+		ls /proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests/aie-rt/driver/src
+
+
+linux: linux_driver
+        mkdir -p build_linux
+        $(PREFIX)$(CC) --std=c11 -I$(INCLUDE) -o build_linux/aieml_tests $(SRCS) -L$(LD_PATH) \
+                -lxaiengine -DDEVICE=$(DEVICE) -DAIE_GEN=$(AIE_GEN)
+				
+								
+fal_linux: linux_driver
+        mkdir -p build_fal_linux/include
+        cp -r $(AIE_FAL) build_fal_linux/include/xaiefal
+        $(PREFIX)$(CXX) -I$(INCLUDE) -Ibuild_fal_linux/include -o build_fal_linux/aieml_fal_tests $(FAL_SRCS) -L$(LD_PATH) \
+                -lxaiengine -DDEVICE=$(DEVICE) -DAIE_GEN=$(AIE_GEN)
+
+
+
+for generating the patch
+        git format-patch -n1 --no-numbered  --subject-prefix="your_subject"
+
+for sending mail using git
+        git send-email --to <mail.id> --cc <attach mail to cc> <files to be attached>

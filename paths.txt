@@ -1,0 +1,63 @@
+*********** paths ***********
+
+PATHS FOR VCK190-2022
+
+path to source 
+/proj/xsjsswstaff/dchauhan/temp/extra/xilinx-vck190-2022.2/components/yocto/workspace/sources/linux-xlnx
+
+path to project
+/proj/xsjsswstaff/dchauhan/temp/extra/xilinx-vck190-2022.2
+
+file that added print
+vi /proj/xsjsswstaff/dchauhan/temp/extra/xilinx-vck190-2022.2/components/yocto/workspace/sources/linux-xlnx/drivers/misc/xilinx-ai-engine/ai-engine-dev.c +302
+
+path to loop back code
+/proj/xsjsswstaff/dchauhan/temp/extra/xilinx-vck190-2022.2/components/yocto/workspace/sources/ai-engine-driver/driver/examples
+
+
+
+PATHS FOR VEK280
+
+/proj/xsjsswstaff/dchauhan/public/share.txt
+
+\\xhd-pvst2ns01-w\CtxXARedirect\dchauhan\Documents\logs\revB_vek280 1.txt
+
+use scrach path to work : /scratch/dchauhan/temp/extra
+/proj/xsjsswstaff/dchauhan/temp/extra/
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/image
+
+
+hw_server tftpd "/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/" nfsroot3 "/proj/xsjsswstaff/dchauhan/work/mipsology/image/"
+
+
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/BOOT.BIN
+
+
+sudo mkdir /mnt/test
+sudo mount -t nfs -o ,proto=tcp,nolock,port=2049 10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/ /mnt/test
+sudo dd if=/mnt/test/image.bin of=/dev/mmcblk0
+sync
+
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/image.bin .
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/zebra_embedded/ .
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/V2023.vek280.5.tar.gz .
+
+./demo ../../examples/snapshot.resnet50/ ../../examples/datasets/imagenet/ILSVRC2012_img_val/ILSVRC2012_val_00000001.JPEG --no
+
+
+./demo ../../examples/snapshot.resnet50/ ../../examples/datasets/imagenet/ILSVRC2012_img_val/ILSVRC2012_val_00000001.JPEG --no
+
+
+
+
+sudo dd bs=256M status=progress if=image.bin of=/dev/sde
+sudo parted /dev/sde resizepart 2 100%
+sudo e2fsck -f /dev/sde2
+sudo resize2fs /dev/sde2

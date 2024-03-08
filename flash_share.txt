@@ -1,0 +1,74 @@
+path for share.txt
+/proj/xsjsswstaff/dchauhan/public/share.txt
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/image
+
+
+this command is for flashing the stuff to board
+
+hw_server tftpd "/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/" nfsroot3 "/proj/xsjsswstaff/dchauhan/work/mipsology/image/"
+
+
+this boot.bin is used when we flash the board
+
+/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/BOOT.BIN
+
+
+
+after login with petalinux 
+
+sudo mkdir /mnt/test
+sudo mount -t nfs -o ,proto=tcp,nolock,port=2049 10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/ /mnt/test
+sudo dd if=/mnt/test/image.bin of=/dev/mmcblk0
+sync
+
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/image.bin .
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/zebra_embedded/ .
+
+scp -r dchauhan@10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/V2023.vek280.5.tar.gz .
+
+./demo ../../examples/snapshot.resnet50/ ../../examples/datasets/imagenet/ILSVRC2012_img_val/ILSVRC2012_val_00000001.JPEG --no
+
+
+./demo ../../examples/snapshot.resnet50/ ../../examples/datasets/imagenet/ILSVRC2012_img_val/ILSVRC2012_val_00000001.JPEG --no
+
+
+
+
+sudo dd bs=256M status=progress if=image.bin of=/dev/sde
+sudo parted /dev/sde resizepart 2 100%
+sudo e2fsck -f /dev/sde2
+sudo resize2fs /dev/sde2
+
+
+
+
+these below commands is used for AIEMl when no flash is required
+
+device program /proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/BOOT_ES1_PRE.BIN
+                                                                                dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/Image" 0x80000
+                                                                                dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/rootfs.cpio.gz.u-boot" 0x2000000
+                                                                                dow -data -force "/proj/xsjsswstaff/sumanthg/jaydip_share/zeroization/vek280/system.dtb" 0x1000
+
+
+
+
+hw_server tftpd "/proj/xsjsswstaff/dchauhan/work/mipsology/tftp_images/" nfsroot3 "/proj/xsjsswstaff/dchauhan/work/mipsology/image/"
+
+sudo mkdir /mnt/test
+sudo mount -t nfs -o ,proto=tcp,nolock,port=2049 10.10.70.101:/proj/xsjsswstaff/dchauhan/work/mipsology/image/ /mnt/test
+#sudo dd if=/mnt/test/image.bin of=/dev/mmcblk0
+sudo dd if=/mnt/test/image.bin of=/dev/sda
+sync
+
+
+
+
+For the ref of dmapause /proj/xsjsswstaff/dchauhan/work/dma_pause/test/aieml-tests/src/test.c
+
+//arch spec
+https://amdcloud-my.sharepoint.com/personal/sumanthg_amd_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsumanthg%5Famd%5Fcom%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FVail%5FAIE2%2DArchSpec%2Dv1%2E7%2Epdf&parent=%2Fpersonal%2Fsumanthg%5Famd%5Fcom%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files

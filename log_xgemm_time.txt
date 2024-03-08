@@ -1,0 +1,315 @@
+/*1*******************************************************************************************
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 4885.858594] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(873), ret: 0
+[ 4885.867537] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(873)
+[ 4885.875182] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(873), ret: 0
+[ 4885.941065] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 4885.941080] [drm] found kind 29(AIE_RESOURCES)
+[ 4886.033256] [drm] AIE Reset successfully finished.
+[5466405.544]Loading PDI from DDR
+[5466405.724]Monolithic/Master Device
+[5466409.093]3.542 ms: PDI initialization time
+[5466413.197]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[5466419.210]---Loading Partition#: 0x0, Id: 0x0
+[5466469.005] 45.493 ms for Partition#: 0x0, Size: 18761472 Bytes
+[5466471.965]Subsystem PDI Load: Done
+[ 4886.037758] [drm] found kind 18(PDI)
+[ 4886.126784] [drm] FPGA Manager load DONE
+[ 4886.136867] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 4886.140805] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 4886.146208] [drm] found kind 25(AIE_METADATA)
+[ 4886.152170] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 4886.156530] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 4886.170658] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 425.623ms
+[INFO] AIE INIT done!execute time[ 4886.176354] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 49.606ms
+[ 4886.333210] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 4886.352263] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 4886.361724] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.104ms
+[INFO] AIE cores are done executing
+execute time: 38.949ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 4931.795494] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(873)
+
+
+
+/*2*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 4980.266735] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(877), ret: 0
+[ 4980.275653] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(877)
+[ 4980.283190] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(877), ret: 0
+[ 4980.348342] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 4980.348358] [drm] found kind 29(AIE_RESOURCES)
+[ 4980.445275] [drm] AIE Reset successfully finished.
+[5559824.309]Loading PDI from DDR
+[5559824.489]Monolithic/Master Device
+[5559827.858]3.542 ms: PDI initialization time
+[5559831.961]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[5559837.972]---Loading Partition#: 0x0, Id: 0x0
+[5559887.767] 45.495 ms for Partition#: 0x0, Size: 18761472 Bytes
+[5559890.726]Subsystem PDI Load: Done
+[ 4980.449941] [drm] found kind 18(PDI)
+[ 4980.538892] [drm] FPGA Manager load DONE
+[ 4980.548999] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 4980.552936] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 4980.558335] [drm] found kind 25(AIE_METADATA)
+[ 4980.564283] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 4980.568638] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 4980.582860] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 429.7ms
+[INFO] AIE INIT done!execute time[ 4980.588554] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 49.665ms
+[ 4980.745472] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 4980.764506] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 4980.773867] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.118ms
+[INFO] AIE cores are done executing
+execute time: 38.979ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 5026.742852] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(877)
+
+
+
+/*3*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 6881.034394] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(905), ret: 0
+[ 6881.043319] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(905)
+[ 6881.050860] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(905), ret: 0
+[ 6881.116111] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 6881.116126] [drm] found kind 29(AIE_RESOURCES)
+[ 6881.209243] [drm] AIE Reset successfully finished.
+[7439696.891]Loading PDI from DDR
+[7439697.071]Monolithic/Master Device
+[7439700.439]3.541 ms: PDI initialization time
+[7439704.539]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[7439710.549]---Loading Partition#: 0x0, Id: 0x0
+[7439760.333] 45.486 ms for Partition#: 0x0, Size: 18761472 Bytes
+[7439763.292]Subsystem PDI Load: Done
+[ 6881.213739] [drm] found kind 18(PDI)
+[ 6881.302627] [drm] FPGA Manager load DONE
+[ 6881.312927] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 6881.316860] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 6881.322259] [drm] found kind 25(AIE_METADATA)
+[ 6881.328223] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 6881.332584] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 6881.346689] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 425.653ms
+[INFO] AIE INIT done!execute time[ 6881.352383] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 49.932ms
+[ 6881.509423] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 6881.528424] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 6881.537791] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 37.955ms
+[INFO] AIE cores are done executing
+execute time: 38.813ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 6927.449066] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(905)
+
+
+
+
+/*4*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 7009.574666] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(910), ret: 0
+[ 7009.583582] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(910)
+[ 7009.591119] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(910), ret: 0
+[ 7009.656540] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 7009.656555] [drm] found kind 29(AIE_RESOURCES)
+[ 7009.745259] [drm] AIE Reset successfully finished.
+[7566869.920]Loading PDI from DDR
+[7566870.099]Monolithic/Master Device
+[7566873.469]3.543 ms: PDI initialization time
+[7566877.574]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[7566883.587]---Loading Partition#: 0x0, Id: 0x0
+[7566933.387] 45.498 ms for Partition#: 0x0, Size: 18761472 Bytes
+[7566936.348]Subsystem PDI Load: Done
+[ 7009.749762] [drm] found kind 18(PDI)
+[ 7009.838859] [drm] FPGA Manager load DONE
+[ 7009.848959] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 7009.852896] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 7009.858295] [drm] found kind 25(AIE_METADATA)
+[ 7009.864242] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 7009.868596] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 7009.882680] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 421.63ms
+[INFO] AIE INIT done!execute time[ 7009.888373] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 50.185ms
+[ 7010.045901] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7010.064946] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7010.074298] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.145ms
+[INFO] AIE cores are done executing
+execute time: 39.006ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 7056.175634] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(910)
+
+
+
+/*5*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 7187.506735] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(917), ret: 0
+[ 7187.515665] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(917)
+[ 7187.523193] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(917), ret: 0
+[ 7187.588400] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 7187.588416] [drm] found kind 29(AIE_RESOURCES)
+[ 7187.677256] [drm] AIE Reset successfully finished.
+[7742991.766]Loading PDI from DDR
+[7742991.946]Monolithic/Master Device
+[7742995.318]3.546 ms: PDI initialization time
+[7742999.427]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[7743005.446]---Loading Partition#: 0x0, Id: 0x0
+[7743055.258] 45.508 ms for Partition#: 0x0, Size: 18761472 Bytes
+[7743058.221]Subsystem PDI Load: Done
+[ 7187.681758] [drm] found kind 18(PDI)
+[ 7187.770764] [drm] FPGA Manager load DONE
+[ 7187.780994] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 7187.784930] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 7187.790329] [drm] found kind 25(AIE_METADATA)
+[ 7187.796275] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 7187.800630] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 7187.814701] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 421.608ms
+[INFO] AIE INIT done!execute time[ 7187.820440] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 50.004ms
+[ 7187.977765] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7187.996789] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7188.006142] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.117ms
+[INFO] AIE cores are done executing
+execute time: 39.003ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 7233.920011] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(917)
+
+
+
+
+/*6*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+[ 7288.974447] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(922), ret: 0
+[ 7288.983363] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(922)
+[ 7288.990907] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(922), ret: 0
+[ 7289.056608] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 7289.056624] [drm] found kind 29(AIE_RESOURCES)
+[ 7289.145258] [drm] AIE Reset successfully finished.
+[7843455.414]Loading PDI from DDR
+[7843455.594]Monolithic/Master Device
+[7843458.965]3.544 ms: PDI initialization time
+[7843463.070]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[7843469.086]---Loading Partition#: 0x0, Id: 0x0
+[7843518.897] 45.507 ms for Partition#: 0x0, Size: 18761472 Bytes
+[7843521.859]Subsystem PDI Load: Done
+[ 7289.149763] [drm] found kind 18(PDI)
+[ 7289.238743] [drm] FPGA Manager load DONE
+[ 7289.248921] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 7289.252858] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 7289.258258] [drm] found kind 25(AIE_METADATA)
+[ 7289.264205] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 7289.268559] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 7289.282682] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 421.615ms
+[INFO] AIE INIT done!execute time[ 7289.288376] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 49.877ms
+[ 7289.445352] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7289.464364] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7289.473725] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.088ms
+[INFO] AIE cores are done executing
+execute time: 38.941ms
+[INFO] Running sanity check
+[INFO] XGeMM Success!
+[ 7335.539930] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(922)
+
+
+
+
+/*7*******************************************************************************************/
+xilinx-vck190-20241:~/linux$ ./aie-matrix-multiplication  ./aie-matrix-multiplication.xclbin
+Initializing ADF API...
+[INFO] AIE GMIO Matrix Multiplication
+[INFO] Matrix size(int32): 1200x1200
+
+[ 7342.274534] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(926), ret: 0
+[ 7342.283464] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(926)
+[ 7342.291004] zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(926), ret: 0
+[ 7342.356615] [drm] Loading xclbin b0cb35d1-f77a-a582-334c-2cadabb5604c to slot 1
+[ 7342.356631] [drm] found kind 29(AIE_RESOURCES)
+[ 7342.445258] [drm] AIE Reset successfully finished.
+[7896218.897]Loading PDI from DDR
+[7896219.077]Monolithic/Master Device
+[7896222.448]3.544 ms: PDI initialization time
+[7896226.554]+++Loading Image#: 0x0, Name: aie_image, Id: 0x1C000000
+[7896232.570]---Loading Partition#: 0x0, Id: 0x0
+[7896282.382] 45.506 ms for Partition#: 0x0, Size: 18761472 Bytes
+[7896285.344]Subsystem PDI Load: Done
+[ 7342.449761] [drm] found kind 18(PDI)
+[ 7342.538644] [drm] FPGA Manager load DONE
+[ 7342.548723] [drm] skip kind 8(IP_LAYOUT) return code: -22
+[ 7342.552659] [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[ 7342.558058] [drm] found kind 25(AIE_METADATA)
+[ 7342.564004] [drm] skip kind 7(CONNECTIVITY) return code: -22
+[ 7342.568358] [drm] skip kind 6(MEM_TOPOLOGY) return code: -22
+[ 7342.582472] [drm] AIE create successfully finished.
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[INFO] XCLBIN download complete
+execute time: 421.75ms
+[INFO] AIE INIT done!execute time[ 7342.588165] [drm] zocl_xclbin_read_axlf b0cb35d1-f77a-a582-334c-2cadabb5604c ret: 0
+: 49.825ms
+[ 7342.745528] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7342.764578] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[ 7342.773921] [drm] Allocating BO from CMA for invalid or unused memory index[0]
+[INFO] GM2AIE and AIE2GM data movement done!execute time: 38.123ms
+[INFO] AIE cores are done executing
+execute time: 38.982ms
+[INFO] Running sanity check
+[ 7388.746287] zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(926)

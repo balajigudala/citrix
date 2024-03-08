@@ -1,0 +1,16 @@
+modified below cpp file with defining flad in the top of the file "#define PERF_PROF"
+/scratch/dchauhan/temp/extra/bsp_test/2024.1/oob/xgemm/designs/xgemm-gmio/aie/xgemm.cpp
+
+recompile the application with below commands
+
+cd xgemm/
+bash
+export XILINXD_LICENSE_FILE=2100@aiengine-eng
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+export BASE_XSA=/proj/xbuilds/2024.1_daily_latest/internal_platforms/xilinx_vck190_base_202410_1/hw/hw.xsa
+export SYSROOT=/proj/xbuilds/2024.1_daily_latest/internal_platforms/sw/versal/xilinx-versal-common-v2024.1/sysroots/cortexa72-cortexa53-xilinx-linux/
+source settings.sh
+cd designs/xgemm-gmio
+DON'T USE MAKE CLEAN
+make OS=linux

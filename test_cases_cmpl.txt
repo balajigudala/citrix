@@ -1,0 +1,51 @@
+COMPILATION OF AIE-ML CODE AND TESTED IN BOARD (VEK280)
+
+Generated the binaries of test.c file, which contains test cases
+
+make linux     (Run this in aieml-tests repo)
+
+Verify for binary file i.e aieml_test in build_linux directoy
+
+Acquire the baord and copy the binaries by using ssh
+
+ssh username@I.P:<from>  <to>
+
+then run the copied binary.
+
+
+
+
+COMPILATION OF AIE-ML CODE AND RUNNING IN SIMULATION
+
+Change the normal login developer login
+
+ssh xsjrdevl171
+
+change the terminal mode to bash
+
+bash
+
+change the directory to aieml_tests repo
+
+verify the README.md (how to compile for AI2PS board type)
+
+run the script file 
+
+source /proj/xsjsswstaff/sankarji/aie-arch/aie-arch-env-files/aie2ps-arch.sh
+
+export LD_LIBRARY_PATH=$PWD/aie-rt/driver/src:$LD_LIBRARY_PATH
+
+for library generation 
+
+make AIE_GEN=5 systemc
+
+To run the generated binaries of test cases in simulation 
+
+make AIE_GEN=5 run_sim
+
+kill the processes created by command "iss_fst_bin"
+use "top" command 
+top -u "username"
+kill -9 "pid" (or) 
+killall iss_fst_bin
+
