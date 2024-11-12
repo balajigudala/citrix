@@ -1,0 +1,12 @@
+https://jira.xilinx.com/browse/CR-1219374
+
+Change RequestCR-1219374
+[DTG++] New telluride design failed to generate system device tree
+
+
+
+launch xsct-trim console.
+/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vivado/2024.2/xsct-trim/bin/xsct
+tgen set_dt_param -xsa /proj/ssw_xhd/verification/no_delete/standalone_designs_20GB/2024.2_daily_latest/hw_design/versal2/T50_versal.xsa -dir /proj/ssw_xhd/verification/no_delete/dtg++/latest/dtgplusplus/build/DT/versal2/versal2_T50_versal/without_dtsi/images
+# sdtgen generate_sdt
+

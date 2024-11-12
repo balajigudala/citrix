@@ -1,0 +1,562 @@
+
+/****** 14/05/24 ******/
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+  Mar  2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.187] 52.363 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.056]---Loading Partition#: 0x2, Id: 0xB
+[103.644] 38.753 ms for Partition#: 0x2, Size: 64160 Bytes
+[106.124]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[111.302]---Loading Partition#: 0x3, Id: 0x3
+[460.534] 345.311 ms for Partition#: 0x3, Size: 491904 Bytes
+[463.004]---Loading Partition#: 0x4, Id: 0x5
+[1311.624] 844.700 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1314.275]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1320.132]---Loading Partition#: 0x5, Id: 0x7
+[1324.806] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1329.159]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1334.336]---Loading Partition#: 0x6, Id: 0x8
+[1338.790] 0.452 ms for Partition#: 0x6, Size: 4784 Bytes
+[1343.387]***********Boot PDI Load: Done***********
+[1347.870]44473.511 ms: ROM Time
+[1350.753]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 249
+BG: line : 253
+ Routing Path between S[35 0] and D[3 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . D < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[2 3] and D[2 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+Routing successful
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+
+BG : data recieved to operation tile
+
+BG : data recieved to passthrough tile
+
+success
+SUCCESS
+
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+  2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.159] 52.335 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.035]---Loading Partition#: 0x2, Id: 0xB
+[102.915] 38.041 ms for Partition#: 0x2, Size: 64160 Bytes
+[105.398]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[110.582]---Loading Partition#: 0x3, Id: 0x3
+[459.990] 345.482 ms for Partition#: 0x3, Size: 491904 Bytes
+[462.463]---Loading Partition#: 0x4, Id: 0x5
+[1315.313] 848.927 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1317.968]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1323.833]---Loading Partition#: 0x5, Id: 0x7
+[1328.513] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1332.872]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1338.056]---Loading Partition#: 0x6, Id: 0x8
+[1342.513] 0.453 ms for Partition#: 0x6, Size: 4784 Bytes
+[1347.116]***********Boot PDI Load: Done***********
+[1351.608]122692.088 ms: ROM Time
+[1354.577]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 249
+BG: line : 253
+ Routing Path between S[35 0] and D[3 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . D < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[2 3] and D[2 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+Routing successful
+
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+
+BG : data recieved to operation tile
+
+
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+data mismatch at TileLoc(2,3) input
+
+data mismatch at TileLoc(2,3) output
+data mismatch at TileLoc(2,3) output
+data mismatch at TileLoc(2,3) output
+data mismatch at TileLoc(2,3) output
+data mismatch at TileLoc(2,3) output
+
+BG : data recieved to passthrough tile
+
+success
+{vmem[0] = 183 } does not match with {vmem_out[0] = 0}
+{vmem[1] = 243 } does not match with {vmem_out[1] = 0}
+{vmem[2] = 12 } does not match with {vmem_out[2] = 0}
+{vmem[3] = 29 } does not match with {vmem_out[3] = 0}
+{vmem[4] = 200 } does not match with {vmem_out[4] = 0}
+{vmem[5] = 8 } does not match with {vmem_out[5] = 0}
+{vmem[249] = 205 } does not match with {vmem_out[249] = 0}
+{vmem[250] = 120 } does not match with {vmem_out[250] = 0}
+{vmem[251] = 66 } does not match with {vmem_out[251] = 0}
+{vmem[252] = 194 } does not match with {vmem_out[252] = 0}
+{vmem[253] = 131 } does not match with {vmem_out[253] = 0}
+{vmem[254] = 180 } does not match with {vmem_out[254] = 0}
+{vmem[255] = 230 } does not match with {vmem_out[255] = 0}
+SUCCESS
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+ 2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.141] 52.317 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.014]---Loading Partition#: 0x2, Id: 0xB
+[102.597] 37.746 ms for Partition#: 0x2, Size: 64160 Bytes
+[105.078]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[110.260]---Loading Partition#: 0x3, Id: 0x3
+[459.319] 345.135 ms for Partition#: 0x3, Size: 491904 Bytes
+[461.791]---Loading Partition#: 0x4, Id: 0x5
+[1313.136] 847.423 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1315.789]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1321.649]---Loading Partition#: 0x5, Id: 0x7
+[1326.325] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1330.681]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1335.861]---Loading Partition#: 0x6, Id: 0x8
+[1340.316] 0.452 ms for Partition#: 0x6, Size: 4784 Bytes
+[1344.916]***********Boot PDI Load: Done***********
+[1349.404]198635.534 ms: ROM Time
+[1352.370]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 249
+BG: line : 253
+ Routing Path between S[35 0] and D[3 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . D < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^ . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . S . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[2 3] and D[2 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+Routing successful
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+
+BG : data recieved to operation tile
+
+BG : data recieved to passthrough tile
+
+success
+SUCCESS
+
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+  Mar  2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.180] 52.356 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.052]---Loading Partition#: 0x2, Id: 0xB
+[102.538] 37.650 ms for Partition#: 0x2, Size: 64160 Bytes
+[105.019]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[110.200]---Loading Partition#: 0x3, Id: 0x3
+[460.242] 346.119 ms for Partition#: 0x3, Size: 491904 Bytes
+[462.715]---Loading Partition#: 0x4, Id: 0x5
+[1313.554] 846.914 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1316.207]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1322.067]---Loading Partition#: 0x5, Id: 0x7
+[1326.743] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1331.097]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1336.278]---Loading Partition#: 0x6, Id: 0x8
+[1340.733] 0.452 ms for Partition#: 0x6, Size: 4784 Bytes
+[1345.332]***********Boot PDI Load: Done***********
+[1349.821]120334.445 ms: ROM Time
+[1352.788]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 244
+BG: line : 248
+ Routing Path between S[2 0] and D[2 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[3 3] and D[7 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v > > > D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+BG : data recieved to operation tile
+
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+
+BG : data recieved to passthrough tile
+
+success
+SUCCESS
+
+
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+4.1   Mar  2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.259] 52.435 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.133]---Loading Partition#: 0x2, Id: 0xB
+[103.286] 38.315 ms for Partition#: 0x2, Size: 64160 Bytes
+[105.768]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[110.951]---Loading Partition#: 0x3, Id: 0x3
+[460.990] 346.113 ms for Partition#: 0x3, Size: 491904 Bytes
+[463.462]---Loading Partition#: 0x4, Id: 0x5
+[1315.649] 848.263 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1318.304]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1324.168]---Loading Partition#: 0x5, Id: 0x7
+[1328.849] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1333.207]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1338.390]---Loading Partition#: 0x6, Id: 0x8
+[1342.848] 0.452 ms for Partition#: 0x6, Size: 4784 Bytes
+[1347.451]***********Boot PDI Load: Done***********
+[1351.939]6268.204 ms: ROM Time
+[1354.741]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 244
+BG: line : 248
+ Routing Path between S[2 0] and D[2 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[3 3] and D[7 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v > > > D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+BG : data recieved to operation tile
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+data mismatch at TileLoc(3,3) output
+BG : data recieved to passthrough tile
+
+success
+{vmem[0] = 183 } does not match with {vmem_out[0] = 0}
+{vmem[1] = 243 } does not match with {vmem_out[1] = 0}
+{vmem[2] = 12 } does not match with {vmem_out[2] = 0}
+{vmem[3] = 29 } does not match with {vmem_out[3] = 0}
+{vmem[4] = 200 } does not match with {vmem_out[4] = 0}
+{vmem[5] = 8 } does not match with {vmem_out[5] = 0}
+{vmem[6] = 2 } does not match with {vmem_out[6] = 0}
+{vmem[7] = 6 } does not match with {vmem_out[7] = 0}
+{vmem[8] = 6 } does not match with {vmem_out[8] = 0}
+{vmem[9] = 119 } does not match with {vmem_out[9] = 0}
+{vmem[10] = 211 } does not match with {vmem_out[10] = 0}
+{vmem[11] = 101 } does not match with {vmem_out[11] = 0}
+{vmem[12] = 93 } does not match with {vmem_out[12] = 0}
+{vmem[13] = 205 } does not match with {vmem_out[13] = 0}
+{vmem[14] = 108 } does not match with {vmem_out[14] = 0}
+{vmem[15] = 143 } does not match with {vmem_out[15] = 0}
+{vmem[247] = 2 } does not match with {vmem_out[247] = 0}
+{vmem[248] = 161 } does not match with {vmem_out[248] = 0}
+{vmem[249] = 205 } does not match with {vmem_out[249] = 0}
+{vmem[250] = 120 } does not match with {vmem_out[250] = 0}
+{vmem[251] = 66 } does not match with {vmem_out[251] = 0}
+{vmem[252] = 194 } does not match with {vmem_out[252] = 0}
+{vmem[253] = 131 } does not match with {vmem_out[253] = 0}
+{vmem[254] = 180 } does not match with {vmem_out[254] = 0}
+{vmem[255] = 230 } does not match with {vmem_out[255] = 0}
+SUCCESS
+
+
+
+
+
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+  2 2024  -  03:59:07
+[0.121]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.194]****************************************
+[0.399]Non Secure Boot
+[3.549]PLM Initialization Time
+[3.578]***********Boot PDI Load: Started***********
+[3.618]Loading PDI from SBI
+[3.645]Monolithic/Master Device
+[3.696]0.074 ms: PDI initialization time
+[3.732]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.779]---Loading Partition#: 0x1, Id: 0xC
+[56.284] 52.460 ms for Partition#: 0x1, Size: 9168 Bytes
+[61.158]---Loading Partition#: 0x2, Id: 0xB
+[102.719] 37.724 ms for Partition#: 0x2, Size: 64160 Bytes
+[105.200]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[110.382]---Loading Partition#: 0x3, Id: 0x3
+[459.066] 344.760 ms for Partition#: 0x3, Size: 491904 Bytes
+[461.538]---Loading Partition#: 0x4, Id: 0x5
+[1313.778] 848.316 ms for Partition#: 0x4, Size: 1284336 Bytes
+[1316.432]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1322.294]---Loading Partition#: 0x5, Id: 0x7
+[1326.973] 0.674 ms for Partition#: 0x5, Size: 1616 Bytes
+[1331.329]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1336.511]---Loading Partition#: 0x6, Id: 0x8
+[1340.968] 0.452 ms for Partition#: 0x6, Size: 4784 Bytes
+[1345.568]***********Boot PDI Load: Done***********
+[1350.055]17574.391 ms: ROM Time
+[1352.940]Total PLM Boot Time
+Cache Disabled performance will have big drop (this test should >350us
+ 1
+1.0
+BG: line : 244
+BG: line : 248
+ Routing Path between S[2 0] and D[2 3]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . ^ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+ Routing Path between S[3 3] and D[7 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v > > > D . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ +----------------------------------------------------------------------------+
+BG : data recieved to operation tile
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+data mismatch at TileLoc(3,3) input
+BG : data recieved to passthrough tile
+
+success
+SUCCESS

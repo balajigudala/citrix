@@ -1,0 +1,109 @@
+jira issue link
+https://jira.xilinx.com/browse/CR-1192891
+
+https://gitenterprise.xilinx.com/SET-ROAST/aie
+
+https://confluence.xilinx.com/pages/viewpage.action?spaceKey=XPS&title=ROAST+Setup
+
+
+RAST SETUP
+#!/bin/bash
+ 
+#Creating Directory Name
+rm -rf workspace
+mkdir -p workspace
+cd workspace
+  
+source /build/ssw_devops/roast_env/python3_10_6/environment-setup-x86_64-petalinux-linux
+  
+rm -rf .venv
+ 
+python3 -m venv .venv
+  
+python3 --version #version should be py3.10
+  
+source .venv/bin/activate
+mkdir -p ./roastsrc
+  
+wget -P ./roastsrc https://raw.gitenterprise.xilinx.com/SET-ROAST/roast_requirements/main/requirements_5_x.txt
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/roast.git)
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/roast-xilinx.git)
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/pytest-roast.git)
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/roast-xilinx-internal.git)
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/pytest-roast-internal.git)
+(cd ./roastsrc && git clone https://gitenterprise.xilinx.com/SET-ROAST/linux.git)
+pip3 install -r roastsrc/requirements_5_x.txt --disable-pip-version-check -q --find-links=/build/ssw_devops/xtf/pip-packages/3.10
+ 
+pip3 install -e roastsrc/roast --disable-pip-version-check -q
+pip3 install -e roastsrc/roast-xilinx --disable-pip-version-check -q
+pip3 install -e roastsrc/pytest-roast --disable-pip-version-check -q
+pip3 install -e roastsrc/roast-xilinx-internal --disable-pip-version-check --trusted-host=xcoartifactory.xilinx.com --extra-index-url=https://xcoartifactory.xilinx.com/artifactory/api/pypi/pypi/simple --pre --ignore-installed hwflow -q
+pip3 install -e roastsrc/pytest-roast-internal --disable-pip-version-check -q
+pip3 install -e roastsrc/linux --disable-pip-version-check -q
+  
+pip3 list | grep roast
+
+
+cd workspace/
+
+CLONE THE SOURCE 
+git clone https://gitenterprise.xilinx.com/SET-ROAST/aie.git
+cd aie
+
+source /build/ssw_devops/roast_env/python3_10_6/environment-setup-x86_64-petalinux-linux
+pytest build_aie.py -k "build_xsct[vck190-plm]" -vvs
+
+source /build/ssw_devops/roast_env/python3_10_6/environment-setup-x86_64-petalinux-linux
+pytest build_aie.py -k "build_xsct[vck190-psm]" -vvs
+
+
+check for elf of both plm and psm (plm.elf,psm.elf)
+And for logs aie/build/vck190/logs/<log with builddate>
+
+
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+xsct
+setws ./plm
+app create -name plm -template {versal PLM} -proc psv_pmc_0 -os standalone -hw /proj/xsjsswstaff/dchauhan/work/aieml_test/roast-aie/workspace/aie/build/vck190/plm/work/versal_plm/hw0/hw/project_1.xsa
+app build -name plm
+
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+xsct
+setws ./psm
+app create -name psm -template {versal PSM Firmware} -proc psv_psm_0 -os standalone -hw /proj/xsjsswstaff/dchauhan/work/aieml_test/roast-aie/workspace/aie/build/vck190/psm/work/versal_psm/hw0/hw/project_1.xsa
+app build -name psm
+
+app clean -name psm
+
+https://confluence.xilinx.com/display/~sandipk/AIE+LAB8
+Steps for PLM build:
+
+clone the embeddedsw repo as per require branch : 
+git clone https://gitenterprise.xilinx.com/embeddedsw/embeddedsw -b xlnx_rel_v2022.2
+$source /proj/xbuilds/2022.2_daily_latest/installs/lin64/Vitis/2022.2/settings64.sh
+$xsct
+$setws embeddedsw_1 (any name can be given)
+$repo -set  /proj/xhdsswstaff1/krachalw/workspace/lab8/embeddedsw   (give full path)
+$set xsa /proj/xhdsswstaff1/krachalw/workspace/lab8_baremetal_hw/vck190_aie_base_graph.xsa
+$app create -name versal_plm -template {versal PLM} -proc psv_pmc_0 -os standalone -hw $xsa
+$app build -name versal_plm
+after this versal_plm.elf file is generated in the versal_plm/Debug/ folder.
+
+
+
+Steps for PSMFW build:
+            First 5 steps are common
+$app create -name versal_psm -template {versal PSM Firmware} -proc psv_psm_0 -os standalone -hw $xsa
+$app build -name versal_psm
+after this versal_psm.elf file is generated in the versal_psm/Debug folder
+
+# Use aie-rt repo and branch
+#git.aiert.url = "https://gitenterprise.xilinx.com/ai-engine/aie-rt.git"
+#git.aiert.url = "https://gitenterprise.xilinx.com/dchauhan/aie-rt.git"
+#git.aiert.url = "https://gitenterprise.xilinx.com/sankarji/aie-rt.git"
+#git clone /proj/xsjsswstaff/dchauhan/temp/extra/dummy/aie-rt/.git /proj/xsjsswstaff/dchauhan/temp/extra/cr-1192891/workspace/aie/build/vck190/plm/work/aiert
+git.aiert.url = "/proj/xsjsswstaff/dchauhan/temp/extra/dummy/aie-rt/.git"
+git.aiert.branch = "main-aie"
+#git.aiert.branch = "xlnx_rel_v2023.2"
+external_aiert = ""
+

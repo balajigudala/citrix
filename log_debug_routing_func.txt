@@ -1,0 +1,215 @@
+https://gitenterprise.xilinx.com/ai-engine/aiebaremetal.git
+
+
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+source /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/settings64.sh
+
+
+
+Register Name	Address	Width	Type	Reset Value	Description
+Stream_Switch_Master_Config_FIFO0	0x0003F014	32	rw	0x00000000	Stream Switch Master Configuration FIFO 0
+Register Stream_Switch_Master_Config_FIFO0 Bit-Field Details
+Field Name	   Bits	Type	Reset   Value	Description
+Master_Enable	31	rw		0x0		1=enable the master port
+Packet_Enable	30	rw		0x0		0=circuit; 1=packet switching mode for master port
+Drop_Header		7	rw		0x0		1=drop header on packet
+Configuration	6:0	rw		0x0		circuit: [4:0]=slave port; packet: [2:0]=arbitor, [6:3]=msel_enable
+
+
+
+Register Name	Address	Width	Type	Reset Value	Description
+Stream_Switch_Slave_ME_Core1_Config	0x0003F104	32	rw	0x00000000	Stream Switch Slave Configuration AI Engine 1
+Register Stream_Switch_Slave_ME_Core1_Config Bit-Field Details
+Field Name		Bits	Type	Reset Value	Description
+Slave_Enable	31		rw		0x0		1=enable the slave port
+Packet_Enable	30		rw		0x0		0=circuit; 1=packet switching mode for slave port
+
+
+ Routing Path between S[3 3] and D[35 0]
+ +----------------------------------------------------------------------------+
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . S . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+ | . . . v > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > D . . |
+ +----------------------------------------------------------------------------+
+GB :stream connect :Masteroffset  :0x3f014, master Value :0x80000001, RegAddr :0x633f014, tileaddr : 0x6300000
+GB :stream connect :slave_offset  :0x3f104, slave Value :0x80000000, RegAddr :0x633f104, tileaddr : 0x6300000
+GB :stream connect :Masteroffset  :0xb001c, master Value :0x8000000d, RegAddr :0x62b001c, tileaddr : 0x6200000
+GB :stream connect :slave_offset  :0xb0134, slave Value :0x80000000, RegAddr :0x62b0134, tileaddr : 0x6200000
+GB :stream connect :Masteroffset  :0xb001c, master Value :0x8000000d, RegAddr :0x61b001c, tileaddr : 0x6100000
+GB :stream connect :slave_offset  :0xb0134, slave Value :0x80000000, RegAddr :0x61b0134, tileaddr : 0x6100000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000e, RegAddr :0x603f048, tileaddr : 0x6000000
+GB :stream connect :slave_offset  :0x3f138, slave Value :0x80000000, RegAddr :0x603f138, tileaddr : 0x6000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x803f048, tileaddr : 0x8000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x803f128, tileaddr : 0x8000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0xa03f048, tileaddr : 0xa000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0xa03f128, tileaddr : 0xa000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0xc03f048, tileaddr : 0xc000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0xc03f128, tileaddr : 0xc000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0xe03f048, tileaddr : 0xe000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0xe03f128, tileaddr : 0xe000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1003f048, tileaddr : 0x10000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1003f128, tileaddr : 0x10000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1203f048, tileaddr : 0x12000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1203f128, tileaddr : 0x12000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1403f048, tileaddr : 0x14000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1403f128, tileaddr : 0x14000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1603f048, tileaddr : 0x16000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1603f128, tileaddr : 0x16000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1803f048, tileaddr : 0x18000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1803f128, tileaddr : 0x18000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1a03f048, tileaddr : 0x1a000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1a03f128, tileaddr : 0x1a000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1c03f048, tileaddr : 0x1c000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1c03f128, tileaddr : 0x1c000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x1e03f048, tileaddr : 0x1e000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x1e03f128, tileaddr : 0x1e000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2003f048, tileaddr : 0x20000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2003f128, tileaddr : 0x20000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2203f048, tileaddr : 0x22000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2203f128, tileaddr : 0x22000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2403f048, tileaddr : 0x24000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2403f128, tileaddr : 0x24000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2603f048, tileaddr : 0x26000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2603f128, tileaddr : 0x26000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2803f048, tileaddr : 0x28000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2803f128, tileaddr : 0x28000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2a03f048, tileaddr : 0x2a000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2a03f128, tileaddr : 0x2a000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2c03f048, tileaddr : 0x2c000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2c03f128, tileaddr : 0x2c000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x2e03f048, tileaddr : 0x2e000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x2e03f128, tileaddr : 0x2e000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3003f048, tileaddr : 0x30000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3003f128, tileaddr : 0x30000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3203f048, tileaddr : 0x32000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3203f128, tileaddr : 0x32000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3403f048, tileaddr : 0x34000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3403f128, tileaddr : 0x34000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3603f048, tileaddr : 0x36000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3603f128, tileaddr : 0x36000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3803f048, tileaddr : 0x38000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3803f128, tileaddr : 0x38000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3a03f048, tileaddr : 0x3a000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3a03f128, tileaddr : 0x3a000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3c03f048, tileaddr : 0x3c000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3c03f128, tileaddr : 0x3c000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x3e03f048, tileaddr : 0x3e000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x3e03f128, tileaddr : 0x3e000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x4003f048, tileaddr : 0x40000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x4003f128, tileaddr : 0x40000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x4203f048, tileaddr : 0x42000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x4203f128, tileaddr : 0x42000000
+GB :stream connect :Masteroffset  :0x3f048, master Value :0x8000000a, RegAddr :0x4403f048, tileaddr : 0x44000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x4403f128, tileaddr : 0x44000000
+GB :stream connect :Masteroffset  :0x3f010, master Value :0x8000000a, RegAddr :0x4603f010, tileaddr : 0x46000000
+GB :stream connect :slave_offset  :0x3f128, slave Value :0x80000000, RegAddr :0x4603f128, tileaddr : 0x46000000
+after XAie_Route 2
+GB :_XAieMl_CoreEnable :RegAddr :4332000, Mask : 1, Value : 1
+BG: corestatus
+GB :_XAieMl_CoreEnable :RegAddr :6332000, Mask : 1, Value : 1
+
+success
+CoreStatus is 100000  3 after enable status is 100000
+0 event register is b0400026
+1 event register is c9
+2 event register is 0
+3 event register is 0
+(2,3) isolate 0 (3,3) isolate  0
+SUCCESS
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/proj/xbuilds/SWIP/2024.1_0513_1906/installs/lin64/Vitis/2024.1/gnu/aarch64/lin/aarch64-none/bin/../x86_64-oesdk-linux/usr/bin/aarch64-xilinx-elf/aarch64-xilinx-elf-ar.real: creating psv_cortexa72_0/lib/libxil.a
+Finished building libraries
+
+make[1]: Leaving directory '/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/psv_c
+ortexa72_0/standalone_domain/bsp'
+
+
+05:33:44 Build Finished (took 21s.941ms)
+
+hsi::open_hw_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 934.934 ; gain = 61.207 ; free physical = 79631 ; free virtual = 142873
+05:34:03 **** Build of configuration Debug for project aieml_vnc_tests ****
+make all
+make[1]: Entering directory '/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/aieml_vnc_tests/Debug'
+Building file: ../src/test.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test.o" -mcpu=cortex-a72 -I/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/ucfirmware -DDEVICE=80 -DAIE_GEN=5 -I/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+../src/test.c:2:10: fatal error: xaiengine.h: No such file or directory
+make[1]: Leaving directory '/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/aieml_vnc_tests/Debug'
+    2 | #include <xaiengine.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [src/subdir.mk:74: src/test.o] Error 1
+
+05:34:04 Build Finished (took 1s.196ms)
+
+
+
+Finished building projects
+io_backend/ext/xaie_baremetal.c:52:25: warning: 'BaremetalIO' defined but not used [-Wunused-variable]
+   52 | static XAie_BaremetalIO BaremetalIO;
+      |                         ^~~~~~~~~~~
+In file included from /scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include/xaiengine/xaie_clock.h:27,
+                 from /scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include/xaiengine.h:11,
+                 from ../src/test.c:2:
+../src/test.c: In function 'main':
+../src/hw_config.h:91:16: error: 'XAIE_DEV_GEN_AIE2PS' undeclared (first use in this function); did you mean 'XAIE_DEV_GEN_AIEML'?
+   91 | #define HW_GEN XAIE_DEV_GEN_AIE2PS
+      |                ^~~~~~~~~~~~~~~~~~~
+/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include/xaiengine/xaiegbl.h:755:35: note: in definition of macro 'XAie_SetupConfig'
+  755 |                         .AieGen = _AieGen,\
+      |                                   ^~~~~~~
+../src/test.c:131:37: note: in expansion of macro 'HW_GEN'
+  131 |         XAie_SetupConfig(ConfigPtr, HW_GEN, XAIE_BASE_ADDR,
+      |                                     ^~~~~~
+../src/hw_config.h:91:16: note: each undeclared identifier is reported only once for each function it appears in
+   91 | #define HW_GEN XAIE_DEV_GEN_AIE2PS
+      |                ^~~~~~~~~~~~~~~~~~~
+/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include/xaiengine/xaiegbl.h:755:35: note: in definition of macro 'XAie_SetupConfig'
+  755 |                         .AieGen = _AieGen,\
+      |                                   ^~~~~~~
+../src/test.c:131:37: note: in expansion of macro 'HW_GEN'
+  131 |         XAie_SetupConfig(ConfigPtr, HW_GEN, XAIE_BASE_ADDR,
+      |                                     ^~~~~~
+make[1]: *** [src/subdir.mk:74: src/test.o] Error 1
+make[1]: Entering directory '/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/aieml_vnc_tests/Debug'
+rm -rf  ./src/test.o ./src/xaie_axi_mm_outstanding_txn.o ./src/xaie_col_status.o ./src/xaie_data_memory.o ./src/xaie_dma_compression.o ./src/xaie_dma_event.o ./src/xaie_dma_fot.o ./src/xaie_dma_pause.o ./src/xaie_dma_tlast_suppress.o ./src/xaie_dmabd_iter.o ./src/xaie_error_injection.o ./src/xaie_generate_intr.o ./src/xaie_isolation_check.o ./src/xaie_load_ucelf.o ./src/xaie_mem_tile_tests.o ./src/xaie_shimdma_loopback.o ./src/xaie_task_complete_token.o ./src/xaie_tile_dma_loopback.o  ./src/test.d ./src/xaie_axi_mm_outstanding_txn.d ./src/xaie_col_status.d ./src/xaie_data_memory.d ./src/xaie_dma_compression.d ./src/xaie_dma_event.d ./src/xaie_dma_fot.d ./src/xaie_dma_pause.d ./src/xaie_dma_tlast_suppress.d ./src/xaie_dmabd_iter.d ./src/xaie_error_injection.d ./src/xaie_generate_intr.d ./src/xaie_isolation_check.d ./src/xaie_load_ucelf.d ./src/xaie_mem_tile_tests.d ./src/xaie_shimdma_loopback.d ./src/xaie_task_complete_token.d ./src/xaie_tile_dma_loopback.d  aieml_vnc_tests.elf.size  aieml_vnc_tests.elf
+
+Building file: ../src/test.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test.o" -mcpu=cortex-a72 -I/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/ucfirmware -DDEVICE=80 -DAIE_GEN=5 -I/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/ps0_me_wrapper/export/ps0_me_wrapper/sw/ps0_me_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+make[1]: Leaving directory '/scratch/dchauhan/temp/extra/xaiegine_header_error/aieml-tests/build_baremetal/aieml_vnc_tests/Debug'
+child process exited abnormally
+    while executing
+"exec -ignorestderr make -C $appSrc clean all"
+    (file "aieml_tests.tcl" line 61)
+make: *** [Makefile:70: baremetal] Error 1
+

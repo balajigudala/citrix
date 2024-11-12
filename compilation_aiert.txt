@@ -55,6 +55,7 @@ fal_linux: linux_driver
 
 for generating the patch
         git format-patch -n1 --no-numbered  --subject-prefix="your_subject"
+		git format-patch -n1 --no-numbered  --subject-prefix="AIENGINE PATCH"
 
 for sending mail using git
         git send-email --to <mail.id> --cc <attach mail to cc> <files to be attached>

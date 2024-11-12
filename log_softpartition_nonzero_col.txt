@@ -1,0 +1,1245 @@
+printf("BG: func: %s, line: %d\n", __func__, __LINE__);
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+
+for vek280
+
+tar 1;
+device program /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/BOOT.BIN;
+tar 6;
+rst -proc;
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/aieml_vnc_tests.elf;
+con;
+
+
+before partiton
+BG: func: XAie_PartitionInitialize, line: 350
+BG: func: _XAie_PrivilegeInitPart, line: 450
+BG: func: _XAie_PrivilegeInitPart, line: 465
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 2000a000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 2000a000000, Value: 0
+BG: func: _XAie_PrivilegeInitPart, line: 495
+BG: func: _XAie_PrivilegeInitPart, line: 512
+BG: func: _XAie_PrivilegeSetPartBlockAxiMmNsuErr, line: 226
+BG: no.cols : 15
+BG: no.cols : 15
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 401e020, FldVal: 12, tile_loc: (2, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 401e020, BaseAddr : 2000a000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 601e020, FldVal: 12, tile_loc: (3, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 601e020, BaseAddr : 2000a000000, Value: 12
+[vek280-6] Systest#
+[vek280-6] Systest#
+[vek280-6] Systest# power 0 power 1 connect com0
+Power: OFF
+Power: ON
+Connecting to device com0.  Use Ctrl-\ to escape.
+:38:12
+[0.120]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.162]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.192]****************************************
+[0.406]Non Secure Boot
+[3.341]PLM Initialization Time
+[3.369]***********Boot PDI Load: Started***********
+[3.409]Loading PDI from SBI
+[3.435]Monolithic/Master Device
+[3.489]0.076 ms: PDI initialization time
+[3.525]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[3.571]---Loading Partition#: 0x1, Id: 0xC
+[54.554] 50.939 ms for Partition#: 0x1, Size: 2880 Bytes
+[59.421]---Loading Partition#: 0x2, Id: 0x0
+[101.221] 37.961 ms for Partition#: 0x2, Size: 64496 Bytes
+PSM Firmware version: 2023.1 [Build: May  1 2023 00:38:12 ]
+[108.826]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[114.168]---Loading Partition#: 0x3, Id: 0x3
+[463.322] 345.227 ms for Partition#: 0x3, Size: 490880 Bytes
+[465.796]---Loading Partition#: 0x4, Id: 0x5
+[1304.092] 834.371 ms for Partition#: 0x4, Size: 1268064 Bytes
+[1306.746]+++Loading Image#: 0x3, Name: aie2_subsys, Id: 0x0421C028
+[1312.610]---Loading Partition#: 0x5, Id: 0x7
+[1317.281] 0.666 ms for Partition#: 0x5, Size: 688 Bytes
+[1321.561]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1326.745]---Loading Partition#: 0x6, Id: 0x8
+[1331.167] 0.416 ms for Partition#: 0x6, Size: 1664 Bytes
+[1336.071]+++Loading Image#: 0x5, Name: apu_subsystem, Id: 0x1C000000
+[1341.820]---Loading Partition#: 0x7, Id: 0x0
+[1361.727] 15.898 ms for Partition#: 0x7, Size: 32272 Bytes
+[1364.116]---Loading Partition#: 0x8, Id: 0x0
+[1403.600] 35.476 ms for Partition#: 0x8, Size: 63440 Bytes
+[1405.989]---Loading Partition#: 0x9, Id: 0x0
+[2108.508] 698.508 ms for Partition#: 0x9, Size: 1086816 Bytes
+NOTICE2  TF-A*runnin* on VPDsal Silicon
+**********
+[2115.680]87910.551 ms: ROM Time
+[2118.565]Total PLM Boot Time
+INFO:    BL31: GET_HANDOFF_PARAMS call success=0
+INFO:    BL31: PLM to TF-A handover success 0
+NOTICE:  BL31: Secure code at 0x0
+NOTICE:  BL31: Non secure code at 0x8000000
+NOTICE:  BL31: v2.8(debug):v1.1-11126-gc9b71dc96
+NOTICE:  BL31: Built : 09:24:17, Apr 12 2023
+INFO:    GICv3 with legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    Maximum SPI INTID supported: 191
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: cortex_a72: CPU workaround for 859971 was applied
+INFO:    BL31: cortex_a72: CPU workaround for 1319367 was applied
+INFO:    BL31: cortex_a72: CPU workaround for cve_2017_5715 was applied
+INFO:    BL31: cortex_a72: CPU workaround for cve_2018_3639 was applied
+INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x8000000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2023.01 (Mar 29 2023 - 13:08:40 +0000)
+
+CPU:   Versal
+Silicon: v2
+Chip:  v2
+Model: Xilinx Versal vek280 Eval board revB
+DRAM:  2 GiB (effective 12 GiB)
+EL Level:       EL2
+Core:  40 devices, 22 uclasses, devicetree: board
+MMC:   mmc@f1050000: 0
+Loading Environment from nowhere... OK
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: JTAG_MODE
+Net:
+ZYNQ GEM: ff0c0000, mdio bus ff0c0000, phyaddr 1, interface rgmii-id
+
+Warning: ethernet@ff0c0000 (eth0) using random MAC address - 06:e4:09:bb:Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_pm_err_injection
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+before partiton
+BG: func: XAie_PartitionInitialize, line: 350
+BG: func: _XAie_PrivilegeInitPart, line: 450
+BG: func: _XAie_PrivilegeInitPart, line: 465
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: _XAie_PrivilegeInitPart, line: 495
+BG: func: _XAie_PrivilegeInitPart, line: 512
+BG: func: _XAie_PrivilegeSetPartBlockAxiMmNsuErr, line: 226
+BG: no.cols : 15
+BG: no.cols : 15
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 401e020, FldVal: 12, tile_loc: (2, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 401e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 601e020, FldVal: 12, tile_loc: (3, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 601e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: no.cols : 15
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: c01e020, FldVal: 12, tile_loc: (6, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c01e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: e01e020, FldVal: 12, tile_loc: (7, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e01e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: no.cols : 15
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 1401e020, FldVal: 12, tile_loc: (10, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1401e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 1601e020, FldVal: 12, tile_loc: (11, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1601e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: no.cols : 15
+BG: no.cols : 15
+BG: no.cols : 15
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 178
+BG: func: _XAie_PrivilegeSetBlockAxiMmNsuErr, line: 196
+BG: RegAddr: 1c01e020, FldVal: 12, tile_loc: (14, 0)
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c01e020, BaseAddr : 20000000000, Value: 12
+BG: _XAie_PrivilegeSetBlockAxiMmNsuErr
+BG: func: _XAie_PrivilegeSetPartBlockAxiMmNsuErr, line: 244
+BG: func: _XAie_PrivilegeInitPart, line: 517
+BG: func: _XAie_PrivilegeInitPart, line: 522
+BG: func: _XAie_PrivilegeInitPart, line: 524
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 36030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 196030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 296030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 336030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 436030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 536030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 636030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 736030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 836030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 936030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a36030, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: aa36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: ca36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: ea36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18a36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a036030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a196030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a296030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a336030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a436030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a536030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a636030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a736030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a836030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a936030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1aa36030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c036030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c196030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c296030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c336030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c436030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c536030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c636030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c736030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c836030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c936030, BaseAddr : 20000000000, Value: 8
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1ca36030, BaseAddr : 20000000000, Value: 8
+BG: func: _XAie_PrivilegeInitPart, line: 551
+BG: func: _XAie_PrivilegeInitPart, line: 560
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16015010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c015010, BaseAddr : 20000000000, Value: 1
+BG: func: _XAie_PrivilegeInitPart, line: 567
+BG: func: _XAie_PrivilegeInitPart, line: 580
+BG: func: _XAie_PrivilegeInitPart, line: 597
+BG: func: _XAie_PrivilegeInitPart, line: 600
+BG: func: XAie_PartitionInitialize, line: 365
+after partiton
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304000, BaseAddr : 20000000000, Value: 37
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304004, BaseAddr : 20000000000, Value: 56
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304008, BaseAddr : 20000000000, Value: 108
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230400c, BaseAddr : 20000000000, Value: 84
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304010, BaseAddr : 20000000000, Value: 2
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304014, BaseAddr : 20000000000, Value: 110
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304018, BaseAddr : 20000000000, Value: 122
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230401c, BaseAddr : 20000000000, Value: 55
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304020, BaseAddr : 20000000000, Value: 124
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304024, BaseAddr : 20000000000, Value: 72
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304028, BaseAddr : 20000000000, Value: 108
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230402c, BaseAddr : 20000000000, Value: 109
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304030, BaseAddr : 20000000000, Value: 16
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304034, BaseAddr : 20000000000, Value: 67
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304038, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230403c, BaseAddr : 20000000000, Value: 22
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304040, BaseAddr : 20000000000, Value: 54
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304044, BaseAddr : 20000000000, Value: 11
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304048, BaseAddr : 20000000000, Value: 10
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230404c, BaseAddr : 20000000000, Value: 117
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304050, BaseAddr : 20000000000, Value: 31
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304054, BaseAddr : 20000000000, Value: 82
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304058, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230405c, BaseAddr : 20000000000, Value: 81
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304060, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304064, BaseAddr : 20000000000, Value: 112
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304068, BaseAddr : 20000000000, Value: 123
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230406c, BaseAddr : 20000000000, Value: 72
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304070, BaseAddr : 20000000000, Value: 59
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304074, BaseAddr : 20000000000, Value: 95
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2304078, BaseAddr : 20000000000, Value: 10
+BG: func: XAie_BaremetalIO_Write32, RegOff: 230407c, BaseAddr : 20000000000, Value: 21
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 233f034, BaseAddr : 20000000000, Value: 2147483649
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 233f104, BaseAddr : 20000000000, Value: 2147483648
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 243f004, BaseAddr : 20000000000, Value: 2147483653
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 243f114, BaseAddr : 20000000000, Value: 2147483648
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 243f014, BaseAddr : 20000000000, Value: 2147483649
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 243f104, BaseAddr : 20000000000, Value: 2147483648
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 233f004, BaseAddr : 20000000000, Value: 2147483663
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 233f13c, BaseAddr : 20000000000, Value: 2147483648
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d020, BaseAddr : 20000000000, Value: 67108896
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d024, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d028, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d02c, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d034, BaseAddr : 20000000000, Value: 33869830
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d120, BaseAddr : 20000000000, Value: 50331680
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d124, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d128, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d12c, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d130, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231d134, BaseAddr : 20000000000, Value: 33607718
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d020, BaseAddr : 20000000000, Value: 67108896
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d024, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d028, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d02c, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d030, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d034, BaseAddr : 20000000000, Value: 33599525
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d120, BaseAddr : 20000000000, Value: 67108896
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d124, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d128, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d12c, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d130, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241d134, BaseAddr : 20000000000, Value: 33861637
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231de14, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231de04, BaseAddr : 20000000000, Value: 9
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241de14, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241de04, BaseAddr : 20000000000, Value: 9
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231de10, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 231de00, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241de10, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 241de00, BaseAddr : 20000000000, Value: 1
+AIE Tile DMA Loopback success.
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_Write32, line: 1294
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff28, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 2a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 4a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 6a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 8a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: a296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: a316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: a936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: aa16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: aa36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: c296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: c316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: c936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: ca16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: ca36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: e296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: e316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: e936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: ea16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: ea36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 10a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 12a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 14a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 16a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18a16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 18a36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1aa16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1aa36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c196048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c296048, BaseAddr : 20000000000, Value: 3
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c316010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c336070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c416010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c436070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c516010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c536070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c616010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c636070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c716010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c736070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c816010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c836070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c916010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c936070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1ca16010, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1ca36070, BaseAddr : 20000000000, Value: 1
+BG: func: XAie_BaremetalIO_Write32, RegOff: fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 20fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 40fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 60fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 80fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: c0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: e0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 100fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 120fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 140fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 160fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 180fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1a0fff20, BaseAddr : 20000000000, Value: 0
+BG: func: XAie_BaremetalIO_Write32, RegOff: 1c0fff20, BaseAddr : 20000000000, Value: 0
+1/1 AIEML tests passed.
+Tests Execution Completed
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+

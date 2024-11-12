@@ -1,0 +1,187 @@
+/********** acquring the tenpro ************/
+
+You can then follow these steps in this page to boot the baremetal app:
+https://confluence.xilinx.com/pages/viewpage.action?pageId=1170527478
+
+******** main terminal *********                      *************** xsdb *************                                         ******** connect com0 ***********
+
+
+/proj/systest/bin/cluster-ping tenpro
+
+/proj/systest/bin/systest tenpro-25
+
+ls -lah /proj/xsjsswstaff/dchauhan/temp/extra/.ptm
+rm -r /proj/xsjsswstaff/dchauhan/temp/extra/.ptm
+cd "/proj/xsjsswstaff/dchauhan/temp/extra/"
+
+module "use /everest/sivhw_bkup/tools/modulefiles"
+module "switch protium/22.05.002"
+
+ptmrun_local_4
+
+to unlock if board is locked
+unlock_4
+
+download /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/run_dir/pdrpp_work
+source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/run.tcl
+
+													reset
+													ssh systemlab-
+													/opt/systest/common/bin/systest-client
+																																	reset
+																																	ssh systemlab-
+																																	/opt/systest/common/bin/systest-client
+																																	connect com0
+
+													xsdb
+													source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/.xsdbrc
+													dow_ten 
+													check_linkup
+													npi
+													jtag ta 1
+													jtag freq 500000
+													apu0
+													dow -skip-activate-subsystem -force <elf_file>
+									dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+													con 
+													
+													
+													
+													
+
+																																	ctrl+/
+																																	reset
+																																	connect com0
+													stop
+													exit
+													reset
+exit
+reset													
+													
+													
+													
+													
+
+/*****************terminal PTM   ***************************/
+/proj/systest/bin/cluster-ping tenpro
+
+/proj/systest/bin/systest tenpro-25
+
+ls -lah /proj/xsjsswstaff/dchauhan/temp/extra/.ptm
+rm -r /proj/xsjsswstaff/dchauhan/temp/extra/.ptm
+cd "/proj/xsjsswstaff/dchauhan/temp/extra/"
+
+module "use /everest/sivhw_bkup/tools/modulefiles"
+module "switch protium/22.05.002"
+
+to unlock if board is locked
+unlock_4
+
+ptmrun_local_4
+
+download /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/run_dir/pdrpp_work
+source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/run.tcl
+
+/********************** terminal xsdb **********************/
+reset
+ssh systemlab-
+/opt/systest/common/bin/systest-client
+																																	
+/********************** terminal connect com0 ****************/																													
+reset
+ssh systemlab-
+/opt/systest/common/bin/systest-client
+connect com0
+
+/*************terminal xsdb ***********/
+xsdb
+source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v3_1/.xsdbrc
+dow_ten 
+check_linkup
+npi
+jtag ta 1
+jtag freq 500000
+apu0
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/isolation_test/dummy2/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/isolation_test/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/test_cases_aieml/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/review_comments_21040/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+dow -skip-activate-subsystem -force <elf_file>
+for baremetal in tenpro
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+for ucdma in systemc
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/uc_driver/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+for isoaltion, in tenpro
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/work/isolation_nonlite/my-aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+for baremetal check dmaloopback
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/aieml-tests/fina_dma_pause/final2/my_aie-rt/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+for nocoutstanding txn sts 
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/uc_driver/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+con 
+
+/********************** terminal connect com0 ****************/																													
+ctrl+/
+reset
+connect com0
+
+/*************terminal xsdb ***********/
+stop
+exit
+reset
+
+/************terminaal PTM **************/
+exit
+reset												
+													
+													
+													
+													
+													
+													
+													
+													
+													
+		terminal-1
+/proj/systest/bin/cluster-ping tenpro
+
+/proj/systest/bin/systest tenpro-
+
+rm -r /proj/xsjsswstaff/dchauhan/temp/extra/.ptm
+
+cd "/proj/xsjsswstaff/dchauhan/temp/extra/"
+
+module "use /everest/sivhw_bkup/tools/modulefiles"
+
+module "switch protium/22.05.002"													
+
+ptmrun_local_4
+ 
+download /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v4_0/run_dir/pdrpp_work;
+source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v4_0/run.tcl;
+ 
+		terminal-2 && terminal-3
+ssh systemlab-
+/opt/systest/common/bin/systest-client
+
+		terminal-3 
+reset
+connect com0
+
+		terminal-2
+reset
+xsdb
+source /everest/siv_rel_bkup/proj/telluride/public/releases/ipp/aie_ipp/aie2ps_ipp_v4_0/.xsdbrc
+dow_ten
+npi
+jtag ta 1
+jtag freq 500000
+apuo
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_testcases_check/aieml_vnc_tests.elf
+dow -skip-activate-subsystem -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_testcases_check/aieml_vnc_tests_5_wow.elf
+/proj/xsjsswstaff/dchauhan/temp/extra/elf_testcases_check/aieml_vnc_tests.elf
+
+/proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/aieml_vnc_tests.elf
+dow -skip-activate-subsystem -force <elf_file>
+
+con

@@ -1,0 +1,56 @@
+/****** 110424 ******/
+app running on petalinux
+
+
+Initializing ADF API...
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+Input memory virtual addr 0x0xffffa57b4000x
+run mm2s_1
+run s2mm_1
+[  384.142574] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.143140] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.143690] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] _XAie_Txn_Submit():809: Flushing the buffer failed
+[  384.147167] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.147606] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.148107] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] XAie_Read32():1351: Failed to flush cmd buffer
+[  384.151851] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.152323] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.152838] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] _XAie_Txn_Submit():809: Flushing the buffer failed
+[  384.155442] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.155872] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.156369] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] XAie_Read32():1351: Failed to flush cmd buffer
+[  384.158524] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.158859] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.159347] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] XAie_Read32():1351: Failed to flush cmd buffer
+[  384.162079] aie aiepart_0_38: Tile(0,5) is gated.
+[  384.162495] aie aiepart_0_38: failed to write to 0x500004,0x4.
+[  384.163038] aie aiepart_0_38: reg op 0 failed: 0x500004.
+[AIE ERROR] XAie_LinuxSubmitTxn():1835: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] _XAie_Txn_Submit():809: Flushing the buffer failed
+XRT build version: 2.17.0
+Build hash: 34ceebc40b326aae408f8dc523c785db796e0483
+Build date: 2024-04-02 21:06:07
+Git branch: master
+PID: 678
+UID: 1000
+[Thu Apr 11 05:07:53 2024 GMT]
+HOST: xilinx-vek280-20241
+EXE: /home/petalinux/host.exe
+[XRT] ERROR: ERROR: adf::graph::run: AIE driver error.: Input/output error
+terminate called after throwing an instance of 'xrt_core::system_error'
+  what():  fail to run graph: Operation not permitted
+./embedded_exec.sh: line 11:   678 Aborted                 ./host.exe aie2_plio_memtile_buffer_port_kernel.xclbin
+ERROR: Embedded host run failed, RC=134
+INFO: Embedded host run completed.

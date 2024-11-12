@@ -1,0 +1,106 @@
+jaydpate
+L7ave@54321
+
+jaydpate/aie-rt-part-query at main-aie-error-int-issue (xilinx.com)
+ use this branch.
+ git remote add upstream https://gitenterprise.xilinx.com/ai-engine/aie-rt.git
+git fetch upstream main-aie
+git checkout -b [your_new_branch] upstream/main-aie
+git push origin [your_new_branch]
+ You can use above steps to create base (main-aie) branch from base repo to your forked repo
+
+
+driver: src: common: Fix for error interrupt test case build fail
+
+Resolve build errors in the error interrupt test case due to UINTPTR
+conflicts with Xilinx headers, renamed UINTPTR to UINTPTR_T.
+
+Signed-off-by: Dhananjay Chauhan <dchauhan@amd.com>
+
+---
+BRANCH: main-aie
+CR-1205883
+---
+
+
+UINTPTR is conflict with xilinx headers, so remaned UINTPTR to UINTPTR_T
+and removed warnings for build error interrupt test case
+
+
+
+aie-rt/driver/src/lite/
+
+aie-rt/driver/src/io_backend/
+
+
+a30a549f (HEAD -> main-aie, origin/main-aie) driver:src: update xaie_helper_private.h file to CMakeLists.txt
+b4985f5c Fix send email fail issue caused by review bot
+f52c07f5 driver:src: clean up internal api from xaie_helper.h
+5f669f09 cmake: Added support for yocto decoupling flow.
+659ba5ec driver: src: Fix Init isolation logic in SetPartIsolationAfterRst
+950a7dcc driver: src: Implemented APIs for list exsiting partitions to facilitating debugging
+e2c8a2ee fal: Version bump
+36c5e70c driver: Version bump
+30a96423 driver: src: io_backend: Disabled shim reset bit in _XAie_PrivilegeRstPartShims API.
+6e3e92e8 driver: src: Fix aie-rt compilation warnings while compiling plm/psm.
+4e2fbbca driver:src:Fixed some softpartition getting isolated wrongly.
+4f47fc06 driver: src: timer: Setup two broadcast channels for timer sync.
+0c46732d driver: src: Added StarCol in XAie_GetTileBitPosFromLoc for non-zero partition
+0f630147 driver: src: Remove resource files from CMake
+
+typedef uintptr_t UINTPTR
+
+
+Compiling xaie
+
+In file included from lite/xaie_lite.c:30:
+lite/xaie_lite_internal.h: In function '_XAie_LGetTTypefromLoc':
+lite/xaie_lite_internal.h:82:27: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+   82 |         } else if(Loc.Row >= XAIE_MEM_TILE_ROW_START &&
+      |                           ^~
+lite/xaie_lite_internal.h:83:34: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+   83 |                         (Loc.Row < (XAIE_MEM_TILE_ROW_START +
+      |                                  ^
+In file included from lite/xaie_lite_privilege.c:32:
+lite/xaie_lite_internal.h: In function '_XAie_LGetTTypefromLoc':
+lite/xaie_lite_internal.h:82:27: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+   82 |         } else if(Loc.Row >= XAIE_MEM_TILE_ROW_START &&
+      |                           ^~
+lite/xaie_lite_internal.h:83:34: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+   83 |                         (Loc.Row < (XAIE_MEM_TILE_ROW_START +
+      |                                  ^
+lite/xaie_lite_privilege.c: In function 'XAie_SoftPartitionInitialize':
+lite/xaie_lite_privilege.c:321:9: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  321 |         memset(&SoftPartOpts,0, sizeof(SoftPartOpts));
+      |         ^~~~~~
+lite/xaie_lite_privilege.c:37:1: note: include '<string.h>' or provide a declaration of 'memset'
+   36 | #include "xaie_helper_internal.h"
+  +++ |+#include <string.h>
+   37 |
+lite/xaie_lite_privilege.c:321:9: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  321 |         memset(&SoftPartOpts,0, sizeof(SoftPartOpts));
+      |         ^~~~~~
+lite/xaie_lite_privilege.c:321:9: note: include '<string.h>' or provide a declaration of 'memset'
+lite/xaie_lite_privilege.c: In function 'XAie_PartitionInitialize':
+lite/xaie_lite_privilege.c:378:15: warning: unused variable 'RC' [-Wunused-variable]
+  378 |         AieRC RC;
+      |               ^~
+lite/xaie_lite_privilege.c: In function 'XAie_SoftPartitionInitialize':
+lite/xaie_lite_privilege.c:334:40: warning: 'IsolationFlags' may be used uninitialized [-Wmaybe-uninitialized]
+  334 |                         IsolationFlags |= XAIE_INIT_WEST_ISOLATION;
+lite/xaie_lite_privilege.c:319:12: note: 'IsolationFlags' was declared here
+  319 |         u8 IsolationFlags;
+      |            ^~~~~~~~~~~~~~
+In file included from interrupt/xaie_interrupt_backtrack.c:31:
+../../../include/xaiengine/xaie_lite_internal.h: In function '_XAie_LGetTTypefromLoc':
+../../../include/xaiengine/xaie_lite_internal.h:82:27: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+   82 |         } else if(Loc.Row >= XAIE_MEM_TILE_ROW_START &&
+      |                           ^~
+../../../include/xaiengine/xaie_lite_internal.h:83:34: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+   83 |                         (Loc.Row < (XAIE_MEM_TILE_ROW_START +
+      |                                  ^
+interrupt/xaie_interrupt_backtrack.c: In function '_XAie_LBacktrackIntrCtrlL1':
+interrupt/xaie_interrupt_backtrack.c:532:22: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  532 |              Loc.Row < (XAIE_MEM_TILE_ROW_START + XAIE_MEM_TILE_NUM_ROWS);
+
+

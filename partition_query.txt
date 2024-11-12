@@ -1,0 +1,161 @@
+https://jira.xilinx.com/browse/SSW-6639
+AIE SSW - Support Partition query in linux
+
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/partition_query/aieml-tests/aie-rt/driver/examples/working_partiation_query_jaydip ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/partition_query/aieml-tests/build_linux/aieml_tests ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/partition_query/aie-rt/driver/examples/xaie_tile_dma_loopback ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/partition_query/aie-rt/driver/examples/xaie_partition_list_query ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/partition_query/aieml-tests/aie-rt/driver/src/libxaiengine* ./
+find / -iname "libxaiengine*"
+rm -rf /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+echo 1 >/sys/devices/platform/./pl-bus/pl-bus:zyxclmm_drm/zocl_reset
+
+
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./aieml_tests &
+[1] 899
+xilinx-vck190-20242:/home/petalinux# Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+[1]+  Stopped(SIGTTIN)        ./aieml_tests
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+Partition ID:   1025
+        Start Col:    1
+        Num Cols:     4
+        Partition Fd: 4
+Select the partition id from list:
+1025
+[AIE ERROR] _XAie_GetTTypefromLoc():127: Invalid column: 8
+[AIE ERROR] XAie_DataMemBlockWrite():281: Invalid tile type
+Writing data to aie data memory failed.
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./aieml_tests &
+[1] 927
+xilinx-vck190-20242:/home/petalinux# Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+
+
+[1]+  Stopped(SIGTTIN)        ./aieml_tests
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+Partition ID:   2049
+        Start Col:    1
+        Num Cols:     8
+        Partition Fd: 4
+Select the partition id from list:
+2049
+[AIE ERROR] _XAie_GetTTypefromLoc():127: Invalid column: 8
+[AIE ERROR] XAie_DataMemBlockWrite():281: Invalid tile type
+Writing data to aie data memory failed.
+
+
+
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# ./aieml_tests &
+[1] 979
+xilinx-vck190-20242:/home/petalinux# Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+l
+sh: l: command not found
+
+[1]+  Stopped(SIGTTIN)        ./aieml_tests
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# bg
+[1] ./aieml_tests &
+xilinx-vck190-20242:/home/petalinux#
+
+[1]+  Stopped(SIGTTIN)        ./aieml_tests
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+Partition ID:   2305
+        Start Col:    1
+        Num Cols:     9
+        Partition Fd: 4
+Select the partition id from list:
+2305
+AIE Tile DMA Loopback success.
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./aieml_tests &
+[1] 967
+xilinx-vck190-20242:/home/petalinux# Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+l
+sh: l: command not found
+
+[1]+  Stopped(SIGTTIN)        ./aieml_tests
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+Partition ID:   2561
+        Start Col:    1
+        Num Cols:     10
+        Partition Fd: 4
+Select the partition id from list:
+2561
+AIE Tile DMA Loopback success.
+
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./xaie_tile_dma_loopback &
+[1] 794
+xilinx-vck190-20242:/home/petalinux# BG: Ebter some value Loopback
+[1]+  Stopped(SIGTTIN)        ./xaie_tile_dma_loopback
+xilinx-vck190-20242:/home/petalinux#
+xilinx-vck190-20242:/home/petalinux# bg
+[1] ./xaie_tile_dma_loopback &
+
+[1]+  Stopped(SIGTTIN)        ./xaie_tile_dma_loopback
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+Partition ID:   12800
+        Start Col:    0
+        Num Cols:     50
+        Partition Fd: 4
+Select the partition id from list:
+12800
+AIE Tile DMA Loopback success.
+
+
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+[AIE ERROR] XAie_LinuxIO_GetPartitionList():230: Partitions was not created, create Partition first
+[AIE ERROR] XAie_GetPartitionFdList():432: Failed to get partition List
+XAie_GetPartitionFdList failed.
+
+
+
+
+xilinx-vck190-20242:/home/petalinux# ./xaie_partition_list_query
+[  234.409239] aie aie0: Invalid ioctl command 3222290691.
+[AIE ERROR] XAie_LinuxIO_GetPartitionList():243: Failed to get partition list 22: Invalid argument
+[AIE ERROR] XAie_GetPartitionFdList():432: Failed to get partition List
+XAie_GetPartitionFdList failed
+
+

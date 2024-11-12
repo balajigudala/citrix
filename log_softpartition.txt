@@ -1,0 +1,296 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 16
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: file : global/xaiegbl.c : 287
+[AIE ERROR] XAie_SoftPartitionInitialize():307: file : global/xaiegbl.c : 307
+[AIE ERROR] XAie_PartitionInitialize():364: file : global/xaiegbl.c : 364
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 12
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():439: file : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():456: file : io_backend/privilege/xaie_io_privilege.c : 456
+[AIE ERROR] _XAie_PrivilegeInitPart():486: file : io_backend/privilege/xaie_io_privilege.c : 486
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():493: file : io_backend/privilege/xaie_io_privilege.c : 493
+[AIE ERROR] _XAie_PrivilegeInitPart():504: file : io_backend/privilege/xaie_io_privilege.c : 504
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 6
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():588: file : io_backend/privilege/xaie_io_privilege.c : 588
+[AIE ERROR] XAie_SoftPartitionInitialize():321: file : global/xaiegbl.c : 321
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():935: entry in func : io_backend/privilege/xaie_io_privilege.c : 935 : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie2PS_SetAxiMMIsolation():69: device/xaie_device_aie2ps.c : 69
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_SoftPartitionInitialize():333: file : global/xaiegbl.c : 333
+AIE Tile DMA Loopback success.
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 13
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+
+        q - to quit
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 16
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+divInst start col = 0
+divInst no col = 5
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: file : global/xaiegbl.c : 287
+[AIE ERROR] XAie_SoftPartitionInitialize():307: file : global/xaiegbl.c : 307
+[AIE ERROR] XAie_PartitionInitialize():364: file : global/xaiegbl.c : 364
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 12
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():439: file : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():456: file : io_backend/privilege/xaie_io_privilege.c : 456
+
+
+
+
+        q - to quit
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 16
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+divInst start col = 0
+divInst no col = 5
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: file : global/xaiegbl.c : 287
+[AIE ERROR] XAie_SoftPartitionInitialize():307: file : global/xaiegbl.c : 307
+[AIE ERROR] XAie_PartitionInitialize():364: file : global/xaiegbl.c : 364
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 12
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] _XAie_PrivilegeInitPart():439: file : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 0
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625 : op code : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+
+
+
+
+
+
+
+        q - to quit
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c : 1625
+[AIE ERROR] XAie_BaremetalIO_RunOp():507: file : io_backend/ext/xaie_baremetal.c : 507
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: file : global/xaiegbl.c : 287
+[AIE ERROR] XAie_SoftPartitionInitialize():329: entry in func : global/xaiegbl.c : 329
+XAie_SoftPartitionInitialize failed
+
+
+
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_SoftPartitionInitialize():368: lite/xaie_lite_privilege.c : 368
+[AIE ERROR] XAie_PartitionInitialize():427: lite/xaie_lite_privilege.c : 427
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] XAie_PartitionInitialize():545: lite/xaie_lite_privilege.c : 545
+[AIE ERROR] _XAie_DisableTlast():935: lite/xaie_lite_aie2ps.h : 935
+[AIE ERROR] _XAie_DisableTlast():946: lite/xaie_lite_aie2ps.h : 946
+[AIE ERROR] _XAie_DisableTlast():948: row strt, end 5 : 13
+[AIE ERROR] _XAie_DisableTlast():951: RegAddr : 560000
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_DisableTlast():951: RegAddr : 660000
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_DisableTlast():951: RegAddr : 760000
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152

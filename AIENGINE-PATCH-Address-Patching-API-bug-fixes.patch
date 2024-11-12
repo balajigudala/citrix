@@ -1,0 +1,72 @@
+diff --git a/driver/src/io_backend/ext/xaie_controlcode.c b/driver/src/io_backend/ext/xaie_controlcode.c
+index 7f6b2c6b..60234f64 100644
+--- a/driver/src/io_backend/ext/xaie_controlcode.c
++++ b/driver/src/io_backend/ext/xaie_controlcode.c
+@@ -605,9 +605,9 @@ static AieRC XAie_ControlCodeIO_BlockSet32(void *IOInst, u64 RegOff, u32 Data, u
+ /**
+ *
+ * This is the memory IO function to perform Address Patching by CERT
+-* @param	IOInst:     IO instance pointer
+-* @param	Arg_Offset: Represents which global register the patching info can be found.
+-* @param	Num_BDs:    Represents Number of BDs to be patched.
++* @param	IOInst:    IO instance pointer
++* @param	Arg_Index: Index of the argument to be patched coresponding to its index in Kernel Signature.
++* @param	Num_BDs:   Represents Number of BDs to be patched.
+ *
+ * @return	None.
+ *
+@@ -615,7 +615,7 @@ static AieRC XAie_ControlCodeIO_BlockSet32(void *IOInst, u64 RegOff, u32 Data, u
+ * @note		Internal only.
+ *
+ *******************************************************************************/
+-static AieRC XAie_ControlCodeIO_AddressPatching(void *IOInst, u8 Arg_Offset, u8 Num_BDs)
++static AieRC XAie_ControlCodeIO_AddressPatching(void *IOInst, u8 Arg_Index, u8 Num_BDs)
+ {
+ 	XAie_ControlCodeIO  *ControlCodeInst = (XAie_ControlCodeIO *)IOInst;
+ 	u32 DataAligner = (DATA_SECTION_ALIGNMENT -
+@@ -624,11 +624,6 @@ static AieRC XAie_ControlCodeIO_AddressPatching(void *IOInst, u8 Arg_Offset, u8
+ 	if (DataAligner == DATA_SECTION_ALIGNMENT) {
+ 		DataAligner = 0U;
+ 	}
+-	if(Arg_Offset > 6)
+-	{
+-		printf("Wrong input of Arg_Offset = %d\n",Arg_Offset);
+-		return XAIE_ERR;
+-	}
+ 
+ 	if (ControlCodeInst->ControlCodefp != NULL) {
+ 
+@@ -643,7 +638,9 @@ static AieRC XAie_ControlCodeIO_AddressPatching(void *IOInst, u8 Arg_Offset, u8
+ 		}
+ 
+ 		fprintf(ControlCodeInst->ControlCodefp,
+-				"APPLY_OFFSET_57\t @shim_bd%d, %d, %d\n",ControlCodeInst->UcbdLabelNum,Num_BDs,Arg_Offset);
++				"APPLY_OFFSET_57\t @DMAWRITE_data_%d, %d, %d\n",
++				ControlCodeInst->UcDmaDataNum - 1,
++				Num_BDs, Arg_Index);
+ 
+ 		ControlCodeInst->UcPageTextSize += ISA_OPSIZE_APPLY_OFFSET_57;
+ 		ControlCodeInst->UcPageSize += ISA_OPSIZE_APPLY_OFFSET_57;
+@@ -724,7 +721,7 @@ static AieRC XAie_ControlCodeIO_RunOp(void *IOInst, XAie_DevInst *DevInst,
+ 		     XAie_BackendOpCode Op, void *Arg)
+ {
+ 	AieRC RC = XAIE_OK;
+-	(void)IOInst;
++	XAie_ControlCodeIO  *ControlCodeInst = (XAie_ControlCodeIO *)IOInst;
+ 
+ 	switch(Op) {
+ 		case XAIE_BACKEND_OP_NPIWR32:
+@@ -756,11 +753,13 @@ static AieRC XAie_ControlCodeIO_RunOp(void *IOInst, XAie_DevInst *DevInst,
+ 		}
+ 		case XAIE_BACKEND_OP_CONFIG_SHIMDMABD:
+ 		{
++			ControlCodeInst->CombineCommands = 0;
+ 			XAie_ShimDmaBdArgs *BdArgs =
+ 				(XAie_ShimDmaBdArgs *)Arg;
+ 
+ 			XAie_ControlCodeIO_BlockWrite32(IOInst, BdArgs->Addr,
+ 				BdArgs->BdWords, BdArgs->NumBdWords);
++			ControlCodeInst->CombineCommands = 1;
+ 			break;
+ 		}
+ 		case XAIE_BACKEND_OP_REQUEST_TILES:

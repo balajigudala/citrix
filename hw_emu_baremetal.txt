@@ -1,0 +1,9 @@
+/scratch/dchauhan/temp/extra/hw_emu_baremetal/aieml-tests/
+
+--advanced.param software.os=standalone --package.pmc_args /scratch/dchauhan/temp/extra/hw_emu_baremetal/aieml-tests/build_baremetal/hw/resources/hw/standalone_domain/qemu/pmc_args.txt --package.qemu_args /scratch/dchauhan/temp/extra/hw_emu_baremetal/aieml-tests/build_baremetal/hw/resources/hw/standalone_domain/qemu/qemu_args.txt
+--advanced.param software.os=standalone --package.pmc_args /scratch/jaydip/dch/CR-1205000/aieml-tests/build_baremetal/hw/resources/hw/standalone_domain/qemu/pmc_args.txt --package.qemu_args /scratch/jaydip/dch/CR-1205000/aieml-tests/build_baremetal/hw/resources/hw/standalone_domain/qemu/qemu_args.txt
+
+INFO: [v++ 60-2442] Software platform is not available, OS name is set from advanced.param 'software.os': linux
+ERROR: [v++ 60-2444] For XSA flow, option 'package.bif' needs to be specified when targeting Embedded (Edge) Versal/Zynq/Zynq UltraScale+ and OS is linux
+ERROR: [v++ 60-702] Failed to finish packaging
+INFO: [v++ 60-1653] Closing dispatch client.

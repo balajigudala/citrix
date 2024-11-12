@@ -19,42 +19,85 @@ petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb
 
 Launch xsct:
 $ source /proj/xbuilds/2023.1_daily_latest/installs/lin64/Vitis/2023.1/settings64.sh
+# source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
 $ xsct
 ===========
 -==-==-==-==-
 $ systest% power 0 power 1
 ************************************************
 VCK190- aie1
-========== VEK280 BOARDFARM =====================
-/proj/systest/bin//cluster-ping vck190
-/proj/systest/bin/systest       vck190-
+========== VCK190 BOARDFARM =====================
+/proj/systest/bin/cluster-ping vck190
+/proj/systest/bin/systest      vck190-
 
 ---Terminal 1     *****---*****        Terminal 2---------
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/"
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/"
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_v2024.2_build_elf/"
+tftpd "/proj/xsjsswstaff/dchauhan/work/shimdma_xrt_issue/build_p/vck190_zoclenable/"
 hw_server
-connect com0
+power 0 power 1 connect com0
 										-ssh connect to board	
 										/opt/systest/common/bin/systest-client
+										#tftpd "/proj/xsjsswstaff/dchauhan/work/CR-1195159/out/"
 										xsdb
 										conn
 										ta 1
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/work/shimdma_xrt_issue/build_p/vck190_zoclenable/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190_v2024.2_build_elf/latest_build/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/BOOT.BIN
 										device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190/xilinx-vck190-2024.1/pre-built/linux/images/BOOT.BIN
 										
 stop auto boot(press any key)
 								
-										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/Image" 0x80000
-										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/rootfs.cpio.gz.u-boot" 0x2000000
-										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_boot_files/system.dtb" 0x1000
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/Image" 0x200000; 
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/rootfs.cpio.gz.u-boot" 0x4000000;
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/system.dtb" 0x1000;
+										
+										/opt/systest/common/bin/systest-client
+										device program 	/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vck190/BOOT.BIN
+										/scratch/dchauhan/temp/extra/vck190/xilinx-vck190-2024.1/pre-built/linux/images/BOOT.BIN
+										
+stop auto boot(press any key)
+								
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/Image" 0x80000; dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/rootfs.cpio.gz.u-boot" 0x2000000; dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/system.dtb" 0x1000;
 									
 booti 0x80000 0x2000000 0x1000
+dhcp; tftpb 0x200000 Image; tftpb 0x4000000 rootfs.cpio.gz.u-boot; tftpb 0x00001000 system.dtb; booti 0x200000 0x4000000 0x1000
+dhcp; tftpb 0x200000 Image; tftpb 0x4000000 zocl_rootfs.cpio.gz.u-boot; tftpb 0x00001000 system.dtb; booti 0x200000 0x4000000 0x1000
+dhcp; tftpb 0x200000 Image_build; tftpb 0x4000000 rootfs.cpio.gz.u-boot; tftpb 0x00001000 system.dtb; booti 0x200000 0x4000000 0x1000
+dhcp; tftpb 0x200000 Image; tftpb 0x4000000 petalinux-image-minimal-xlnx-vck190-20240808081839.cpio.gz.u-boot; tftpb 0x00001000 system.dtb; booti 0x200000 0x4000000 0x1000
+dhcp; tftpb 0x200000 Image--6.6.40+git0+b4b168ff9b-r0.0-xlnx-vck190-20240808081839.bin; tftpb 0x4000000 petalinux-image-minimal-xlnx-vck190-20240808081839.cpio.gz.u-boot; tftpb 0x00001000 cortexa72-linux.dtb; booti 0x00200000 0x04000000 0x00001000
+dhcp; tftpb 0x200000 Image--6.6.30+git0+cbb4be365a-r0.0-xlnx-vck190-20240806105320.bin; tftpb 0x4000000 petalinux-image-minimal-xlnx-vck190-20240806105320.cpio.gz.u-boot; booti 0x00200000 0x04000000 0x00001000
+device program  /proj/ssw_xhd/verification/no_delete/rathans/Yocto_linux/BOOT-xlnx-vck190-20240806105320.bin
 username:
 password:
-scp -r ssatpute@10.10.70.101://proj/xsjsswstaff/ssatpute/exports/vek280/lib/* .
-sudo rm /usr/lib/libxaiengine*
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/aie-rt/driver/src/libxaiengine.so* .
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/aie-rt/driver/examples/xaie_tile_dma_loopback ./
+/scratch/dchauhan/temp/extra/cmpl_wrngs_aiert/clr_wrngs_aiert_main/aieml-tests/build_linux/aieml_tests
+find / -iname "libxaiengine*"
+rm -rf /usr/lib/libxaiengine*
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
 ./usr_space_application
 
+to check the aie partitions:
+ls /sys/class/aie/
+to clear partition:
+echo 1 >/sys/devices/platform/./pl-bus/pl-bus:zyxclmm_drm/zocl_reset 
 
+xclbinutils -r reset 
 
+/scratch/dchauhan/work/shimdma_xrt_issue/aie/build/vck190/streamswitch_xrt/linux/images
+/proj/xsjsswstaff/dchauhan/work/shimdma_xrt_issue/build_p/vck190_zoclenable
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/work/shimdma_xrt_issue/aie/build/vck190/linux_lib_aie/osl/images/libxaiengine.so* .
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/work/shimdma_xrt_issue/aie/build/vck190/streamswitch_xrt/linux/images/* ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/work/shimdma_xrt_issue/aie/build/vck190/shim_dma_loopback_xrt/linux/work/app_sysroot/lib/libxaiengine.so* ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/work/shimdma_xrt_issue/aie/build/vck190/shim_dma_loopback_xrt/linux/images/* ./
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/work/shimdma_xrt_issue/xgemm/designs/xgemm-gmio/export/linux/aie-matrix-multiplication* ./
+/scratch/dchauhan/work/shimdma_xrt_issue/aie/streamswitch_xrt/src/aie_control.cpp
+	
 
 
 ===============================================================================================================================
@@ -81,8 +124,8 @@ $ systest% power 0 power 1
 VCK190- aie1
 VEK280- aie2
 ========== VEK280 BOARDFARM =====================
-/proj/systest/bin//cluster-ping vek280
-/proj/systest/bin/systest       vek280-4
+/proj/systest/bin/cluster-ping vck190
+/proj/systest/bin/systest      vck190-
 
 ---Terminal 1     *****---*****        Terminal 2---------
 hw_server

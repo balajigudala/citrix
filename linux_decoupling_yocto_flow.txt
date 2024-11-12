@@ -1,0 +1,18 @@
+#########################
+linux Decoupling yocto flow
+############################
+mkdir Yocto_workspace
+cd Yocto_workspace
+curl https://storage.googleapis.com/git-repo-downloads/repo > repo
+chmod a+x repo
+/build/ssw_devops/xtf/bin/repo init -u https://gitenterprise.xilinx.com/Yocto/yocto-manifests.git -b 2024.2
+/build/ssw_devops/xtf/bin/repo sync
+/build/ssw_devops/xtf/bin/repo start 2024.2 --all
+source setupsdk
+bitbake-layers remove-layer meta-xilinx-tools
+bitbake-layers add-layer ../sources/meta-xilinx/meta-xilinx-standalone-experimental
+gen-machineconf --multiconfigfull --hw-description /proj/ssw_xhd/verification/no_delete/design_dts_10GB/2024.2/designs_stable_latest/versal/prod/vck190_aie_all/dts/ --native-sysroot /proj/petalinux/2024.2/petalinux_regression_latest/tool/petalinux-v2024.2-final/sysroots/x86_64-petalinux-linux/ -l conf/local.conf
+bitbake petalinux-image-minimal
+ 
+ 
+/proj/ssw_xhd/verification/no_delete/rathans/Yocto_linux/ -- Rathan's Images

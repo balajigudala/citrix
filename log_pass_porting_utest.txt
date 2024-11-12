@@ -1,0 +1,160 @@
+dchauhan@xsjaiedev50:/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests$ ./build.sh all
+Compiling cpputest...
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/cpputest/cpputest_build /scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+
+-------------------------------------------------------
+CppUTest Version 3.8
+
+Current compiler options:
+    CC:                                 /usr/bin/cc
+    CXX:                                /usr/bin/c++
+    CppUTest CFLAGS:                     -include "/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/cpputest/include/CppUTest/MemoryLeakDetectorMallocMacros.h"  -Wall -Wextra -Wshadow -Wswitch-default -Wswitch-enum -Wconversion -Wsign-conversion -Wno-padded -Wno-long-long -Wstrict-prototypes
+    CppUTest CXXFLAGS:                   -include "/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/cpputest/include/CppUTest/MemoryLeakDetectorNewMacros.h" -include "/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/cpputest/include/CppUTest/MemoryLeakDetectorMallocMacros.h"
+    CppUTest LDFLAGS:
+
+Features configured in CppUTest:
+    Memory Leak Detection:              ON
+    Compiling Extensions:               ON
+    Support Long Long:                  OFF
+    Use CppUTest flags:                 ON
+
+    Using Standard C library:           ON
+    Using Standard C++ library:         ON
+    Using C++11 library:                OFF
+
+    Generating map file:                OFF
+    Compiling with coverage:            OFF
+
+    Compile and run self-tests          ON
+    Run self-tests separately           OFF
+
+-------------------------------------------------------
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/cpputest/cpputest_build
+[ 21%] Built target CppUTest
+[ 36%] Built target CppUTestExt
+[ 70%] Built target CppUTestTests
+[100%] Built target CppUTestExtTests
+INFO: compiling cpputest SUCCESSFUL
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+Compiling aiengine driver...
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/aie-rt/driver/src /scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+INFO: Code coverage disabled
+mkdir ../include/xaiengine -p
+mkdir ../internal/xaiengine -p
+cp xaiengine.h ../include
+cp ./*/xaie_clock.h ./*/xaie_reset.h ./*/xaie_core.h ./*/xaie_dma.h ./*/xaie_elfloader.h ./*/xaie_events.h ./*/xaie_events_aie.h ./*/xaie_events_aieml.h ./*/xaie_interrupt.h ./*/xaie_lite.h ./*/xaie_lite_util.h ./*/xaie_locks.h ./*/xaie_mem.h ./*/xaie_perfcnt.h ./*/xaie_plif.h ./*/xaie_ss.h ./*/xaie_timer.h ./*/xaie_trace.h ./*/xaie_util_events.h ./*/xaiegbl.h ./*/xaiegbl_defs.h ./*/xaiegbl_regdef.h ./*/xaie_io.h ./*/xaie_feature_config.h ./*/xaie_helper.h ./*/xaie_lite_hwcfg.h ./*/xaiegbl_params.h ./xaiengine.h ./*/*/xlnx-ai-engine.h ./*/xaie_routing.h ./*/xaie_txn.h ./*/xaiegbl_dynlink.h ../include/xaiengine
+cp xaiengine.h ../internal
+cp ./*/*.h ./*/*/*.h ../internal/xaiengine
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC lite/xaie_lite.c -o lite/xaie_lite.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC lite/xaie_lite_privilege.c -o lite/xaie_lite_privilege.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC events/xaie_events.c -o events/xaie_events.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC common/xaie_helper.c -o common/xaie_helper.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_tilectrl.c -o pm/xaie_tilectrl.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_reset.c -o pm/xaie_reset.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_reset_aie.c -o pm/xaie_reset_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_reset_aieml.c -o pm/xaie_reset_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_clock.c -o pm/xaie_clock.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pm/xaie_ecc.c -o pm/xaie_ecc.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC pl/xaie_plif.c -o pl/xaie_plif.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_control.c -o interrupt/xaie_interrupt_control.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_aie2ps.c -o interrupt/xaie_interrupt_aie2ps.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_init.c -o interrupt/xaie_interrupt_init.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_aieml.c -o interrupt/xaie_interrupt_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_aie2ipu.c -o interrupt/xaie_interrupt_aie2ipu.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_aie.c -o interrupt/xaie_interrupt_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC interrupt/xaie_interrupt_backtrack.c -o interrupt/xaie_interrupt_backtrack.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC core/xaie_uc.c -o core/xaie_uc.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC core/xaie_core_aieml.c -o core/xaie_core_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC core/xaie_core.c -o core/xaie_core.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC core/xaie_elfloader.c -o core/xaie_elfloader.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC core/xaie_core_aie.c -o core/xaie_core_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaiegbl.c -o global/xaiegbl.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaie2psgbl_reginit.c -o global/xaie2psgbl_reginit.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaiegbl_reginit.c -o global/xaiegbl_reginit.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaiemlgbl_reginit.c -o global/xaiemlgbl_reginit.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaie2ipugbl_reginit.c -o global/xaie2ipugbl_reginit.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC global/xaie2pgbl_reginit.c -o global/xaie2pgbl_reginit.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC npi/xaie_npi_aieml.c -o npi/xaie_npi_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC npi/xaie_npi.c -o npi/xaie_npi.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC npi/xaie_npi_aie.c -o npi/xaie_npi_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC memory/xaie_mem.c -o memory/xaie_mem.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC device/xaie_device_aie2ps.c -o device/xaie_device_aie2ps.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC device/xaie_device_aie.c -o device/xaie_device_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC device/xaie_device_aie2p.c -o device/xaie_device_aie2p.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC device/xaie_device_aieml.c -o device/xaie_device_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC device/xaie_device_aie2ipu.c -o device/xaie_device_aie2ipu.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC locks/xaie_locks.c -o locks/xaie_locks.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC locks/xaie_locks_aieml.c -o locks/xaie_locks_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC locks/xaie_locks_aie.c -o locks/xaie_locks_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC uc_driver/xaie_uc_core.c -o uc_driver/xaie_uc_core.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC uc_driver/xaie_uc_dma.c -o uc_driver/xaie_uc_dma.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC uc_driver/xaie_txn_buffer.c -o uc_driver/xaie_txn_buffer.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC util/btree4.c -o util/btree4.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC util/xaie_util_status.c -o util/xaie_util_status.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC util/xaie_util_events_aieml.c -o util/xaie_util_events_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC util/xaie_util_events.c -o util/xaie_util_events.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC dma/xaie_dma_aie2ps.c -o dma/xaie_dma_aie2ps.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC dma/xaie_dma.c -o dma/xaie_dma.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC dma/xaie_dma_aie.c -o dma/xaie_dma_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC dma/xaie_dma_aieml.c -o dma/xaie_dma_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/xaie_io.c -o io_backend/xaie_io.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC timer/xaie_timer.c -o timer/xaie_timer.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC stream_switch/xaie_ss_aie.c -o stream_switch/xaie_ss_aie.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC stream_switch/xaie_ss.c -o stream_switch/xaie_ss.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC stream_switch/xaie_ss_aieml.c -o stream_switch/xaie_ss_aieml.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC stream_switch/xaie_ss_aie2ps.c -o stream_switch/xaie_ss_aie2ps.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC perfcnt/xaie_perfcnt.c -o perfcnt/xaie_perfcnt.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC routing/xaie_routing.c -o routing/xaie_routing.o
+routing/xaie_routing.c: In function ‘PrintBits’:
+routing/xaie_routing.c:34:19: warning: unused parameter ‘value’ [-Wunused-parameter]
+   34 | void PrintBits(u8 value)
+      |                ~~~^~~~~
+routing/xaie_routing.c: In function ‘PrintBDBits’:
+routing/xaie_routing.c:43:27: warning: unused parameter ‘num’ [-Wunused-parameter]
+   43 | void PrintBDBits(uint64_t num)
+      |                  ~~~~~~~~~^~~
+routing/xaie_routing.c: In function ‘XAie_coreConstraintToPrint’:
+routing/xaie_routing.c:217:14: warning: unused variable ‘tileTypeStr’ [-Wunused-variable]
+  217 |  const char* tileTypeStr[] = {"XAIE_AIE_SHIM", "XAIE_AIE_MEM", "XAIE_AIE_CORE"};
+      |              ^~~~~~~~~~~
+routing/xaie_routing.c: In function ‘_XAie_drawRoute’:
+routing/xaie_routing.c:328:32: warning: unused parameter ‘source’ [-Wunused-parameter]
+  328 |   int pathLength, XAie_LocType source, XAie_LocType destination)
+      |                   ~~~~~~~~~~~~~^~~~~~
+routing/xaie_routing.c:328:53: warning: unused parameter ‘destination’ [-Wunused-parameter]
+  328 |   int pathLength, XAie_LocType source, XAie_LocType destination)
+      |                                        ~~~~~~~~~~~~~^~~~~~~~~~~
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC trace/xaie_trace.c -o trace/xaie_trace.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_controlcode.c -o io_backend/ext/xaie_controlcode.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_io_common.c -o io_backend/ext/xaie_io_common.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_debug.c -o io_backend/ext/xaie_debug.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_ipu.c -o io_backend/ext/xaie_ipu.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_baremetal.c -o io_backend/ext/xaie_baremetal.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_sim.c -o io_backend/ext/xaie_sim.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_metal.c -o io_backend/ext/xaie_metal.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_linux.c -o io_backend/ext/xaie_linux.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_cdo.c -o io_backend/ext/xaie_cdo.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/ext/xaie_socket.c -o io_backend/ext/xaie_socket.o
+cc -std=c11 -Wall -Wextra -D_POSIX_C_SOURCE=200809 -D_DEFAULT_SOURCE -I../internal -I../internal/xaiengine -c -fPIC io_backend/privilege/xaie_io_privilege.c -o io_backend/privilege/xaie_io_privilege.o
+cc  lite/xaie_lite.o lite/xaie_lite_privilege.o events/xaie_events.o common/xaie_helper.o pm/xaie_tilectrl.o pm/xaie_reset.o pm/xaie_reset_aie.o pm/xaie_reset_aieml.o pm/xaie_clock.o pm/xaie_ecc.o pl/xaie_plif.o interrupt/xaie_interrupt_control.o interrupt/xaie_interrupt_aie2ps.o interrupt/xaie_interrupt_init.o interrupt/xaie_interrupt_aieml.o interrupt/xaie_interrupt_aie2ipu.o interrupt/xaie_interrupt_aie.o interrupt/xaie_interrupt_backtrack.o core/xaie_uc.o core/xaie_core_aieml.o core/xaie_core.o core/xaie_elfloader.o core/xaie_core_aie.o global/xaiegbl.o global/xaie2psgbl_reginit.o global/xaiegbl_reginit.o global/xaiemlgbl_reginit.o global/xaie2ipugbl_reginit.o global/xaie2pgbl_reginit.o npi/xaie_npi_aieml.o npi/xaie_npi.o npi/xaie_npi_aie.o memory/xaie_mem.o device/xaie_device_aie2ps.o device/xaie_device_aie.o device/xaie_device_aie2p.o device/xaie_device_aieml.o device/xaie_device_aie2ipu.o locks/xaie_locks.o locks/xaie_locks_aieml.o locks/xaie_locks_aie.o uc_driver/xaie_uc_core.o uc_driver/xaie_uc_dma.o uc_driver/xaie_txn_buffer.o util/btree4.o util/xaie_util_status.o util/xaie_util_events_aieml.o util/xaie_util_events.o dma/xaie_dma_aie2ps.o dma/xaie_dma.o dma/xaie_dma_aie.o dma/xaie_dma_aieml.o io_backend/xaie_io.o timer/xaie_timer.o stream_switch/xaie_ss_aie.o stream_switch/xaie_ss.o stream_switch/xaie_ss_aieml.o stream_switch/xaie_ss_aie2ps.o perfcnt/xaie_perfcnt.o routing/xaie_routing.o trace/xaie_trace.o io_backend/ext/xaie_controlcode.o io_backend/ext/xaie_io_common.o io_backend/ext/xaie_debug.o io_backend/ext/xaie_ipu.o io_backend/ext/xaie_baremetal.o io_backend/ext/xaie_sim.o io_backend/ext/xaie_metal.o io_backend/ext/xaie_linux.o io_backend/ext/xaie_cdo.o io_backend/ext/xaie_socket.o io_backend/privilege/xaie_io_privilege.o -shared -Wl,-soname,libxaiengine.so.3 -o libxaiengine.so.3.6
+rm -f libxaiengine.so.3 libxaiengine.so
+ln -s libxaiengine.so.3.6 libxaiengine.so.3
+ln -s libxaiengine.so.3 libxaiengine.so
+INFO: Compiling aiengine driver SUCCESSFUL
+HEAD is now at 1726199b driver:src: while loading elf unaligned data writes handled properly
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests/test_cases /scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+rm -rf aie_tests
+rm -rf aie2_tests
+rm -rf aie2ipu_tests
+rm -rf aie2p_tests
+g++ -g -Wl,-warn-unresolved-symbols -DXAIE_DEBUG -I../aie-rt/driver/include -I../aie-rt/driver/include/xaiengine -I../cpputest/include -I../include -DAIE_GEN=1 main.cpp core.cpp dma.cpp events.cpp global.cpp interrupt.cpp locks.cpp memory.cpp multi_part.cpp perfcnt.cpp plif.cpp pm.cpp stream_switch.cpp timer.cpp trace.cpp dma_aie.cpp events_aie.cpp timer_aie.cpp -o aie_tests -L../aie-rt/driver/src -L../cpputest/cpputest_build/src/CppUTest -lxaiengine -lCppUTest
+g++ -g -Wl,-warn-unresolved-symbols -DXAIE_DEBUG -I../aie-rt/driver/include -I../aie-rt/driver/include/xaiengine -I../cpputest/include -I../include -DAIE_GEN=2 main.cpp core.cpp dma.cpp events.cpp global.cpp interrupt.cpp locks.cpp memory.cpp multi_part.cpp perfcnt.cpp plif.cpp pm.cpp stream_switch.cpp timer.cpp trace.cpp dma_aieml.cpp events_aieml.cpp timer_aieml.cpp -o aie2_tests -L../aie-rt/driver/src -L../cpputest/cpputest_build/src/CppUTest -lxaiengine -lCppUTest
+g++ -g -Wl,-warn-unresolved-symbols -DXAIE_DEBUG -I../aie-rt/driver/include -I../aie-rt/driver/include/xaiengine -I../cpputest/include -I../include -DAIE_GEN=3 main.cpp core.cpp dma.cpp events.cpp global.cpp interrupt.cpp locks.cpp memory.cpp multi_part.cpp perfcnt.cpp plif.cpp pm.cpp stream_switch.cpp timer.cpp trace.cpp dma_aieml.cpp events_aieml.cpp timer_aieml.cpp -o aie2ipu_tests -L../aie-rt/driver/src -L../cpputest/cpputest_build/src/CppUTest -lxaiengine -lCppUTest
+g++ -g -Wl,-warn-unresolved-symbols -DXAIE_DEBUG -I../aie-rt/driver/include -I../aie-rt/driver/include/xaiengine -I../cpputest/include -I../include -DAIE_GEN=4 main.cpp core.cpp dma.cpp events.cpp global.cpp interrupt.cpp locks.cpp memory.cpp multi_part.cpp perfcnt.cpp plif.cpp pm.cpp stream_switch.cpp timer.cpp trace.cpp dma_aieml.cpp events_aieml.cpp timer_aieml.cpp -o aie2p_tests -L../aie-rt/driver/src -L../cpputest/cpputest_build/src/CppUTest -lxaiengine -lCppUTest
+INFO: make all SUCCESSFUL
+/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests
+dchauhan@xsjaiedev50:/scratch/dchauhan/temp/extra/porting_utests/dummy2/aienginev2-tests$

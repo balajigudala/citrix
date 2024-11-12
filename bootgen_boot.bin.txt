@@ -1,0 +1,171 @@
+cd embeddedsw
+cd embeddedsw/lib/sw_apps/versal_plm/src/versal
+#Build path:/scratch/jaydpate/workspace/zeroization/embeddedsw/lib/sw_apps/versal_plm/src/versal
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+make clean
+make
+
+create the project for vek280 or vck190
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+petalinux-create -t project -s /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest_bsps/release/xilinx-vck190-v2024.1-final.bsp
+petalinux-create -t project -s /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest_bsps/release/xilinx-vek280-v2024.1-final.bsp
+
+/scratch/dchauhan/test5517/daily_latest/xilinx-vek280-2024.1
+/scratch/dchauhan/test5517/daily_latest/xilinx-vek280-2024.1/pre-built/linux/images
+
+change in file bootgen.bif ,paths of plm.elf file and vpl_gen_fixed.pdi
+ls -lah /proj/xsjsswstaff/dchauhan/temp/extra/dummy/embeddedsw/lib/sw_apps/versal_plm/src/versal/plm.elf
+#/scratch/dchauhan/test5517/daily_latest/xilinx-vek280-2024.1/project-spec/hw-description/vpl_gen_fixed.pdi
+/proj/xsjsswstaff/dchauhan/temp/extra/vek280/xilinx-vek280-2024.1/project-spec/hw-description/vpl_gen_fixed.pdi
+bootgen -arch versal -image bootgen.bif -w -o BOOT.BIN
+#bootgen -arch versal -image bootgen_jd.bif -w -o BOOT.BIN
+
+
+
+[vek280-6] Systest# connect com0
+Connecting to device com0.  Use Ctrl-\ to escape.
+ease 2024.1   Mar 20 2024  -  11:35:10
+[0.118]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.157]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.186]****************************************
+[0.390]Non Secure Boot
+[3.600]PLM Initialization Time
+[3.628]u32 : 4[3.645]unsigned int: 4[3.667]u64 : 8[3.685]unsigned long int : 4[3.711]***********Boot PDI Load: Started***********
+[3.750]Loading PDI from SBI
+[3.776]Monolithic/Master Device
+[3.839]0.085 ms: PDI initialization time
+[3.873]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+
+
+"/proj/xsjsswstaff/dchauhan/temp/extra/dummy/embeddedsw/lib/sw_apps/versal_plm/src/common/xplm_loader.c" 171
+        XPlmi_Printf(DEBUG_PRINT_PERF, "PLM Initialization Time \n\r");
+        XPlmi_Printf(DEBUG_PRINT_PERF, "u32 : %d",sizeof(u32));
+        XPlmi_Printf(DEBUG_PRINT_PERF, "unsigned int: %d",sizeof(unsigned int));
+        XPlmi_Printf(DEBUG_PRINT_PERF, "u64 : %d",sizeof(u64));
+        XPlmi_Printf(DEBUG_PRINT_PERF, "unsigned long int : %d",sizeof(unsigned long int));
+
+
+
+
+checking plm.elf 
+before clearning warnigs
+Connecting to device com0.  Use Ctrl-\ to escape.
+ Versal Platform Loader and Manager
+[0.085]Release 2024.1   Mar 22 2024  -  06:26:16
+[0.122]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.195]****************************************
+[0.400]Non Secure Boot
+[3.656]PLM Initialization Time
+[3.685]***********Boot PDI Load: Started***********
+[3.726]Loading PDI from SBI
+[3.753]Monolithic/Master Device
+[5.055]1.323 ms: PDI initialization time
+[5.092]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[5.138]---Loading Partition#: 0x1, Id: 0xC
+[61.870] 56.687 ms for Partition#: 0x1, Size: 10368 Bytes
+[66.816]---Loading Partition#: 0x2, Id: 0x0
+[114.313] 43.668 ms for Partition#: 0x2, Size: 67312 Bytes
+PSM Firmware version: 2024.1 [Build: Mar 22 2024 06:27:23 ]
+[121.898]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[127.223]---Loading Partition#: 0x3, Id: 0x3
+[1010.521] 879.384 ms for Partition#: 0x3, Size: 1241952 Bytes
+[1013.157]---Loading Partition#: 0x4, Id: 0x5
+[1955.890] 938.734 ms for Partition#: 0x4, Size: 1332144 Bytes
+[1958.537]+++Loading Image#: 0x3, Name: aie_subsys, Id: 0x0421C005
+[1964.300]---Loading Partition#: 0x5, Id: 0x7
+[1971.123] 2.827 ms for Partition#: 0x5, Size: 1664 Bytes
+[1973.345]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1978.514]---Loading Partition#: 0x6, Id: 0x8
+[1982.960] 0.451 ms for Partition#: 0x6, Size: 4320 Bytes
+[1987.813]+++Loading Image#: 0x5, Name: apu_subsystem, Id: 0x1C000000
+[1993.543]---Loading Partition#: 0x7, Id: 0x0
+[2016.509] 18.968 ms for Partition#: 0x7, Size: 29936 Bytes
+[2018.891]---Loading Partition#: 0x8, Id: 0x0
+[2064.840] 41.950 ms for Partition#: 0x8, Size: 67632 Bytes
+[2067.223]---Loading Partition#: 0x9, Id: 0x0
+[2894.696] 823.474 ms for Partition#: 0x9, Size: 1192864 Bytes
+ DOTICE:* TF-A running on Vers2l Silicos
+ROM Time
+[2904.727]Total PLM Boot Time
+INFO:    BL31: GET_HANDOFF_PARAMS call success=0
+INFO:    BL31: PLM to TF-A handover success 0
+NOTICE:  BL31: Secure code at 0x0
+NOTICE:  BL31: Non secure code at 0x8000000
+NOTICE:  BL31: v2.10.0  (debug):v1.1-13187-g4f82b6134
+NOTICE:  BL31: Built : 04:45:53, Mar 12 2024
+INFO:    GICv3 with legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    Maximum SPI INTID supported: 191
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: cortex_a72: CPU workaround for erratum 859971 was applied
+INFO:    BL31: cortex_a72: CPU workaround for erratum 1319367 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2017_5715 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2018_3639 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2022_23960 was applied
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x8000000
+INFO:    SPSR = 0x3c9
+
+
+
+after clearning warnings 
+
+Connecting to device com0.  Use Ctrl-\ to escape.
+inx Versal Platform Loader and Manager
+[0.085]Release 2024.1   Mar 22 2024  -  07:23:04
+[0.122]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.164]BOOTMODE: 0x0, MULTIBOOT: 0x0
+[0.195]****************************************
+[0.400]Non Secure Boot
+[3.656]PLM Initialization Time
+[3.685]***********Boot PDI Load: Started***********
+[3.726]Loading PDI from SBI
+[3.752]Monolithic/Master Device
+[4.782]1.050 ms: PDI initialization time
+[4.819]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[4.865]---Loading Partition#: 0x1, Id: 0xC
+[61.191] 56.280 ms for Partition#: 0x1, Size: 10368 Bytes
+[66.133]---Loading Partition#: 0x2, Id: 0x0
+[113.093] 43.135 ms for Partition#: 0x2, Size: 67312 Bytes
+PSM Firmware version: 2024.1 [Build: Mar 22 2024 07:24:16 ]
+[120.668]+++Loading Image#: 0x2, Name: pl_cfi, Id: 0x18700000
+[125.987]---Loading Partition#: 0x3, Id: 0x3
+[998.081] 868.182 ms for Partition#: 0x3, Size: 1241952 Bytes
+[1000.632]---Loading Partition#: 0x4, Id: 0x5
+[1944.443] 939.814 ms for Partition#: 0x4, Size: 1332144 Bytes
+[1947.089]+++Loading Image#: 0x3, Name: aie_subsys, Id: 0x0421C005
+[1952.849]---Loading Partition#: 0x5, Id: 0x7
+[1959.670] 2.825 ms for Partition#: 0x5, Size: 1664 Bytes
+[1961.892]+++Loading Image#: 0x4, Name: fpd, Id: 0x0420C003
+[1967.059]---Loading Partition#: 0x6, Id: 0x8
+[1971.502] 0.451 ms for Partition#: 0x6, Size: 4320 Bytes
+[1976.354]+++Loading Image#: 0x5, Name: apu_subsystem, Id: 0x1C000000
+[1982.082]---Loading Partition#: 0x7, Id: 0x0
+[2004.924] 18.847 ms for Partition#: 0x7, Size: 29936 Bytes
+[2007.305]---Loading Partition#: 0x8, Id: 0x0
+[2053.123] 41.823 ms for Partition#: 0x8, Size: 67632 Bytes
+[2055.503]---Loading Partition#: 0x9, Id: 0x0
+[2884.346] 824.845 ms for Partition#: 0x9, Size: 1192864 Bytes
+[NFO7 0 6BL31: Early console setup
+NOTeCE:  *F*A*r
+ ROM TimeVer9al Sil7cmn
+[2894.367]Total PLM Boot Time
+INFO:    BL31: GET_HANDOFF_PARAMS call success=0
+INFO:    BL31: PLM to TF-A handover success 0
+NOTICE:  BL31: Secure code at 0x0
+NOTICE:  BL31: Non secure code at 0x8000000
+NOTICE:  BL31: v2.10.0  (debug):v1.1-13187-g4f82b6134
+NOTICE:  BL31: Built : 04:45:53, Mar 12 2024
+INFO:    GICv3 with legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    Maximum SPI INTID supported: 191
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: cortex_a72: CPU workaround for erratum 859971 was applied
+INFO:    BL31: cortex_a72: CPU workaround for erratum 1319367 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2017_5715 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2018_3639 was applied
+INFO:    BL31: cortex_a72: CPU workaround for CVE 2022_23960 was applied
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x8000000
+INFO:    SPSR = 0x3c9

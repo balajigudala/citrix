@@ -1,0 +1,14 @@
+https://confluence.xilinx.com/display/~yishanlu/Flow+and+Code+Organization+for+AIE+Runtime+Control
+https://confluence.amd.com/display/~yishanlu/Control+Code+Generation+by+AIE+Compiler
+https://pages.gitenterprise.xilinx.com/TurinAI/cert/isa-spec.html
+
+
+
+Here are the steps to compile a test and create ELF
+I have copied the required files to /proj/fv7/ashivarp/Aie_Rt_Aiecompiler_Setup
+Create Aiecompiler sandbox: https://confluence.xilinx.com/display/XSW/Aiecompiler+build+and+debug
+copy to local /proj/fv7/ashivarp/Aie_Rt_Aiecompiler_Setup
+source envSetup.csh <Sandbox Root>/HEAD/
+cd sample_test
+make aie
+make elf

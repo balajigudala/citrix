@@ -1,0 +1,98 @@
+Build applications using Non Yocto Rigel Flow
+
+https://confluence.xilinx.com/pages/viewpage.action?pageId=875125672
+
+export XILINX_VITIS=/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vivado/2024.2
+
+python create_bsp.py -w vck190_xbuilds -s /proj/ssw_xhd/verification/no_delete/design_dts_10GB/2024.2/xbuilds_designs/vck190/dts/system-top.dts -p psv_cortexa72_0 -t empty_application
+
+python build_bsp.py -d vck190_xbuilds
+
+python3 scripts/pyesw/create_app.py -d vck190_xbuilds -t hello_world -w app_ws
+
+python3 scripts/pyesw/build_app.py -w app_ws
+
+python create_example.py -d vck190_xbuilds/ -e xaie_tile_dma_loopback.c -n xaiengine -w app_ws/
+
+
+/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw
+
+
+
+
+
+#BSP build with Rigel flow
+1. python3 scripts/pyesw/repo.py -st /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw /proj/xsjsswstaff/dchauhan/temp/aienginev2_v3_6
+2. python3 scripts/pyesw/create_bsp.py -s /proj/ssw_xhd/verification/no_delete/design_dts_10GB/2024.2/designs_stable_latest/versal/prod/vck190_aie/dts/system-top.dts -w vck190_xbuilds -p psv_cortexa72_0 -t hello_world
+3. python3 scripts/pyesw/config_bsp.py -d vck190_xbuilds -sr driver aienginev2:/proj/xsjsswstaff/dchauhan/temp/aienginev2_v3_6
+4. python3 scripts/pyesw/config_bsp.py -d vck190_xbuilds -sr driver aiefal:/proj/xsjsswstaff/jaydpate/workspace/decoup/aie_local_repo/aie-rt/aiefal_v1_4
+5. python3 scripts/pyesw/build_bsp.py -d vck190_xbuilds
+
+
+3. python3 scripts/pyesw/config_bsp.py -d vck190_xbuilds -sr driver aienginev2:/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw/XilinxProcessorIPLib/drivers/aienginev2_v3_6
+3. python3 scripts/pyesw/config_bsp.py -d vck190_xbuilds -sr driver aienginev2:/scratch/dchauhan/temp/extra/Non_Yocto_Rigel_Flow/jd/aienginev2_v3_6
+3. python3 scripts/pyesw/config_bsp.py -d vck190_xbuilds -sr driver aienginev2:/proj/xsjsswstaff/dchauhan/temp/aienginev2_v3_6
+
+
+source the vitis latest version
+source /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/settings64.sh
+
+clone the embeddedsw repository and copy the scrits to workspace.
+git clone https://gitenterprise.xilinx.com/embeddedsw/embeddedsw.git
+cp -r embeddedsw/scripts/pyesw/* ./
+
+clone aie-rt and rename the driver diretory with aienginev2_v3_6
+git clone https://gitenterprise.xilinx.com/ai-engine/aie-rt.git
+git switch main-aie
+mv /scratch/dchauhan/temp/extra/Non_Yocto_Rigel_Flow/new/aie-rt/driver /scratch/dchauhan/temp/extra/Non_Yocto_Rigel_Flow/new/aie-rt/aienginev2_v3_6
+
+
+Environment Set up for Non yocto rigel flow
+export XILINX_VITIS=/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vivado/2024.2
+export PYTHON_VER="python-3.8.3"
+export CMAKE_VER="cmake-3.24.2"
+export XBUILDS_CMAKE_PATH=${XILINX_VITIS}/tps/lnx64/${CMAKE_VER}
+export XBUILDS_PYTHON_PATH=${XILINX_VITIS}/tps/lnx64/${PYTHON_VER}
+# LD_LIBRARY_PATH is needed to add the linker libraries (e.g. libffi) to the path
+export LD_LIBRARY_PATH=${XBUILDS_PYTHON_PATH}/lib:${XBUILDS_CMAKE_PATH}/libs/Ubuntu:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${XILINX_VITIS}/lib/lnx64.o/Ubuntu/20:$LD_LIBRARY_PATH
+# Below path is needed if you are working on old RHEL machines where older gcc version is installed
+# Note that this path is available only in Vivado install area
+export LD_LIBRARY_PATH=${XILINX_VITIS}/tps/lnx64/gcc-8.3.0/lib64:${LD_LIBRARY_PATH}
+# Source Paths of different toolchains, python, cmake and lopper binary
+export PATH=${XILINX_VITIS}/bin:${XILINX_VITIS}/gnu/microblaze/lin/bin:${XILINX_VITIS}/gnu/riscv/lin/riscv64-unknown-elf/bin:${XILINX_VITIS}/gnu/arm/lin/bin:${XILINX_VITIS}/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:${XILINX_VITIS}/gnu/aarch32/lin/gcc-arm-none-eabi/bin:${XILINX_VITIS}/gnu/aarch64/lin/aarch64-none/bin:${XILINX_VITIS}/gnu/armr5/lin/gcc-arm-none-eabi/bin:${XBUILDS_PYTHON_PATH}/bin:${XBUILDS_CMAKE_PATH}/bin:$PATH
+# VALIDATE_ARGS flag is needed to enable the validation of inputs. Set this flag to "" when
+# using the GUI flow.
+export VALIDATE_ARGS="True"
+# OSF Flag is needed to be enabled for Open Source Flow.
+export OSF="False"
+# LOPPER_DTC_FLAGS is needed to generate device tree with symbols in it.
+export LOPPER_DTC_FLAGS="-b 0 -@" 
+source ${XILINX_VITIS}/tps/lnx64/lopper-1.1.0/env/bin/activate
+
+
+#python3 scripts/pyesw/repo.py -st /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw /proj/xsjsswstaff/dchauhan/temp/extra/aie-rt/aienginev2_v3_6
+To set the local embeddedsw repo:
+python repo.py -st <local esw path1> <local esw path 2> .... <local esw path n>
+Ex: python3 repo.py -st /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw /proj/xsjsswstaff/dchauhan/temp/extra/aie-rt/aienginev2_v3_6
+
+Create BSP:
+python create_bsp.py -w <bsp path> -s <system device-tree system-top.dts path> -p <processor name> -t <template name>
+Ex:python3 create_bsp.py -s /proj/ssw_xhd/verification/no_delete/design_dts_10GB/2024.2/designs_stable_latest/versal/prod/vck190_aie/dts/system-top.dts -w vck190_xbuilds -p psv_cortexa72_0 -t hello_world
+
+Config BSP:
+python config_bsp.py -d <Directory Path till bsp> -st <library_name> <param1>:<param1_val> <param2>:<param2_val>
+Ex: python3 config_bsp.py -d vck190_xbuilds -sr driver aienginev2:/proj/xsjsswstaff/dchauhan/temp/extra/aie-rt/aienginev2_v3_6
+
+Build BSP:
+python build_bsp.py -d <Directory Path till bsp>
+Ex: python3 build_bsp.py -d vck190_xbuilds
+
+Create APP:
+python create_app.py -d <Specify the Directory path till BSP> -t <template app name> -w <app_ws>
+Ex: python3 create_app.py -d vck190_xbuilds -t hello_world -w app_ws
+
+Build APP:
+python build_app.py -w <Specify the app workspace>
+Ex: python3 build_app.py -w app_ws 
+

@@ -1,0 +1,412 @@
+test_soft_part
+BG: file: src/test.c,func: main, line: 263
+BG: Dstartclm: 1, Dnoclm: 4
+,BG: line: 265, isready: 1
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 1, Dnoclm: 4
+,BG: line: 157, isoflag: 1
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 1, Dnoclm: 4
+,BG: line: 157, isoflag: 5
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: col: 3, line: 178
+BG: dir: 8, line: 181
+BG: line: 267, isready: 1
+BG: line: 276, isoflag: 6
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 1, Dnoclm: 4
+,BG: line: 157, isoflag: 6
+BG: col: 0, line: 174
+BG: dir: 2, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: col: 3, line: 178
+BG: dir: 8, line: 181
+BG: file: src/test.c,func: main, line: 287
+BG: Dstartclm: 4, Dnoclm: 1
+,BG: line: 291, isoflag: 2
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 4, Dnoclm: 1
+,BG: line: 157, isoflag: 2
+BG: col: 0, line: 174
+BG: dir: 2, line: 181
+BG: file: src/test.c,func: main, line: 300
+BG: Dstartclm: 1, Dnoclm: 4
+ [warning]  (0 s in tl.me.array.tile_2_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_3_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.axi_ctrl) : Invalid request dropped. 11 Address:110
+ [warning]  (0 s in tl.me.array.tile_4_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_4_3.cm.proc.axi_ctrl) : Invalid request dropped. 11 Address:110
+,event register 0x6334208, val is 0x0
+ test softpart SUCCESS
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+
+
+
+test_soft_part
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 0, Dnoclm: 5
+,BG: line: 157, isoflag: 0
+BG: dir: 2, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: dir: 0, line: 181
+BG: dir: 8, line: 181
+ [warning]  (0 s in tl.me.shim.tile_2_0.second_level_interrupt.axi_ctrl) : Ignoring write to interrupt_controller_2nd_level_interrupt since privileged register access is not enabled!
+ [warning]  (0 s in tl.me.shim.tile_3_0.second_level_interrupt.axi_ctrl) : Ignoring write to interrupt_controller_2nd_level_interrupt since privileged register access is not enabled!
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 2, Dnoclm: 1
+,BG: line: 157, isoflag: 1
+BG: dir: 0, line: 181
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 2, Dnoclm: 1
+,BG: line: 157, isoflag: 1
+BG: dir: 0, line: 181
+BG: file: src/test.c,func: main, line: 282
+BG: Dstartclm: 2, Dnoclm: 1
+BG: line: 286, isoflag: 6
+BG: file: device/xaie_device_aieml.c,func: _XAieMl_SetPartIsolationAfterRst, line: 155
+BG: Dstartclm: 2, Dnoclm: 1
+,BG: line: 157, isoflag: 6
+BG: col: 0, line: 174
+BG: col: 0, line: 178
+BG: dir: 10, line: 181
+ [warning]  (0 s in tl.me.array.tile_1_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_2_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_2_3.cm.proc.axi_ctrl) : Invalid request dropped. 11 Address:110
+ [warning]  (0 s in tl.me.array.tile_3_3.mm.axi_ctrl) : Invalid request dropped. Address:12110
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.axi_ctrl) : Invalid request dropped. 11 Address:110
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_5.generate_blocked_response) : Attempted memory load from isolated tile or edge
+ [warning]  (0 s in tl.me.array.tile_3_3.cm.proc.dm_load_adaptor_1.generate_blocked_response) : Attempted memory load from isolated tile or edge
+data mismatch at index 1
+data mismatch at index 2
+data mismatch at index 3
+data mismatch at index 4
+data mismatch at index 5
+data mismatch at index 6
+data mismatch at index 7
+data mismatch at index 8
+data mismatch at index 9
+data mismatch at index 10
+data mismatch at index 11
+data mismatch at index 12
+data mismatch at index 13
+data mismatch at index 14
+data mismatch at index 15
+data mismatch at index 16
+data mismatch at index 17
+data mismatch at index 18
+data mismatch at index 19
+data mismatch at index 20
+data mismatch at index 21
+data mismatch at index 22
+data mismatch at index 23
+data mismatch at index 24
+data mismatch at index 25
+data mismatch at index 26
+data mismatch at index 27
+data mismatch at index 28
+data mismatch at index 29
+data mismatch at index 30
+data mismatch at index 31
+data mismatch at index 32
+data mismatch at index 33
+data mismatch at index 34
+data mismatch at index 35
+data mismatch at index 36
+data mismatch at index 37
+data mismatch at index 38
+data mismatch at index 39
+data mismatch at index 40
+data mismatch at index 41
+data mismatch at index 42
+data mismatch at index 43
+data mismatch at index 44
+data mismatch at index 45
+data mismatch at index 46
+data mismatch at index 47
+data mismatch at index 48
+data mismatch at index 49
+data mismatch at index 50
+data mismatch at index 51
+data mismatch at index 52
+data mismatch at index 53
+data mismatch at index 54
+data mismatch at index 55
+data mismatch at index 56
+data mismatch at index 57
+data mismatch at index 58
+data mismatch at index 59
+data mismatch at index 60
+data mismatch at index 61
+data mismatch at index 62
+data mismatch at index 63
+data mismatch at index 64
+data mismatch at index 65
+data mismatch at index 66
+data mismatch at index 67
+data mismatch at index 68
+data mismatch at index 69
+data mismatch at index 70
+data mismatch at index 71
+data mismatch at index 72
+data mismatch at index 73
+data mismatch at index 74
+data mismatch at index 75
+data mismatch at index 76
+data mismatch at index 77
+data mismatch at index 78
+data mismatch at index 79
+data mismatch at index 80
+data mismatch at index 81
+data mismatch at index 82
+data mismatch at index 83
+data mismatch at index 84
+data mismatch at index 85
+data mismatch at index 86
+data mismatch at index 87
+data mismatch at index 88
+data mismatch at index 89
+data mismatch at index 90
+data mismatch at index 91
+data mismatch at index 92
+data mismatch at index 93
+data mismatch at index 94
+data mismatch at index 95
+data mismatch at index 96
+data mismatch at index 97
+data mismatch at index 98
+data mismatch at index 99
+data mismatch at index 100
+data mismatch at index 101
+data mismatch at index 102
+data mismatch at index 103
+data mismatch at index 104
+data mismatch at index 105
+data mismatch at index 106
+data mismatch at index 107
+data mismatch at index 108
+data mismatch at index 109
+data mismatch at index 110
+data mismatch at index 111
+data mismatch at index 112
+data mismatch at index 113
+data mismatch at index 114
+data mismatch at index 115
+data mismatch at index 116
+data mismatch at index 117
+data mismatch at index 118
+data mismatch at index 119
+data mismatch at index 120
+data mismatch at index 121
+data mismatch at index 122
+data mismatch at index 123
+data mismatch at index 124
+data mismatch at index 125
+data mismatch at index 126
+data mismatch at index 127
+data mismatch at index 128
+data mismatch at index 129
+data mismatch at index 130
+data mismatch at index 131
+data mismatch at index 132
+data mismatch at index 133
+data mismatch at index 134
+data mismatch at index 135
+data mismatch at index 136
+data mismatch at index 137
+data mismatch at index 138
+data mismatch at index 139
+data mismatch at index 140
+data mismatch at index 141
+data mismatch at index 142
+data mismatch at index 143
+data mismatch at index 144
+data mismatch at index 145
+data mismatch at index 146
+data mismatch at index 147
+data mismatch at index 148
+data mismatch at index 149
+data mismatch at index 150
+data mismatch at index 151
+data mismatch at index 152
+data mismatch at index 153
+data mismatch at index 154
+data mismatch at index 155
+data mismatch at index 156
+data mismatch at index 157
+data mismatch at index 158
+data mismatch at index 159
+data mismatch at index 160
+data mismatch at index 161
+data mismatch at index 162
+data mismatch at index 163
+data mismatch at index 164
+data mismatch at index 165
+data mismatch at index 166
+data mismatch at index 167
+data mismatch at index 168
+data mismatch at index 169
+data mismatch at index 170
+data mismatch at index 171
+data mismatch at index 172
+data mismatch at index 173
+data mismatch at index 174
+data mismatch at index 175
+data mismatch at index 176
+data mismatch at index 177
+data mismatch at index 178
+data mismatch at index 179
+data mismatch at index 180
+data mismatch at index 181
+data mismatch at index 182
+data mismatch at index 183
+data mismatch at index 184
+data mismatch at index 185
+data mismatch at index 186
+data mismatch at index 187
+data mismatch at index 188
+data mismatch at index 189
+data mismatch at index 190
+data mismatch at index 191
+data mismatch at index 192
+data mismatch at index 193
+data mismatch at index 194
+data mismatch at index 195
+data mismatch at index 196
+data mismatch at index 197
+data mismatch at index 198
+data mismatch at index 199
+data mismatch at index 200
+data mismatch at index 201
+data mismatch at index 202
+data mismatch at index 203
+data mismatch at index 204
+data mismatch at index 205
+data mismatch at index 206
+data mismatch at index 207
+data mismatch at index 208
+data mismatch at index 209
+data mismatch at index 210
+data mismatch at index 211
+data mismatch at index 212
+data mismatch at index 213
+data mismatch at index 214
+data mismatch at index 215
+data mismatch at index 216
+data mismatch at index 217
+data mismatch at index 218
+data mismatch at index 219
+data mismatch at index 220
+data mismatch at index 221
+data mismatch at index 222
+data mismatch at index 223
+data mismatch at index 224
+data mismatch at index 225
+data mismatch at index 226
+data mismatch at index 227
+data mismatch at index 228
+data mismatch at index 229
+data mismatch at index 230
+data mismatch at index 231
+data mismatch at index 232
+data mismatch at index 233
+data mismatch at index 234
+data mismatch at index 235
+data mismatch at index 236
+data mismatch at index 237
+data mismatch at index 238
+data mismatch at index 239
+data mismatch at index 240
+data mismatch at index 241
+data mismatch at index 242
+data mismatch at index 243
+data mismatch at index 244
+data mismatch at index 245
+data mismatch at index 246
+data mismatch at index 247
+data mismatch at index 248
+data mismatch at index 249
+data mismatch at index 250
+data mismatch at index 251
+data mismatch at index 252
+data mismatch at index 253
+data mismatch at index 254
+data mismatch at index 255
+event register 0x6334208, val is 0x4
+ test softpart FAILED
+test_soft_part failed.
+0/1 AIEML tests passed

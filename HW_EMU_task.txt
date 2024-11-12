@@ -1,0 +1,480 @@
+du -h --max-depth 1
+df -h
+
+https://confluence.xilinx.com/display/~satorui/linux-headers+for+XRT+from+petalinux+2021.2+for+zcu104
+
+./package.hw_emu/launch_hw_emu.sh -verbose -no-reboot -login "petalinux" -password "petalinux"
+
+petalinux-create -t project -s /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest_bsps/release/xilinx-vek280-v2024.1-final.bsp
+
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+
+petalinux-package --boot --u-boot --dtb images/linux/system.dtb --qemu-rootfs images/linux/rootfs.cpio.gz.u-boot --force
+
+petalinux-build -c kernel
+
+petalinux-boot --qemu --kernel
+
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/isolation_test/dummy2/aieml-tests/build_linux/aieml_tests ./
+ 
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/isolation_test/dummy2/aieml-tests/aie-rt/driver/src/libxaiengine.so* ./
+
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/aie2_plio_memtile_buffer_port_kernel_soft_partition/package.hw_emu/sd_card/* ./
+
+sudo rm /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+./usr_space_application
+
+*****************************for vek280 b03
+
+tftpd "/proj/xsjsswstaff/dchauhan/work/CR-1195159/out/"
+device program /proj/xsjsswstaff/dchauhan/work/tets_ssw5715/2023.2/BOOT.BIN
+
+setenv serverip 10.10.70.101
+dhcp
+tftpb 0x200000 Image_2
+tftpb 0x4000000 rootfs_89.cpio.gz.u-boot
+booti 0x00200000 0x04000000 0x00001000
+
+*****************************
+
+Copy the test case from bug case directory.
+tar -xvzf aie2_plio_memtile_buffer_port_kernel_soft_partition.tar.gz
+ 
+To run a fresh build
+"make cleanall"
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+copy system_updated.cfg to sytem.cfg.
+
+please update system.cfg
+[connectivity]
+stream_connect=mm2s_1.s:ai_engine_0.graph1_DataIn
+stream_connect=ai_engine_0.graph1_DataOut:s2mm_1.s
+
+"./local_run.sh"
+
+
+
+
+update npi is passed
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 11
+[AIE ERROR] XAie_SoftPartitionInitialize():281: file : global/xaiegbl.c
+[AIE ERROR] XAie_SoftPartitionInitialize():299: file : global/xaiegbl.c
+[AIE ERROR] XAie_PartitionInitialize():355: file : global/xaiegbl.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 8
+[AIE ERROR] _XAie_PrivilegeInitPart():441: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():451: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():458: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():461: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():468: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():476: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():483: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():493: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_PrivilegeInitPart():511: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():520: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():527: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():546: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():562: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 6
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeInitPart():598: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():305: file : global/xaiegbl.c
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():945: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():336: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():208: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():216: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():222: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():228: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():231: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():237: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():246: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():249: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():81: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():95: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 0
+[AIE ERROR] _XAie_NpiSetLock():98: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_NpiSetLock():103: file : npi/xaie_npi.c
+[AIE ERROR] XAie_RunOp():1625: file : common/xaie_helper.c
+[AIE ERROR] XAie_BaremetalIO_RunOp():513: file : io_backend/ext/xaie_baremetal.c, opt : 1
+[AIE ERROR] XAie_BaremetalIO_RunOp():528: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():462: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():473: file : io_backend/ext/xaie_baremetal.c : count : 1
+[AIE ERROR] _XAie_BaremetalIO_NpiRead32():438: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_BaremetalIO_NpiMaskPoll():477: file : io_backend/ext/xaie_baremetal.c
+[AIE ERROR] _XAie_NpiSetProtectedRegEnable():251: file : npi/xaie_npi.c
+[AIE ERROR] _XAie_PrivilegeSetPartProtectedRegs():346: file : io_backend/privilege/xaie_io_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():315: file : global/xaiegbl.c
+RC return 0
+line 180
+Data size:32
+after XAie_DataMemBlockWrite RC = 0
+after XAie_DataMemBlockRead RC = 0
+src: 0, rec: 0
+src: 1, rec: 1
+src: 2, rec: 2
+src: 3, rec: 3
+src: 4, rec: 4
+src: 5, rec: 5
+src: 6, rec: 6
+src: 7, rec: 7
+src: 8, rec: 8
+src: 9, rec: 9
+src: A, rec: A
+src: B, rec: B
+src: C, rec: C
+src: D, rec: D
+src: E, rec: E
+src: F, rec: F
+src: 10, rec: 10
+src: 11, rec: 11
+src: 12, rec: 12
+src: 13, rec: 13
+src: 14, rec: 14
+src: 15, rec: 15
+src: 16, rec: 16
+src: 17, rec: 17
+src: 18, rec: 18
+src: 19, rec: 19
+src: 1A, rec: 1A
+src: 1B, rec: 1B
+src: 1C, rec: 1C
+src: 1D, rec: 1D
+src: 1E, rec: 1E
+src: 1F, rec: 1F
+SUCCESS
+Specify any of the below option:

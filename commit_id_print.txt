@@ -1,0 +1,94 @@
+dchauhan@xsjaiedev50:/scratch/dchauhan/temp/extra/commit_check/aieml-tests/aie-rt$ 
+
+#!/bin/bash
+echo "#define XAIE_HASH \"$(git rev-parse HEAD)\"" > $(pwd)/driver/src/file.h
+
+
+
+#!/bin/bash
+#git rev-parse HEAD > ./../../commit_id.txt
+touch ./../../commid_id.txt
+echo $(git rev-parse HEAD) > ./../../commid_id.txt
+#git add ./../../commit_id.txt
+
+
+
+#commit_str += $(shell git rev-parse HEAD)
++#commit_id += "$(commit_str)"
++#commit_id += 10
++hash += $(shell git rev-parse HEAD)
+     @echo "#define my_hash \"$(hash)\"" > file.h
++       @echo -e  "\n\n\n"
++       #echo #define GIT_HASH \ > file.h
++       #echo " > file.h
++       #echo $(git rev-parse HEAD) > ./../../commid_id.txt
++       #echo " > file.h
++       #@echo $(commit_id)
++       @echo -e  "\n\n\n"
++       #$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -DCOMMIT=$(commit_id) -I$(INTERNALDIR) -I$(INTERNALDIR)/xaiengine -c -fPIC $< -o $@
+intf("\n\n\nBG: commit_id : %s\n\n\n", my_hash);
++       printf("\n\n\nBG: commit_id : %s\n\n\n", my_hash);
++
++        //char *xyz = COMMIT;
++       printf("\n\n\nBG: Commit\n\n\n");
++       printf("BG: commit_id : %s\n", COMMIT);
++       //printf("BG: ", COMMIT);
++  */      /*unsigned long int xyz = COMMIT;
++       printf("\n\n\nBG: Commit\n\n\n");
++       printf("BG: commit_id : %lu\n", xyz);
++
++*//*lse
++printf("\n\n\nBG: no Commit\n\n\n");
++#endif
++*/     AieRC RC;
+
+all:
+#       echo "define GIT_HASH " > file.h
+        echo "#define GIT_HASH  /" > file.h
+#       echo " > file.h
+#       echo $(git rev-parse HEAD) > ./../../commid_id.txt
+        echo "whatever cmd to get the hash" > file.h
+        echo -e "\" > file.h
+
+echo "#define GIT_HASH \" > file.h
+#echo " > file.h
+#echo "whatever cmd to get the hash" > file.h
+#echo " > file.h
+hash += $(shell git rev-parse HEAD)
+all:
+        @echo "#define my_hash \"$(hash)\"" > file.h
+d:wq
+
+
+
+BG: commit_id : c3487719a6ff04ea79aa96f88a0e12e0ac41071c
+BG: commit_id : 314d20b3cf804cc6154421ba97f0dcb752263fce
+BG: commit_id : 3f2f3382e6dc76b1be02693264477091f3571a7f
+BG: commit_id : 7a62fd124bd7ad3d50852717b9b2bd362da6d87a
+BG: commit_id : 4e06d833af08cfbc55fd906b96696ea05ae120a6
+
+BG: commit_id : 4e06d833af08cfbc55fd906b96696ea05ae120a6
+BG: commit_id : 60605692c2f8ba1dbaa4c9c16d0577c042fc3d52
+BG: commit_id : c3487719a6ff04ea79aa96f88a0e12e0ac41071c
+BG: commit_id : d284e7c373dbe335f97a45e0b26ec041780b7a55
+
+
+#!/bin/bash
+echo "#define XAIE_HASH \"$(git rev-parse HEAD)\"" > $(pwd)/driver/internal/xaiengine/commit_id.h
+
+
+[main 38ef4c58] dummy commit for hash testing
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+ 
+ #ifdef XAIE_HASH
++       printf("\n\nBG: commit_id: %s\n", XAIE_HASH);
++//#endif
+
+
+
+
+
+
+
+

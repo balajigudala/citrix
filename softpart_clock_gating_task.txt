@@ -1,0 +1,180 @@
+versal-rootfs-common-20242:~/sd_card$ ./embedded_exec.sh
+installing the aie rpm files on board
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+WARNING : Unable to re-install aie packages on board
+----------------------------------------------------
+Running aie Install.sh to install packages!
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+ERROR: Unable to install aie packages on board
+---------------------------------------------------
+Successfully ran aie install.sh.
+installing the rpm files on board
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+WARNING : Unable to re-install xrt packages on board
+----------------------------------------------------
+Running Install.sh to install packages!
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+ERROR: Unable to install xrt packages on board
+---------------------------------------------------
+[  467.257298] zocl-drm zyxclmm_drm: zocl_create_client: created KDS client for pid(710), ret: 0
+[  467.265875] zocl-drm zyxclmm_drm: zocl_destroy_client: client exits pid(710)
+[  467.284878] zocl-drm zyxclmm_drm: zocl_create_client: created KDS client for pid(710), ret: 0
+[  467.327003] [drm] Loading xclbin 5c535173-0e75-46d1-2745-295242d641c5 to slot 0
+[  467.327017] [drm] skip kind 29(AIE_RESOURCES) return code: -22
+[  467.334343] [drm] found kind 8(IP_LAYOUT)
+[  467.340203] [drm] found kind 9(DEBUG_IP_LAYOUT)
+[  467.344223] [drm] found kind 25(AIE_METADATA)
+[  467.348764] [drm] found kind 7(CONNECTIVITY)
+[  467.353131] [drm] found kind 6(MEM_TOPOLOGY)
+[  467.357484] [drm] Memory 0 is not reserved in device tree. Will allocate memory from CMA
+[  467.378848] [drm] AIE create successfully finished.
+[  467.379164] zocl_irq_intc ZOCL_CU_INTC.2.auto: zocl_irq_intc_add: managing IRQ 42
+[  467.391608] cu_drv CU.3.auto: cu_probe: CU[0] created
+[  467.396903] aie aie0: Asserted tile error event 64 at col 10 row 0
+[  467.403503] [drm] Get AIE asynchronous Error: error_id 64 Mod 2, category 2, Col 10, Row 0
+[  467.411860] zocl_irq_intc ZOCL_CU_INTC.2.auto: zocl_irq_intc_add: managing IRQ 43
+[  467.419411] cu_drv CU.4.auto: cu_probe: CU[1] created
+[  467.424610] cu_drv CU.3.auto:  ffff000006293410 xrt_cu_intr_thread: CU[0] start
+[  467.431963] [drm] zocl_xclbin_read_axlf 5c535173-0e75-46d1-2745-295242d641c5 ret: 0
+[  467.432020] cu_drv CU.4.auto:  ffff000006292810 xrt_cu_intr_thread: CU[1] start
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+[  467.499073] [drm] bitstream 5c535173-0e75-46d1-2745-295242d641c5 locked, ref=1
+[  467.499111] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_add_context: Client pid(710) add context Domain(65535) CU(0xffff) shared(true)
+[  467.518463] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_context: Client pid(710) del context Domain(65535) CU(0xffff)
+Input memory virtual addr 0x0xffffb55a0000x
+[  467.529433] [drm] bitstream 5c535173-0e75-46d1-2745-295242d641c5 unlocked, ref=0
+[  467.544607] [drm] bitstream 5c535173-0e75-46d1-2745-295242d641c5 locked, ref=1
+[  467.552082] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_add_context: Client pid(710) add context Domain(0) CU(0x0) shared(true)
+run mm2s_1
+[  467.571091] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_add_context: Client pid(710) add context Domain(0) CU(0x1) shared(true)
+run s2mm_1
+[  467.584838] aie aiepart_0_50: Tile(7,1) is gated.
+[  467.589552] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+[  467.595472] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+[AIE ERROR] XAie_LinuxSubmitTxn()[  467.600975] aie aiepart_0_50: Tile(7,1) is gated.
+:1665: Submitting transaction to[  467.608492] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+ device failed, 22: Invalid argu[  467.617180] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+ment
+[AIE ERROR] _XAie_Txn_Submi[  467.625443] aie aiepart_0_50: Tile(7,1) is gated.
+t():810: Flushing the buffer fai[  467.632912] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+led
+[AIE ERROR] XAie_LinuxSubmi[  467.641599] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+tTxn():1665: Submitting transacti[  467.649813] aie aiepart_0_50: Tile(7,1) is gated.
+on to device failed, 22: Invalid[  467.657330] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+ argument
+[AIE ERROR] XAie_Read[  467.666023] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+32():1352: Failed to flush cmd bu[  467.674245] aie aiepart_0_50: Tile(7,1) is gated.
+ffer
+[AIE ERROR] XAie_LinuxSubm[  467.681755] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+itTxn():1665: Submitting transac[  467.690441] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+tion to device failed, 22: Invali[  467.698712] aie aiepart_0_50: Tile(7,1) is gated.
+d argument
+[AIE ERROR] _XAie_Tx[  467.706172] aie aiepart_0_50: failed to write to 0x3840004,0x4.
+n_Submit():810: Flushing the buf[  467.714861] aie aiepart_0_50: reg op 0 failed: 0x3840004.
+fer failed
+[AIE ERROR] XAie_LinuxSubmitTxn():1665: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] XAie_Read32():1352: Failed to flush cmd buffer
+[AIE ERROR] XAie_L[  467.737022] audit: type=1701 audit(1667916481.524:3): auid=4294967295 uid=1000 gid=1000 ses=4294967295 pid=710 comm="host.exe" exe="/home/petalinux/sd_card/host.exe" sig=6 res=1
+inuxSubmitTxn():1665: Submitting[  467.753663] zocl-drm zyxclmm_drm:  ffff000001fa8010 _kds_fini_client: Client pid(710) has open context for 0 slot
+ transaction to device failed, 2[  467.768626] zocl-drm zyxclmm_drm:  ffff000001fa8010 _kds_fini_client: Removing CU Domain[0] CU Index [0]
+2: Invalid argument
+[AIE ERROR][  467.780891] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+ XAie_Read32():1352: Failed to flush cmd buffer
+[AIE ERROR] XAie_LinuxSubmitTxn():1665: Submitting transaction to device failed, 22: Invalid argument
+[AIE ERROR] _XAie_Txn_Submit():810: Flushing the buffer failed
+XRT build version: 2.17.0
+Build hash: a75e9843c875bac0f52d34a1763e39e16fb3c9a7
+Build date: 2024-05-20 10:03:24
+Git branch: 2024.1
+PID: 710
+UID: 1000
+[Tue Nov  8 14:08:01 2022 GMT]
+HOST: versal-rootfs-common-20242
+EXE: /home/petalinux/sd_card/host.exe
+[XRT] ERROR: ERROR: adf::graph::run: AIE driver error.: Input/output error
+terminate called after throwing an instance of 'xrt_core::system_error'
+  what():  fail to run graph: Operation not permitted
+[  468.312069] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  468.856067] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  469.400067] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  469.944069] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  470.488068] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  471.032071] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  471.576074] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  472.120069] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  472.664066] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  473.208079] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(0)
+[  473.752069] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_context: Client pid(710) del context Domain(0) CU(0x0)
+[  473.762437] zocl-drm zyxclmm_drm:  ffff000001fa8010 _kds_fini_client: Removing CU Domain[0] CU Index [1]
+[  473.771922] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  474.296067] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  474.840068] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  475.384071] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  475.928068] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  476.472077] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  477.016068] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  477.560071] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  478.104074] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  478.648067] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  479.192069] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_cu_context: 1 outstanding command(s) on Domain(0) CU(1)
+[  479.736068] zocl-drm zyxclmm_drm:  ffff000001fa8010 kds_del_context: Client pid(710) del context Domain(0) CU(0x1)
+[  479.746444] [drm] bitstream 5c535173-0e75-46d1-2745-295242d641c5 unlocked, ref=0
+[  479.746455] zocl-drm zyxclmm_drm: zocl_destroy_client: client exits pid(710)
+./embedded_exec.sh: line 11:   710 Aborted                 ./host.exe loopback.xclbin
+ERROR: Embedded host run failed, RC=134
+INFO: Embedded host run completed.
+
+
+
+CDO compilation errors
+
+dchauhan@xsjaiedev50:/scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/_aie/ps/cdo$ make
+(rm -rf generated-objects/* *.bin ../../config/aie_resources.bin)
+(/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/aietools/tps/lnx64/gcc/bin/g++ -fPIC -std=c++17 -Wno-deprecated-declarations -Og -flto -D__AIESIM__ -D__CDO__ -D__PS_INIT_AIE__ -I /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/aietools/include -I /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/aietools/include/adf -I . -I . -I /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/include/drivers/aiengine -I ../../.. -I /proj/xbuilds/SWIP/9999.0_0709_2006/installs/lin64/Vitis/2024.2/aietools/include -I /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/./ -I /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/./src -I /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/./ -I /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/./data  -o "generated-objects/cdo_main.out" generated-source/gen_cdo.cpp generated-source/cdo_main.cpp  -Wl,--allow-shlib-undefined  -lcdo_driver -lxaiengine -ladf_api -L /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/aietools/lib/lnx64.o )
+generated-objects/cdo_main.out --work-dir-path /scratch/dchauhan/temp/extra/softpartition/clock_gating_not_relsd/aie1_loop_back_soft_partition/./_aie
+Initializing AIE driver...
+Initializing ADF API...
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+Generating: aie_cdo_reset.bin
+Generating: aie_cdo_clock_gating.bin
+XAIEFAL: ERROR: getCommonRscId Max resource ID larger than bitmap size
+XAIEFAL: WARN: requestBc Unable to find common broadcast channel
+XAIEFAL: WARN: Unable to reserve broadcast resources for ECC
+Generating: aie_cdo_mem_clear.bin
+Generating: aie_cdo_error_handling.bin
+XAIEFAL: ERROR: getCommonRscId Max resource ID larger than bitmap size
+XAIEFAL: WARN: requestBc Unable to find common broadcast channel
+XAIEFAL: WARN: Unable to reserve broadcast resources for Error Handling
+Generating: aie_cdo_elfs.bin
+Loading elfs of graph mygraph...
+Generating: aie_cdo_init.bin
+XAIEFAL: ERROR: getCommonRscId Max resource ID larger than bitmap size
+XAIEFAL: WARN: requestBc Unable to find common broadcast channel
+XAIEFAL: WARN: broadcast _reserve resource not available.
+XAIEFAL: ERROR: getCommonRscId Max resource ID larger than bitmap size
+XAIEFAL: WARN: requestBc Unable to find common broadcast channel
+XAIEFAL: WARN: broadcast _reserve resource not available.
+ERROR: Failed to reserve Broadcast channels for enabling core
+make: *** [Makefile:12: run] Error 1
+
+vim fal/src/rsc/xaiefal-rscmgr-generic.hpp +774
+XAIEFAL: ERROR: getCommonRscId Max resource ID larger than bitmap size
+
+vim fal/src/rsc/xaiefal-bc.hpp +147
+XAIEFAL: WARN: broadcast _reserve resource not available.
+
+vim fal/src/rsc/xaiefal-rscmgr-generic.hpp +262
+XAIEFAL: WARN: requestBc Unable to find common broadcast channel
+
+vim fal/src/rsc/xaiefal-rscmgr.hpp +319
+XAIEFAL: WARN: Unable to reserve broadcast resources for ECC
+
+vim fal/src/rsc/xaiefal-rscmgr.hpp +381
+XAIEFAL: WARN: Unable to reserve broadcast resources for Error Handling
+
+
+./rsc/xaiefal-rscmgr-linux.hpp ./rsc/xaiefal-ss.hpp ./rsc/xaiefal-pc.hpp ./rsc/xaiefal-rscmgr.hpp ./rsc/xaiefal-rsc-group.hpp ./rsc/xaiefal-trace.hpp ./rsc/xaiefal-bc.hpp  ./rsc/xaiefal-rscmgr-backend-base.hpp ./rsc/xaiefal-rsc-base.hpp ./rsc/xaiefal-groupevent.hpp ./rsc/xaiefal-rscmgr-generic.hpp ./rsc/xaiefal-events.hpp /rsc/xaiefal-rsc-group-impl.hpp ./rsc/xaiefal-perf.hpp  ./profile/xaiefal-profile.hpp ./common/xaiefal-base.hpp ./common/xaiefal-common.hpp ./common/xaiefal-log.hpp  

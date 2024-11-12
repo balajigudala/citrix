@@ -1,0 +1,13 @@
+https://jira.xilinx.com/browse/CR-1212381
+Error in Cmake file while running build_app in rigel_flow
+
+clone the aie-rt repo
+pytest rigel_flow/build_aie_rigel_flow.py -vvs -k "empty_application" --machine=vck190
+pytest rigel_flow/build_aie_rigel_flow.py -vvs -k "build_rigel_flow and bulk" --machine=vck190
+
+/scratch/dchauhan/temp/extra/plm_psm/rigel_flow_issue/aie
+/scratch/dchauhan/temp/extra/plm_psm/rigel_flow_issue/aie-rt
+
+/scratch/dchauhan/temp/extra/plm_psm/rigel_flow_issue/aie/build/vck190/rigel_flow/empty_application/work/.repo.yaml
+
+/proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/data/embeddedsw/lib/sw_apps/

@@ -1,0 +1,91 @@
+http://dsv-sol642/xhdresults/siv/CI_production_builds_2/24816061/smoke/main-aie/overall_result/allure-report/index.html#suites/88750912a883e23cb5dae15ad5ed1df8/b3fb3967743fdd9a/
+
+
+git clone https://gitenterprise.xilinx.com/ai-engine/aie-rt.git
+cd aie-rt
+git clone https://gitenterprise.xilinx.com/ai-engine/cpputest.git
+cd cpputest/
+cmake CMakeLists.txt
+make all
+
+cd aie-rt/driver
+mkdir build
+cd build
+
+#cmake -DAIE_GEN=x -DWITH_TESTS=ON -DCPPUTEST_DIR=/proj/xsjsswstaff/gregoryw/cpputest ../
+cmake -DAIE_GEN=1 -DWITH_TESTS=ON -DCPPUTEST_DIR=/scratch/dchauhan/temp/extra/porting_utests/aie-rt/cpputest ../
+make all
+
+
+
+### Build Unit Tests with CMake
+We use `CppUTest` for unit testing. Use CMake option `-DWITH_TESTS=ON` to turn
+on building the unit testing.
+
+You can specify to use your external cpputest directory with the following
+option `-DWITH_TESTS=ON -DCPPUTEST_DIR=<compiled_cpputest_dir>`
+
+Here is the repo for cpputest:
+`https://github.com/cpputest/cpputest.git`
+git clone https://gitenterprise.xilinx.com/ai-engine/cpputest.git
+cd cpputest
+
+Building from source (unix-based, cygwin, MacOSX):
+* Download latest version
+* autogen.sh
+* configure
+* make
+* make check
+* You can use "make install" if you want to install CppUTest system-wide
+
+The testing executable will be in `<BUILD_DIR>/tests/`.
+It will not run the tests by default during build. If you want to run the tests
+in the end of the build, you can use CMake option `-DWITH_TESTS_EXEC=ON`.
+
+Example:
+        cd aie-rt/driver
+        mkdir build; cd build
+        cmake ../ -DWITH_TESTS=on -DLINUX_BACKEND=on -DCPPUTEST_DIR=/path/to/cpputest
+
+
+
+
+
+
+git clone https://gitenterprise.xilinx.com/ai-engine/aienginev2-tests.git
+cd aienginev2-tests/
+git submodule update --init --recursive
+
+
+./build.sh --device aie_tests
+#./build.sh all
+./run.sh
+
+g++ -g -Wl,-warn-unresolved-symbols -DXAIE_DEBUG -I../aie-rt/driver/include -I../aie-rt/driver/include/xaiengine -I../cpputest/include -I../include
+-DAIE_GEN=1 main.cpp core.cpp dma.cpp events.cpp global.cpp interrupt.cpp locks.cpp memory.cpp multi_part.cpp perfcnt.cpp plif.cpp pm.cpp stream_switch.cpp
+timer.cpp trace.cpp dma_aie.cpp events_aie.cpp timer_aie.cpp -o aie_tests
+-L../aie-rt/driver/src -L../cpputest/cpputest_build/src/CppUTest -lxaiengine -lCppUTest core.cpp
+
+
+
+-I../aie-rt/driver/src/core/ xaie_elfloader.h
+#INCLUDEDIR = $(DRIVER_DIR)/include -I$(DRIVER_DIR)/include/xaiengine -I$(CPPUTEST_DIR)/include -I../include -I../aie-rt/driver/src/core/
+
+
+
+./build.sh --device aie_tests
+./build.sh --device aie2_tests
+./build.sh --device aie2ipu_tests
+./build.sh --device aie2p_tests
+
+
+Submodule path 'aie-rt': checked out '87e90c0a6d3cd5a54a84f0d5a5ce161854ace0ea'
+Submodule path 'cpputest': checked out 'b59eea2278d2f1862fafe4d6a5bb268f7d4ebe42
+
+1726199b57f1f07583ecc294a283004a30325d1e
+b59eea2278d2f1862fafe4d6a5bb268f7d4ebe42
+
+
+test_cases/aie2_tests test_cases/aie2ipu_tests test_cases/aie2p_tests
+
+ driver/internal/ driver/src/core/xaie_uc.o driver/src/device/xaie_device_aie2ps.o driver/src/dma/xaie_dma_aie2ps.o driver/src/global/xaie2psgbl_reginit.o driver/src/interrupt/xaie_interrupt_aie2ps.o driver/src/io_backend/ext/xaie_controlcode.o driver/src/routing/ driver/src/stream_switch/xaie_ss_aie2ps.o driver/src/uc_driver/ driver/src/util/btree4.o driver/src/util/xaie_util_events_aieml.o driver/src/util/xaie_util_status.o 

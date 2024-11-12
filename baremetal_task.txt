@@ -21,8 +21,13 @@ Oh sure, first just change this line to correct columns "0, 1, 2, 3"
 https://gitenterprise.xilinx.com/ai-engine/aieml-tests/blob/main/src/xaie_shimdma_loopback.c#L31
 
 acquire developer login 
-ssh xsjrdev171
+ssh xsjrdevl171
 source /proj/xsjsswstaff/sankarji/aie-arch/aie-arch-env-files/aie2ps-arch.sh
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+
+for aiegen=2
+use xsa in makefile
+/proj/xsjsswstaff/dchauhan/temp/extra/vek280/xilinx-vek280-es1-2024.1/hardware/xilinx-vek280-es1/hw.xsa 
 
 Then you can compile with 'make AIE_GEN=5 baremetal'
 

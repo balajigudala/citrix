@@ -1,0 +1,120 @@
+GitHub PR #268: PR opened
+Started by user jaydip
+Rebuilds build #1437
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/AIE_Driver_AIEML_AIE2PS_Tests_From_PR
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential HUAJUP
+Cloning the remote Git repository
+Cloning repository https://gitenterprise.xilinx.com/ai-engine/aie-rt/
+ > git init /var/lib/jenkins/workspace/AIE_Driver_AIEML_AIE2PS_Tests_From_PR # timeout=10
+Fetching upstream changes from https://gitenterprise.xilinx.com/ai-engine/aie-rt/
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://gitenterprise.xilinx.com/ai-engine/aie-rt/ +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://gitenterprise.xilinx.com/ai-engine/aie-rt/ # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+Seen branch in repository origin/aie4_aig
+Seen branch in repository origin/jignesh/ecc_scrubbing_not_supported_in_client_devices
+Seen branch in repository origin/main
+Seen branch in repository origin/main-aie
+Seen branch in repository origin/main_aig
+Seen branch in repository origin/rel/phoenix
+Seen branch in repository origin/release/main_aig
+Seen branch in repository origin/test_infra_test
+Seen branch in repository origin/testing_infa_test
+Seen branch in repository origin/xlnx_rel_v2022.1
+Seen branch in repository origin/xlnx_rel_v2022.2
+Seen branch in repository origin/xlnx_rel_v2023.1
+Seen branch in repository origin/xlnx_rel_v2023.2
+Seen branch in repository origin/xlnx_rel_v2024.1
+Seen 14 remote branches
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 8ff70463d6f2702e36c36b192e88d37c3e456235 (origin/jignesh/ecc_scrubbing_not_supported_in_client_devices)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8ff70463d6f2702e36c36b192e88d37c3e456235 # timeout=10
+Commit message: "ECC Scrubbing is not implemented in client devices (AIE2P & AIE4 both)"
+ > git rev-list --no-walk 8ff70463d6f2702e36c36b192e88d37c3e456235 # timeout=10
+No emails were triggered.
+[AIE_Driver_AIEML_AIE2PS_Tests_From_PR] $ /bin/sh -xe /tmp/jenkins9398747573418746774.sh
++ rm -rf test-infra
++ git clone https://****@gitenterprise.xilinx.com/ai-engine/aie-rt test-infra
+Cloning into 'test-infra'...
++ cd ./test-infra
++ git checkout test_infra_test
+Switched to a new branch 'test_infra_test'
+Branch 'test_infra_test' set up to track remote branch 'test_infra_test' from 'origin'.
++ bash -ex .jenkins/aie_driver_AIEML_AIE2PS_Tests_from_PR.sh
++ BUGFIX_BRANCH=
++ TARGET_BRANCH=
++ echo 'GITHUB_PR_TRIGGER_SENDER_AUTHOR '
+GITHUB_PR_TRIGGER_SENDER_AUTHOR 
++ echo 'GITHUB_PR_URL '
+GITHUB_PR_URL 
++ echo 'GITHUB_PR_NUMBER '
+GITHUB_PR_NUMBER 
+++ echo
+++ sed 's/https:\/\/gitenterprise.xilinx.com\///'
+++ sed 's/\/pull.*//'
++ REPO_URL=
+++ echo
+++ cut -d/ -f1
++ OWNER=
+++ echo
+++ cut -d/ -f2
++ REPO=
++ echo 'OWNER: '
+OWNER: 
++ echo 'REPO: '
+REPO: 
+++ curl -s -H 'Authorization: token ****' https://gitenterprise.xilinx.com/api/v3/repos///pulls/
++ PR_DETAILS='{
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/enterprise-server@3.8/rest"
+}'
+++ echo '{' '"message":' '"Not' 'Found",' '"documentation_url":' '"https://docs.github.com/enterprise-server@3.8/rest"' '}'
+++ jq -r .head.repo.full_name
++ SOURCE_REPO=null
+++ echo '{' '"message":' '"Not' 'Found",' '"documentation_url":' '"https://docs.github.com/enterprise-server@3.8/rest"' '}'
+++ jq -r .head.ref
++ SOURCE_BRANCH=null
+++ echo '{' '"message":' '"Not' 'Found",' '"documentation_url":' '"https://docs.github.com/enterprise-server@3.8/rest"' '}'
+++ jq -r .base.repo.full_name
++ DEST_REPO=null
+++ echo '{' '"message":' '"Not' 'Found",' '"documentation_url":' '"https://docs.github.com/enterprise-server@3.8/rest"' '}'
+++ jq -r .base.ref
++ DEST_BRANCH=null
++ echo 'Source Repository: null'
+Source Repository: null
++ echo 'Source Branch: null'
+Source Branch: null
++ echo 'Destination Repository: null'
+Destination Repository: null
++ echo 'Destination Branch: null'
+Destination Branch: null
++ GIT_URL=https://gitenterprise.xilinx.com/null.git
++ SOURCE_REPO=https://gitenterprise.xilinx.com/null.git
++ git clone https://gitenterprise.xilinx.com/null.git aie-rt
+Cloning into 'aie-rt'...
+remote: Not Found
+fatal: repository 'https://gitenterprise.xilinx.com/null.git/' not found
++ git fetch source_repo
+fatal: 'source_repo' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Build step 'Execute shell' marked build as failure
+[Set GitHub commit status (universal)] ERROR on repos [GHRepository@2e008c89[archived=false,commits={},compareUsePaginatedCommits=false,description=AIE Driver and Functional Abstraction Layer,disabled=false,fork=false,homepage=<null>,isTemplate=false,language=C,milestones={},name=aie-rt,nodeId=MDEwOlJlcG9zaXRvcnkxMjc3Ng==,parent=<null>,size=137199,source=<null>,visibility=public,createdAt=2021-09-22T19:47:48Z,id=12776,nodeId=<null>,updatedAt=2024-04-10T00:29:37Z,url=https://gitenterprise.xilinx.com/api/v3/repos/ai-engine/aie-rt]] (sha:8ff7046) with context:AIE_Driver_AIEML_AIE2PS_Tests_From_PR
+Setting commit status on GitHub for https://gitenterprise.xilinx.com/ai-engine/aie-rt/commit/8ff70463d6f2702e36c36b192e88d37c3e456235
+Email was triggered for: Failure - Any
+Sending email for trigger: Failure - Any
+An attempt to send an e-mail to empty list of recipients, ignored.
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Skipped based on build state FAILURE
+Finished: FAILURE

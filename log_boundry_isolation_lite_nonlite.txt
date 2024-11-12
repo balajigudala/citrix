@@ -1,0 +1,577 @@
+
+
+
+
+3beb8f0df90dd8ece474aaa2ffc55ca0a82925c9
+
+XAIE_ERROR("entry in func : %s : %d\n", __func__, __LINE__);
+
+XAIE_ERROR("%s : %d\n", __FILE__, __LINE__);
+
+XAIE_ERROR("print in %s\n", __func__);
+
+XAIE_BACKEND_OP_PARTITION_INITIALIZE
+
+
+
+for lite 
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_SoftPartitionInitialize():368: lite/xaie_lite_privilege.c : 368
+[AIE ERROR] XAie_PartitionInitialize():427: lite/xaie_lite_privilege.c : 427
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] XAie_PartitionInitialize():539: lite/xaie_lite_privilege.c : 539
+[AIE ERROR] _XAie_DisableTlast():935: lite/xaie_lite_aie2ps.h : 935
+[AIE ERROR] _XAie_DisableTlast():946: lite/xaie_lite_aie2ps.h : 946
+[AIE ERROR] _XAie_DisableTlast():948: row strt, end 5 : 13
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+[AIE ERROR] _XAie_LPartMaskWrite32():152: lite/xaie_lite_io.h : 152
+
+
+
+
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c : 425
+[AIE ERROR] _XAie_DisableTlast():946: row strt, end 5 : 13
+
+
+
+for lite 
+/******040424 ******/
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c : 425
+[AIE ERROR] XAie_SoftPartitionInitialize():385: lite/xaie_lite_privilege.c : 385
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():561: lite/xaie_lite_aie2ps.h : 561
+AIE Tile DMA Loopback success.
+1/1 AIEML tests passed.
+
+
+
+for lite 
+/******040424 ******/
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c : 425
+[AIE ERROR] XAie_PartitionInitialize():440: lite/xaie_lite_privilege.c : 440
+[AIE ERROR] XAie_PartitionInitialize():443: lite/xaie_lite_privilege.c : 443
+[AIE ERROR] XAie_PartitionInitialize():451: lite/xaie_lite_privilege.c : 451
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] XAie_PartitionInitialize():464: lite/xaie_lite_privilege.c : 464
+[AIE ERROR] XAie_PartitionInitialize():468: lite/xaie_lite_privilege.c : 468
+[AIE ERROR] XAie_PartitionInitialize():473: lite/xaie_lite_privilege.c : 473
+[AIE ERROR] XAie_PartitionInitialize():478: lite/xaie_lite_privilege.c : 478
+[AIE ERROR] XAie_PartitionInitialize():542: lite/xaie_lite_privilege.c : 542
+[AIE ERROR] XAie_PartitionInitialize():544: lite/xaie_lite_privilege.c : 544
+[AIE ERROR] XAie_PartitionInitialize():546: lite/xaie_lite_privilege.c : 546
+[AIE ERROR] _XAie_DisableTlast():935: lite/xaie_lite_aie2ps.h : 935
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+
+
+
+for softpartition initdivInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c : 354
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c : 425
+[AIE ERROR] XAie_PartitionInitialize():440: lite/xaie_lite_privilege.c : 440
+[AIE ERROR] XAie_PartitionInitialize():443: lite/xaie_lite_privilege.c : 443
+[AIE ERROR] XAie_PartitionInitialize():451: lite/xaie_lite_privilege.c : 451
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] XAie_PartitionInitialize():464: lite/xaie_lite_privilege.c : 464
+[AIE ERROR] XAie_PartitionInitialize():468: lite/xaie_lite_privilege.c : 468
+[AIE ERROR] XAie_PartitionInitialize():473: lite/xaie_lite_privilege.c : 473
+[AIE ERROR] XAie_PartitionInitialize():478: lite/xaie_lite_privilege.c : 478
+[AIE ERROR] XAie_PartitionInitialize():542: lite/xaie_lite_privilege.c : 542
+[AIE ERROR] XAie_PartitionInitialize():544: lite/xaie_lite_privilege.c : 544
+[AIE ERROR] XAie_PartitionInitialize():546: lite/xaie_lite_privilege.c : 546
+[AIE ERROR] _XAie_DisableTlast():935: lite/xaie_lite_aie2ps.h : 935
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] XAie_PartitionInitialize():549: lite/xaie_lite_privilege.c : 549
+[AIE ERROR] XAie_PartitionInitialize():551: lite/xaie_lite_privilege.c : 551
+[AIE ERROR] XAie_SoftPartitionInitialize():385: lite/xaie_lite_privilege.c : 385
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():561: lite/xaie_lite_aie2ps.h : 561
+AIE Tile DMA Loopback success.
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+1/1 AIEML tests passed.
+
+
+
+
+
+
+for partition init 
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c : 425
+[AIE ERROR] XAie_PartitionInitialize():440: lite/xaie_lite_privilege.c : 440
+[AIE ERROR] XAie_PartitionInitialize():443: lite/xaie_lite_privilege.c : 443
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] XAie_PartitionInitialize():451: lite/xaie_lite_privilege.c : 451
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] XAie_PartitionInitialize():464: lite/xaie_lite_privilege.c : 464
+[AIE ERROR] XAie_PartitionInitialize():468: lite/xaie_lite_privilege.c : 468
+[AIE ERROR] XAie_PartitionInitialize():473: lite/xaie_lite_privilege.c : 473
+[AIE ERROR] XAie_PartitionInitialize():478: lite/xaie_lite_privilege.c : 478
+[AIE ERROR] XAie_PartitionInitialize():542: lite/xaie_lite_privilege.c : 542
+[AIE ERROR] XAie_PartitionInitialize():544: lite/xaie_lite_privilege.c : 544
+[AIE ERROR] XAie_PartitionInitialize():546: lite/xaie_lite_privilege.c : 546
+[AIE ERROR] _XAie_DisableTlast():935: lite/xaie_lite_aie2ps.h : 935
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():950: lite/xaie_lite_aie2ps.h : 950
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():953: lite/xaie_lite_aie2ps.h : 953
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():959: lite/xaie_lite_aie2ps.h : 959
+[AIE ERROR] _XAie_DisableTlast():965: lite/xaie_lite_aie2ps.h : 965
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_DisableTlast():967: lite/xaie_lite_aie2ps.h : 967
+[AIE ERROR] XAie_PartitionInitialize():549: lite/xaie_lite_privilege.c : 549
+[AIE ERROR] XAie_PartitionInitialize():551: lite/xaie_lite_privilege.c : 551
+AIE Tile DMA Loopback success.
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+[AIE ERROR] _XAie_LPartMaskWrite32():153: lite/xaie_lite_io.h : 153
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+
+
+for nonlite
+/****** 040424 ******/
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: entry in func : global/xaiegbl.c : 287
+[AIE ERROR] _XAie_PrivilegeInitPart():439: entry in func : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] XAie_SoftPartitionInitialize():320: entry in func : global/xaiegbl.c : 320
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():929: entry in func : io_backend/privilege/xaie_io_privilege.c : 929 : 0
+[AIE ERROR] _XAie2PS_SetAxiMMIsolation():69: device/xaie_device_aie2ps.c : 69
+AIE Tile DMA Loopback success.
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+
+[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+[AIE ERROR] XAie_PartitionInitialize():368: entry in func : global/xaiegbl.c : 368
+[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+[AIE ERROR] XAie_BaremetalIO_RunOp():547: entry in func : io_backend/ext/xaie_baremetal.c : 547
+[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+[AIE ERROR] _XAie_PrivilegeInitPart():524: entry in func : io_backend/privilege/xaie_io_privilege.c : 524
+[AIE ERROR] _XAie2PS_SetAxiMMIsolation():69: entry in func : _XAie2PS_SetAxiMMIsolation : 69
+:[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+[AIE ERROR] XAie_RunOp():1697: entry in func : common/xaie_helper.c : 1697
+1/1 AIEML tests passed.
+
+
+
+
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_ucdma_pause
+test_aie_nocdma_pause
+test_aie_uc_aximmoutstanding_txn
+test_aie_noc_aximmoutstanding_txn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+[AIE ERROR] XAie_PartitionInitialize():366: print in XAie_PartitionInitialize
+[AIE ERROR] XAie_BaremetalIO_RunOp():541: print in XAie_BaremetalIO_RunOp
+[AIE ERROR] _XAie_PrivilegeInitPart():524: print in _XAie_PrivilegeInitPart
+[AIE ERROR] _XAie2PS_SetAxiMMIsolation():69: print in _XAie2PS_SetAxiMMIsolation
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+[AIE ERROR] _XAie_PrivilegeInitPart():439: entry in func : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] _XAie_PrivilegeInitPart():525: entry in func : io_backend/privilege/xaie_io_privilege.c : 525
+1/1 AIEML tests passed.
+
+
+
+ran the softpartition from the test.c file 
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():287: entry in func : global/xaiegbl.c : 287
+[AIE ERROR] _XAie_PrivilegeInitPart():439: entry in func : io_backend/privilege/xaie_io_privilege.c : 439
+[AIE ERROR] XAie_SoftPartitionInitialize():320: entry in func : global/xaiegbl.c : 320
+[AIE ERROR] _XAie_PrivilegeSetAxiMMIsolation():929: entry in func : io_backend/privilege/xaie_io_privilege.c : 929 : 0
+AIE Tile DMA Loopback success.
+
+
+
+

@@ -1,0 +1,37 @@
+vitis source:
+source /proj/xbuilds/2024.2_daily_latest/installs/lin64/Vitis/2024.2/settings64.sh
+
+clone aie-rt repo
+git clone https://gitenterprise.xilinx.com/ai-engine/aie-rt.git
+
+compile libraries for Linux in aie-rt: 
+make -C driver/src/ CC=aarch64-linux-gnu-gcc COMPILER=aarch64-linux-gnu-gcc CFLAGS='-Wall -O2 -g -Wextra --std=c11 -D_AIELINUX_ -DXAIE_DEBUG -D_POSIX_C_SOURCE=200809' -f Makefile.Linux linux
+
+compile aie-rt testcases:
+make -C driver/examples/ CC=aarch64-linux-gnu-gcc COMPILER=aarch64-linux-gnu-gcc CFLAGS='-Wall -O2 -g -Wextra --std=c11 -D_AIELINUX_ -DXAIE_DEBUG -D_POSIX_C_SOURCE=200809' Makefile all
+aarch64-linux-gnu-gcc -I../include -Wall -O2 -g -Wextra --std=c11 -D_AIELINUX_ -DXAIE_DEBUG -D_POSIX_C_SOURCE=200809 -c xaie_tile_dma_loopback.c -o xaie_tile_dma_loopback.o
+aarch64-linux-gnu-gcc -o  xaie_tile_dma_loopback xaie_tile_dma_loopback.o -L../src -lxaiengine
+
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/aie-rt/driver/src/libxaiengine.so* .
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/aie-rt/driver/examples/xaie_tile_dma_loopback ./
+
+jaydpate
+L7ave@54321
+
+commit message format: 
+driver: src: Fix in Cmake file to build applications in rigel_flow
+
+This patch fixes the error in Cmake file while running build_app 
+in rigel_flow.
+
+Signed-off-by: Dhananjay Chauhan <dhananjay.chauhan@amd.com>
+
+---
+BRANCH: main-aie
+CR-1212381
+---
+
+generate patch: 
+git format-patch -n1 --no-numbered --subject-prefix="AIENGINE PATCH"
+send patch: 
+git send-email --to git_aiengine_dev@xilinx.com --cc gregory.williams@amd.com --cc sankarji@amd.com *.patch

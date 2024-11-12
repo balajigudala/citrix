@@ -1,0 +1,1 @@
+WARNING: [aiecompiler 77-43963] No platfrom and no part was specified. A default part will be selected. Specifying --platform or --part will become mandatory in a future release.

@@ -1,0 +1,115 @@
+/wrk/vitis_collateral/VERSAL_AIE/SD_card_ubuntu_AIE_all_Fixes_ALOK.img
+ Could you please try to flash this image on VCK190 board?
+ https://confluence.amd.com/display/PSSANONECC/Vck190+ubuntu+image+flash
+ 
+ Vck190 ubuntu image flash
+
+Created by K J,Agalyasri (Jul 18, 2024 05:57), last edited by K J,Agalyasri (Jul 18, 2024 07:21)
+STEP : 1
+Source tool and create project:
+1.      source plnx_tool
+2.      create plnx project
+3.      petalinux-create -t project -s <BSP PATH> -n <project name>
+4.      Acquire board in different terminal /proj/systest/bin/systest <board farm board no >
+5.      on systest ->power 0 power 1
+                     tftpd "<absolute for plnx project images folder>" : either prebuilt images or built images according to the test case
+                     nfsroot3 "<ubuntu images folder>"
+STEP : 2
+Boot the board
+1.      BOOT with following commands:
+1.      PETALINUX BOOT WITH prebuilt images:
+1.      zynqmp- petalinux-boot --jtag -v --prebuilt 3 --bitstream pre-built/linux/images/system.bit --rootfs pre-built/linux/images/rootfs.cpio.gz.u-boot --hw_server-url <hw_url>:3121
+2.      versal - petalinux-boot --jtag -v --prebuilt 2 --hw_server-url <hw_url>:3121 , stop at u-boot and do following steps:
+Versal> dhcp ; setenv serverip 10.10.70.101 ; tftpb 200000 Image ; tftpb 4000000 rootfs.cpio.gz.u-boot ; tftpb 100000 system.dtb
+Versal> booti 200000 4000000 100000
+
+2.      After booting it will end up in linux promt ;login with petalinux user and password as petalinux.
+STEP : 3
+Flash WIC image in sda using prebuilt wic file:
+root@xilinx-vck190-20222:~# umount /dev/mmcblk1p1 → this is optional , if already mounted and needs to umount the partition
+root@xilinx-vck190-20222:~# umount /dev/mmcblk1p2 → this is optional , if already mounted and needs to umount the partition
+root@xilinx-vck190-20222:~# fdisk -l /dev/mmcblk1
+root@xilinx-vck190-20222:~# dd if=/dev/zero of=/dev/mmcblk1 bs=1024 count=1024
+root@xilinx-vck190-20222:~# fdisk /dev/mmcblk1
+Welcome to fdisk (util-linux 2.37.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+This disk is currently in use - repartitioning is probably a bad idea.
+It's recommended to umount all file systems, and swapoff all swap
+partitions on this disk.
+
+Command (m for help): d
+Partition number (1,2, default 2): 1
+Partition 1 has been deleted.
+Command (m for help): d
+Selected partition 2
+Partition 2 has been deleted.
+Command (m for help): p
+Disk /dev/sda: 29.72 GiB, 31914983424 bytes, 62333952 sectors
+Disk model: Ultra HS-COMBO
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x4e6c7b36
+
+
+
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-rea[  458.803755]  mmcblk1:
+d partition table.
+Syncing disks.
+
+
+[  458.812765]  mmcblk1:
+root@xilinx-vck190-20222:~# mkdir /nfsroot
+root@xilinx-vck190-20222:~# mount -o port=2049,nolock,proto=tcp,vers=3 10.10.70.101:/exports/root  /nfsroot
+root@xilinx-vck190-20222:~# xzcat /nfsroot/{ubuntu_image} | dd of=/dev/mmcblk1 bs=32M
+#dd if=/sd_card/SD_card_ubuntu_AIE_all_Fixes_ALOK.img of=/dev/mmcblk0 bs=32M
+
+Once done check if the wic is flashed properly in mmcblk1 or not
+systest: power 0 power 1 bootmode "sd1_ls" connect com0
+NOTE: It will automatically boot till linux in QSPI bootmode. Verify your test cases.
+~
+
+
+
+
+
+xilinx-vck190-20241:/home/petalinux# power 0 power 1 bootmode "mmcblk0" connect com0
+sh: power: command not found
+xilinx-vck190-20241:/home/petalinux# [vck190-8] Systest#  power 0 power 1 bootmode "mmcblk0" connect com0
+Power: OFF
+Power: ON
+Waiting for system controller to boot up...
+INFO: boot mode is jtag
+ERROR: invalid bootmode target
+Process exited with status: -1
+[vck190-8] Systest#  power 0 power 1 bootmode "sd1_ls" connect com0
+Power: OFF
+Power: ON
+Waiting for system controller to boot up...
+INFO: boot mode is jtag
+INFO: boot mode is sd1_ls
+Connecting to device com0.  Use Ctrl-\ to escape.
+P;Mux Init done
+
+Xilinx Versal Image Selector
+Board name ▒ ▒ ▒ ▒ ▒ ▒
+
+Xilinx Versal Image Selector
+Board name   ! " # $ %
+
+use ctlr + \
+power 0 power 1 connect com0
+
+use boot.bin from xsdb 
+
+in uboot terminal
+fatrm mmc 0 BOOT.BIN; fatls mmc 0; dhcp; tftpb 0x80000 BOOT.BIN; fatwrite mmc 0 0x80000 BOOT.BIN 0x2000000; fatls mmc 0
+
+use ctrl + /
+power 0 power 1 bootmode "sd1_ls" connect com0
+NOTE: wait for auto boot

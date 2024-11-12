@@ -1,0 +1,59 @@
+			terminal 1
+/proj/systest/bin/cluster-ping vek280
+/proj/systest/bin/cluster-ping vck190
+/proj/systest/bin/systest vek280-6
+power 0 power 1
+xsdb
+conn
+tar 1
+
+for vek280
+device program /proj/xsjsswstaff/huaj/vek280/oob/BOOT.BIN
+device program /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/BOOT.BIN
+
+for vck190
+dow -force /proj/xsjsswstaff/jaydpate/Workdir/vck190_1/BOOT.BIN
+device program /proj/xsjsswstaff/dchauhan/temp/extra/elf_testcases_check/BOOT.BIN
+
+
+/scratch/dchauhan/temp/extra/core_enable/aiebaremetal/arch/psv_cortexa72_0/buildexample/BOOT.BIN
+#device program /scratch/dchauhan/temp/extra/vek280_new/xilinx-vek280-2024.1/pre-built/linux/images/BOOT.BIN
+
+tar 6
+rst -proc
+
+tar 6
+rst -proc
+																					ssh chanterelle20
+																					/opt/systest/common/bin/systest-client
+for vek 280
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/aieml_vnc_tests5.elf
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/aieml_vnc_tests.elf
+
+for vck190
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_testcases_check/aieml_vnc_tests.elf
+dow -force /scratch/dchauhan/temp/extra/isolation_test/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+dow -force /proj/xsjsswstaff/huaj/vek280/oob/hjiangrepo/aieml_vnc_tests.elf
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/isolation_test/aieml-tests/build_baremetal/aieml_vnc_tests/Debug/aieml_vnc_tests.elf
+/proj/xsjsswstaff/dchauhan/work/soft_part/aiebaremetal/arch/psv_cortexa72_0/buildexample/main.elf
+./arch/psv_cortexa72_0/buildexample/main.elf
+dow -force /proj/xsjsswstaff/dchauhan/temp/extra/elf_isolation_check/main.elf
+																					connect com0
+con
+
+
+connect com0																					
+
+
+step
+ta 1; 
+
+device program /proj/xsjsswstaff/sumanthg/vck190/BOOT.BIN
+ta 6 
+rst -proc
+ dow -force /proj/xsjsswstaff/sumanthg/vck190/helloworld.elf;con
+
+
+
+
+

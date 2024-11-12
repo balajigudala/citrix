@@ -1,0 +1,77 @@
+####### another way to boot the image ##############
+acquire one board (vck190 or vek280)
+
+terminal -1                                                   terminal 2
+
+hw_server
+connect com0
+
+                                                            ssh <board>
+                                                            /opt/systest/common/bin/systest-client  #(systest)
+                                                            xsdb
+
+
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/" [(Image,  rootfs.cpio.gz.u-boot , system.dtb , u-boot-dtb.elf, BOOT.BIN])
+nfsroot3 "/proj/xsjsswstaff/path" (above path)
+
+
+                                                            connect
+                                                            ta 1
+                                                            device program /proj/xsjsswstaff/dchauhan/temp/extra/vck190_0/BOOT.BIN
+
+
+stop autoboot
+
+dhcp
+tftpboot 0x80000 Image ; tftpboot 0x2000000 rootfs.cpio.gz.u-boot ; tftpboot 0x1000 system.dtb
+booti 0x80000 0x2000000 0x1000
+
+
+
+
+
+1. Acquired vck190/vek280
+   board & brig up systest
+
+2. hw_server
+3. tftpd "$Image_Path"
+(BOOT.BIN, sd_card.img, rootfs imagees)
+4. nfsroot3 "$Image_Path"
+connect com0
+
+                    (terminal 2)
+5.                    ssh morel10
+6.                                      /opt/systest/common/bin/systest-client
+7.                    xsdb
+8.                    conn
+9.                    ta 1
+10.                    device program "$Image_PATH/BOOT.BIN"
+
+11. Stop the Auto boot
+should stop at u-boot window
+
+12. dhcp; tftpboot 0x80000 Image ; tftpboot 0x2000000 rootfs.cpio.gz.u-boot ; tftpboot 0x1000 system.dtb; tftpboot 0x80000 Image ; tftpboot 0x2000000 rootfs.cpio.gz.u-boot ; tftpboot 0x1000 system.dtb
+
+13.login: petalinux
+14. pass: petalinux
+
+15. sudo su
+
+16. cd /home/petalinux/
+17. mkdir -p /nfsroot
+18. mount -t nfs -o nolock,proto=tcp,port=2049 10.10.70.101:/exports/root /nfsroot
+19. do scp sd_card.img to /nfsroot directory
+20. dd if=/nfsroot/sd_card.img of=/dev/mmcblk0 bs=1G
+output:
+    2+1 records in
+    2+1 records out
+
+21.                                    (terminal 3)
+                                    bring up the xsdb window using steps no. 5,6,7
+
+22.                                    connect -url  morel10:3121 (use respective board address)
+23.                                    source /proj/xsjsswstaff/gvaradar/git/xsdb-scripts/sdboot.tcl
+
+24. At this point you'll see bootup logs
+    in the terminal one.
+

@@ -1,0 +1,59 @@
+**********commands to acquire board ************
+
+VEK280- aie2
+========== VEK280 BOARDFARM =====================
+/proj/systest/bin/cluster-ping vek280
+/proj/systest/bin/systest       vek280-4
+
+---Terminal 1     *****---*****        Terminal 2---------
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vek_280_v2024.2_build/"
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vek280-2024.2_build_elf"
+ttfpd "/proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vek280/"
+tftpd "/proj/xsjsswstaff/dchauhan/temp/extra/vek280_yocto_sdtlinux_not_boot_elf"
+nfsroot3 "/proj/xsjsswstaff/dchauhan/temp/extra/vek280_yocto_sdtlinux_not_boot_elf"
+hw_server
+power 0 power 1 connect com0
+										-ssh connect to board	
+										/opt/systest/common/bin/systest-client
+
+										
+										xsdb
+										conn
+										ta 1
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vek280-2024.2_build_elf/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vek_280_v2024.2_build/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vek_280_v2024.2_build/working_BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/bin_vek280_kernel/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vek280_yocto_sdtlinux_not_boot_elf/BOOT.BIN
+										device program /proj/xsjsswstaff/ssatpute/exports/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/linux_decoupling_yocto_flow/vek280/BOOT.BIN
+										device program /proj/xsjsswstaff/dchauhan/temp/extra/vek280/xilinx-vek280-es1-2024.1/pre-built/linux/images/BOOT.BIN
+									
+stop auto boot(press any key)
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/bin_vek280_kernel/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/bin_vek280_kernel/rootfs.cpio.gz.u-boot" 0x2000000								
+										dow -data -force "/proj/xsjsswstaff/dchauhan/temp/extra/bin_vek280_kernel/system.dtb" 0x1000
+										
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/Image" 0x80000
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/rootfs.cpio.gz.u-boot" 0x2000000
+										dow -data -force "/proj/xsjsswstaff/ssatpute/exports/vek280/imges/system.dtb" 0x1000
+									
+dhcp; tftpboot 0x200000 Image ; tftpboot 0x2000000 rootfs.cpio.gz.u-boot ; tftpboot 0x1000 system.dtb;
+dhcp; tftpboot 0x200000 Image ; tftpboot 0x2000000 rootfs.cpio.gz.u-boot ; tftpboot 0x1000 pb_system.dtb;
+#dhcp; tftpb 0x200000 Image; tftpb 0x4000000 rootfs.cpio.gz.u-boot; booti 0x00200000 0x04000000 0x00001000
+tftpboot 0x200000 Image ; tftpboot 0x1000 system.dtb;
+booti 0x200000 0x2000000 0x1000
+#booti 0x80000 0x2000000 0x1000
+username:
+password:
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/build_linux/aieml_tests ./
+ls
+scp -r dchauhan@172.19.2.41:/scratch/dchauhan/temp/extra/pm_request_tiles/aieml-tests/aie-rt/driver/src/lib* ./
+
+scp -r ssatpute@10.10.70.101://proj/xsjsswstaff/ssatpute/exports/vek280/lib/* .
+sudo rm /usr/lib/libxaiengine*
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/petalinux
+./usr_space_application
+
+
+

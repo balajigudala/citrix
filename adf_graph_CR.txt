@@ -1,0 +1,232 @@
+https://confluence.xilinx.com/display/~satorui/linux-headers+for+XRT+from+petalinux+2021.2+for+zcu104
+
+
+[CR-1198099] [XRT] ERROR: ERROR: adf::graph::run: AIE driver error.: Input/output error - Xilinx Engineering JIRA
+./package.hw_emu/launch_hw_emu.sh -verbose -no-reboot -login "petalinux" -password "petalinux"
+wget -r --no-parent https://jira.xilinx.com/public/bugcases/CR/1198000-1198999/1198099/
+Do this
+if it doesn't work copy this
+/proj/xsjsswstaff/jaydpate/workspace/petalinux_proj/jira.xilinx.com/public/bugcases/CR/1198000-1198999/1198099/workspace
+
+
+
+
+[4:24 PM] Patel, Jaydip
+[CR-1198099] [XRT] ERROR: ERROR: adf::graph::run: AIE driver error.: Input/output error - Xilinx Engineering JIRA
+[4:25 PM] Patel, Jaydip
+./package.hw_emu/launch_hw_emu.sh -verbose -no-reboot -login "petalinux" -password "petalinux"
+
+
+source /proj/xbuilds/2024.1_daily_latest/installs/lin64/Vitis/2024.1/settings64.sh
+/scratch/dchauhan/temp/extra/cr-1198099/jira.xilinx.com/public/bugcases/CR/1198000-1198999/1198099/workspace
+source /proj/petalinux/2024.1/petalinux-v2024.1_daily_latest/tool/petalinux-v2024.1-final/settings.sh
+
+
+
+
+
+
+******main func in test.c ******
+update npi is passed
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():372: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():438: ptflags : 7
+[AIE ERROR] XAie_PartitionInitialize():442: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():451: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():461: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():464: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():476: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():481: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():486: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():548: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():550: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():552: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():555: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():557: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():388: lite/xaie_lite_privilege.c
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():562: lite/xaie_lite_aie2ps.h
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():567: lite/xaie_lite_aie2ps.h
+RC return 0
+line 182
+Data size:32
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 4
+[AIE ERROR] XAie_DataMemBlockWrite():259: Invalid tile type
+RC line 223
+after XAie_DataMemBlockWrite RC = 5
+[AIE ERROR] _XAie2PS_GetTTypefromLoc():46: Invalid column: 4
+[AIE ERROR] XAie_DataMemBlockRead():384: Invalid tile type
+RC line 228
+after XAie_DataMemBlockRead RC = 5
+src: 0, rec: 0
+src: 1, rec: 0
+src: 2, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 3, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 4, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 5, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 6, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 7, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 8, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 9, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: A, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: B, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: C, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: D, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: E, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: F, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 10, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 11, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 12, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 13, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 14, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 15, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 16, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 17, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 18, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 19, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1A, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1B, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1C, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1D, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1E, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+src: 1F, rec: 0
+[AIE ERROR] XAie_Finish():477: Invalid Device Instance
+SUCCESS
+
+
+
+
+
+
+
+
+******************** start main **************
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_ucdma_pause
+test_aie_nocdma_pause
+test_aie_uc_aximmoutstanding_txn
+test_aie_noc_aximmoutstanding_txn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+[AIE ERROR] XAie_SoftPartitionInitialize():354: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():372: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_PartitionInitialize():425: lite/xaie_lite_privilege.c
+[AIE ERROR] XAie_SoftPartitionInitialize():388: lite/xaie_lite_privilege.c
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():562: lite/xaie_lite_aie2ps.h
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():568: lite/xaie_lite_aie2ps.h
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():568: lite/xaie_lite_aie2ps.h
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():568: lite/xaie_lite_aie2ps.h
+[AIE ERROR] _XAie_LSetPartIsolationAxiMM():568: lite/xaie_lite_aie2ps.h
+******************** end  main **************
+AIE Tile DMA Loopback success.
+1/1 AIEML tests passed.
+Tests Execution Completed
+
+
+
+
+
+
+
+
+Connecting to device com0.  Use Ctrl-\ to escape.
+******************** start main **************
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+test_aie_dma
+test_aie_dma_event
+test_aie_dma_fot
+test_mem_tile_dma_fot
+test_aie_data_mem
+test_aie_dmabd_iter
+test_mem_tile_bditer
+test_aie_dma_task_complete_token
+test_aie_mem_tiles
+test_mem_tiles_compression
+test_aie_dma_compression
+test_aie_dma_tlast
+test_mem_tile_dma_tlast
+test_aie_tct_pl_fifo
+test_aie_shimdma_loopback
+test_aie_isolation_check
+test_aie_generate_intr
+test_aie_col_status
+test_aie_load_uc_elf
+test_aie_ucdma_pause
+test_aie_nocdma_pause
+test_aie_uc_aximmoutstanding_txn
+test_aie_noc_aximmoutstanding_txn
+End of Test cases List
+Specify any of the below option:
+        l - list all test cases
+        all - execute all test cases
+        <test_name> - execute only specified test
+        q - to quit
+divInst start col = 0
+divInst no col = 4
+Requesting tiles...!
+******************** end  main **************
+AIE Tile DMA Loopback success.
+1/1 AIEML tests passed.

@@ -1,0 +1,31 @@
+Created by Swagath Gadde, last modified on May 16, 2024
+$ curl https://storage.googleapis.com/git-repo-downloads/repo > repo
+
+$ chmod a+x repo
+
+$ repo init -u https://gitenterprise.xilinx.com/Yocto/yocto-manifests.git -b 2023
+
+$ repo sync
+
+$ repo start 2023 --all
+
+$ source setupsdk
+
+Now you will be inside the build directory then add the below to  conf/local.conf pointing the latest xsa like below (once xsa automation is done and available in artifactory this step is not needed)
+
+$ git clone https://gitenterprise.xilinx.com/Yocto/meta-xilinx-restricted/tree/2023
+
+$ bitbake-layers add-layer <from above cloned path give till https://gitenterprise.xilinx.com/Yocto/meta-xilinx-restricted/tree/2023/meta-xilinx-restricted-lounge/meta-xilinx-restricted-emb-plus-ve2302-es1>
+Now you will be inside the build directory then add the below to machine conf file pointing the latest xsa like below (This is optional try on when you wanted to point the custom xsa)
+
+Example machine conf file path: above cloned repo (meta-xilinx-restricted/meta-xilinx-restricted-lounge/meta-xilinx-restricted-emb-plus-ve2302-es1/conf/machine/emb-plus-ve2302-es1.conf)
+HDF_EXT = "xsa"
+HDF_BASE = "file://"
+HDF_PATH = "/scratch/swagathg/projects/yocto_build_2023/rave-debug-xsa/ve2302_es1_pcie_qdma_base.xsa" (change accordingly to your xsa path)
+
+
+
+
+Below Step will start building the APU Package
+
+$MACHINE=emb-plus-ve2302-es1 bitbake emb-plus-apu-image

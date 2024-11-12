@@ -1,0 +1,65 @@
+
+
+
+without modifications
+
+v2.dir/io_backend/ext/xaie_cdo.c.obj.d -o libsrc/aienginev2/src/CMakeFiles/aienginev2.dir/io_backend/ext/xaie_cdo.c.obj -c /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/libsrc/aienginev2/src/io_backend/ext/xaie_cdo.c
+DEBUG    roast.ssh:roast_utils.py:1562 In file included from /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/libsrc/aienginev2/src/io_backend/ext/xaie_cdo.c:39:
+DEBUG    roast.ssh:roast_utils.py:1562 /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/libsrc/build_configs/gen_bsp/include/xaiengine/xaie_io_privilege.h:28:10: fatal error: xaie_dma_aie2ps.h: No such file or directory
+DEBUG    roast.ssh:roast_utils.py:1562    28 | #include "xaie_dma_aie2ps.h"
+
+empty application build
+vitis_version = 2024.2_1004_1
+ORIGIN COMMIT: "f05a4e4971b2915ac208ce412b410e68beea454d - Nandanikhil Gajulapally, 12 days ago : spartanup_plm: refactor DMA initialization API"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/empty_pass_commit_2024.2_1004_1_pass.log
+
+zero_dm_pm_memory build
+vitis_version = 2024.2_1004_1
+ORIGIN COMMIT: "f05a4e4971b2915ac208ce412b410e68beea454d - Nandanikhil Gajulapally, 12 days ago : spartanup_plm: refactor DMA initialization API"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/memory_pass_commit_2024.2_1004_1_fail.log
+
+empty application build
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "f05a4e4971b2915ac208ce412b410e68beea454d - Nandanikhil Gajulapally, 12 days ago : spartanup_plm: refactor DMA initialization API"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/empty_pass_commit_2024.2_1009_1_pass.log
+
+zero_dm_pm_memory build
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "f05a4e4971b2915ac208ce412b410e68beea454d - Nandanikhil Gajulapally, 12 days ago : spartanup_plm: refactor DMA initialization API"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/memory_pass_commit_2024.2_1009_1_fail.log
+
+empty application build
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "2f34bb53a5832674c52061c6c974ee8194723de8 - Onkar Harsh, 6 days ago : scripts: Add support for SpartanUp PLM in BSP and the workflow"
+logfile: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/empty_fail_commit_2024.2_1009_1_pass.log
+
+zero_dm_pm_memory build
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "2f34bb53a5832674c52061c6c974ee8194723de8 - Onkar Harsh, 6 days ago : scripts: Add support for SpartanUp PLM in BSP and the workflow"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/memory_fail_commit_2024.2_1009_1_fail.log
+
+
+
+
+
+empty application build 
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "38a8aaa50131d25188ddf7fc5a46a15cdc32def8 - Rama devi Veggalam, 5 hours ago : versal_psmfw: Use shared memory to pass STL events to PLM"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/empty_latest_embsw_commit_2024.2_1009_1_pass.log
+
+zero_dm_pm_memory build
+vitis_version = 2024.2_1009_1
+ORIGIN COMMIT: "38a8aaa50131d25188ddf7fc5a46a15cdc32def8 - Rama devi Veggalam, 5 hours ago : versal_psmfw: Use shared memory to pass STL events to PLM"
+log file: /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/my_logs/memory_latest_embsw_commit_2024.2_1009_1_fail.log
+
+
+
+
+
+atch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/include -isystem /proj/xbuilds/SWIP/2024.2_1004_0125/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include -isystem /proj/xbuilds/SWIP/2024.2_1004_0125/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include-fixed -isystem /proj/xbuilds/2024.2_1004_1/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include/c++/13.3.0 -isystem /proj/xbuilds/2024.2_1004_1/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include/c++/13.3.0/aarch64-xilinx-elf -isystem /proj/xbuilds/2024.2_1004_1/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include/c++/13.3.0/backward -isystem /proj/xbuilds/2024.2_1004_1/installs/lin64/Vitis/2024.2/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include -O2 -DSDT -DARMA72_EL3  -MMD -MP -specs=/scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/Xilinx.spec -I/scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/bsp_dir/include -Wall -Wextra      -O0  -g3     -U__clang__ "-D__FILENAME__=\"\$(subst /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/app_dir/src/,,\$(abspath \$<))\"" -MD -MT CMakeFiles/empty_application.elf.dir/aie_control.cpp.obj -MF CMakeFiles/empty_application.elf.dir/aie_control.cpp.obj.d -o CMakeFiles/empty_application.elf.dir/aie_control.cpp.obj -c /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/app_dir/src/aie_control.cpp
+DEBUG    roast.ssh:roast_utils.py:1562 In file included from /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/app_dir/src/aie_control.cpp:15:
+DEBUG    roast.ssh:roast_utils.py:1562 /scratch/dchauhan/temp/extra/incld_err_xaieng_hdr_rigel/aie/build/vck190/rigel_flow/empty_application/work/app_dir/src/include/hw_config.h:4:10: fatal error: xaiengine.h: No such file or directory
+DEBUG    roast.ssh:roast_utils.py:1562     4 | #include <xaiengine.h>
+DEBUG    roast.ssh:roast_utils.py:1562       |          ^~~~~~~~~~~~~
+DEBUG    roast.ssh:roast_utils.py:1562 compilation terminated.
+DEBUG    roast.ssh:roast_utils.py:1562 ninja: build stopped: subcommand failed.
